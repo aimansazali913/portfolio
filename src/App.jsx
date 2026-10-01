@@ -6,7 +6,10 @@ import {
   education, 
   achievements, 
   certifications, 
-  experience 
+  experience,
+  teamCollaborations,
+  engineeringValues,
+  humanBento
 } from './data/portfolioData';
 import { 
   Mail, 
@@ -25,9 +28,20 @@ import {
   Droplets,
   FileText,
   Users,
+  Users2,
   ShieldCheck,
   Wrench,
-  Maximize2
+  Maximize2,
+  HeartHandshake,
+  Layers,
+  Target,
+  DollarSign,
+  Coffee,
+  Car,
+  Train,
+  Activity,
+  Terminal,
+  Lightbulb
 } from 'lucide-react';
 
 function Linkedin({ className = "w-4 h-4" }) {
@@ -81,14 +95,14 @@ export default function App() {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+          <div className="hidden md:flex space-x-5 text-xs lg:text-sm font-medium text-slate-300">
             <a href="#hero" className="hover:text-cyan-400 transition">Home</a>
             <a href="#about" className="hover:text-cyan-400 transition">About</a>
+            <a href="#values" className="hover:text-cyan-400 transition">Philosophy</a>
+            <a href="#teams" className="hover:text-cyan-400 transition">Teams</a>
+            <a href="#human-element" className="hover:text-cyan-400 transition">Beyond Code</a>
             <a href="#skills" className="hover:text-cyan-400 transition">Skills</a>
             <a href="#education" className="hover:text-cyan-400 transition">Education</a>
-            <a href="#achievements" className="hover:text-cyan-400 transition">Achievements</a>
-            <a href="#licenses" className="hover:text-cyan-400 transition">Licenses</a>
-            <a href="#experience" className="hover:text-cyan-400 transition">Experience</a>
             <a href="#projects" className="hover:text-cyan-400 transition">Projects</a>
             <a href="#contact" className="hover:text-cyan-400 transition">Contact</a>
           </div>
@@ -118,6 +132,9 @@ export default function App() {
           <div className="md:hidden bg-slate-950 border-b border-slate-800 px-6 py-4 space-y-3 text-sm">
             <a href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Home</a>
             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">About</a>
+            <a href="#values" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Philosophy</a>
+            <a href="#teams" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Teams</a>
+            <a href="#human-element" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Beyond Code</a>
             <a href="#skills" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Skills</a>
             <a href="#education" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Education</a>
             <a href="#achievements" onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Achievements</a>
@@ -337,6 +354,228 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* 3.1 ENGINEERING PHILOSOPHY & WORK VALUES */}
+      <section id="values" className="py-20 px-6 max-w-5xl mx-auto border-t border-slate-900">
+        <div className="text-center mb-12">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/70 px-3 py-1 rounded-full border border-cyan-800/50 inline-block mb-3">
+            How I Think &amp; Work
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Engineering Philosophy</h2>
+          <p className="text-slate-400 text-sm max-w-lg mx-auto">
+            Technical execution is only half the battle. Here is how I approach cross-discipline collaboration, problem-solving, and team dynamics.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {engineeringValues.map((val) => {
+            const IconComponent = val.id === 'empathy' ? Layers :
+                                  val.id === 'rigor' ? Target :
+                                  val.id === 'pragmatic' ? DollarSign : HeartHandshake;
+            return (
+              <div 
+                key={val.id}
+                className="group p-6 sm:p-7 rounded-3xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-cyan-500/10 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-slate-950 border border-slate-800 text-cyan-400 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:text-cyan-300 transition-all duration-300">
+                    <IconComponent className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                    {val.title}
+                  </h3>
+                  <p className="text-xs font-mono text-cyan-400/90 mb-3">
+                    {val.subtitle}
+                  </p>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    {val.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 3.2 COLLABORATORS & CAPSTONE TEAMS */}
+      <section id="teams" className="py-20 px-6 max-w-5xl mx-auto border-t border-slate-900">
+        <div className="text-center mb-12">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/70 px-3 py-1 rounded-full border border-cyan-800/50 inline-block mb-3">
+            Team Leadership &amp; Joint Engineering
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Collaborators &amp; Teams</h2>
+          <p className="text-slate-400 text-sm max-w-lg mx-auto">
+            Complex engineering requires trust, clear milestones, and mutual accountability. Highlights of the teams I’ve led and collaborated with.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {teamCollaborations.map((team) => (
+            <div 
+              key={team.id}
+              className="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition shadow-xl space-y-4"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+                <div className="flex items-center gap-3.5">
+                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${team.avatarColor} flex items-center justify-center text-slate-950 font-black text-lg shadow-md shrink-0`}>
+                    <Users2 className="w-6 h-6 text-slate-950" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                      {team.teamName}
+                    </h3>
+                    <p className="text-xs text-cyan-400 font-medium">
+                      {team.context}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2 sm:text-right">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-semibold">
+                    <Users className="w-3.5 h-3.5 text-cyan-400" /> {team.membersCount} Members
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-800/40 text-xs font-mono font-bold">
+                    {team.role}
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-slate-200 mb-1">
+                  Project: <span className="text-white font-bold">{team.projectTitle}</span>
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                  {team.description}
+                </p>
+
+                <div className="bg-slate-950/70 rounded-2xl p-4 border border-slate-800 space-y-2">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    Collaborative Highlights
+                  </span>
+                  <ul className="space-y-1.5 text-xs text-slate-300">
+                    {team.keyHighlights.map((hl, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>{hl}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-3">
+                  {team.tags.map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-lg bg-slate-800/80 text-cyan-300 font-mono border border-slate-700/60">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3.3 BEYOND ENGINEERING / THE HUMAN BENTO */}
+      <section id="human-element" className="py-20 px-6 max-w-5xl mx-auto border-t border-slate-900">
+        <div className="text-center mb-12">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/70 px-3 py-1 rounded-full border border-cyan-800/50 inline-block mb-3">
+            Off The Clock &amp; In The Lab
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">Beyond The Terminal</h2>
+          <p className="text-slate-400 text-sm max-w-lg mx-auto">
+            A glimpse into the daily habits, hardware tinkering, and personal interests that keep my engineering mind sharp.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card 1: Hardware Tinkering */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 transition shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+                <Wrench className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">{humanBento.workshop.title}</h3>
+              <p className="text-xs font-mono text-cyan-400 mb-3">{humanBento.workshop.subtitle}</p>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {humanBento.workshop.description}
+              </p>
+            </div>
+            <div className="mt-4 pt-4 border-t border-slate-800/80 flex items-center gap-2 text-xs text-slate-400">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Active Workbench at Home
+            </div>
+          </div>
+
+          {/* Card 2: Everyday Toolkit */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/40 transition shadow-xl md:col-span-2">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+                  <Terminal className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">{humanBento.setup.title}</h3>
+                  <p className="text-xs text-slate-400">Hardware, software &amp; daily driver essentials</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+              {humanBento.setup.tools.map((item, idx) => (
+                <div key={idx} className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 hover:border-slate-700 transition">
+                  <span className="text-xs font-bold text-white block truncate">{item.name}</span>
+                  <span className="text-[10px] text-cyan-400 font-mono block">{item.category}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Card 3: Hobbies & Passions */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/40 transition shadow-xl md:col-span-2">
+            <h3 className="text-lg font-bold text-white mb-1">Passions &amp; Creative Outlets</h3>
+            <p className="text-xs text-slate-400 mb-4">Balancing deep analytical focus with active recharge</p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {humanBento.hobbies.map((hobby, i) => {
+                const HobbyIcon = hobby.icon === 'Train' ? Train :
+                                  hobby.icon === 'Activity' ? Activity :
+                                  hobby.icon === 'Car' ? Car : Coffee;
+                return (
+                  <div key={i} className="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80 flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+                      <HobbyIcon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-white">{hobby.name}</h4>
+                      <p className="text-[11px] text-slate-400 leading-snug mt-0.5">{hobby.detail}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Card 4: Currently Exploring */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 transition shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+                <Lightbulb className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">{humanBento.currentlyExploring.title}</h3>
+              <ul className="space-y-2.5 text-xs text-slate-300">
+                {humanBento.currentlyExploring.topics.map((t, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-1.5"></span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-cyan-400 font-mono">
+              Always learning &amp; prototyping
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 4. SKILLS SECTION */}
       <section id="skills" className="py-20 px-6 max-w-5xl mx-auto border-t border-slate-900">

@@ -355,3 +355,124 @@ export const projects = [
     ]
   }
 ];
+
+export const teamCollaborations = [
+  {
+    id: "bangman",
+    teamName: "BangMan Solutions",
+    projectTitle: "IoT Smart Rainwater Harvesting & Filtration System",
+    context: "UniKL MFI Final Year Capstone Team (6 Members)",
+    period: "2025 – 2026",
+    role: "Capstone Project Lead & Pressure Vessel Engineer",
+    avatarColor: "from-cyan-500 to-blue-600",
+    description: "Spearheaded a multidisciplinary team of 6 engineers bridging mechanical frame fabrication, fluid pressure calculations, and cloud-connected IoT sensors. Directed sprint milestones, cross-functional CAD/FEA reviews, and parts procurement that reduced overall BOM manufacturing cost by 63%.",
+    keyHighlights: [
+      "Coordinated mechanical design, sensor telemetry, and structural safety verification across all 6 team members.",
+      "Collaborated closely with faculty advisor Dr. Ts. Azri to validate pressure vessel FoS of 2.45 under 3,000 N static load.",
+      "Established standard operating procedures (SOP) and assembly guides for safe workshop fabrication."
+    ],
+    membersCount: 6,
+    tags: ["Leadership", "Mechanical Fabrication", "ESP32 IoT", "BOM Optimization", "UniKL MFI"]
+  },
+  {
+    id: "kada",
+    teamName: "KADA Cohort 2 Core Squad",
+    projectTitle: "URUS Enterprise Operations & ERP Platform",
+    context: "Korea-ASEAN Digital Academy / MDEC Full-Stack Cohort",
+    period: "2026",
+    role: "Core Full-Stack & Transactional Logic Developer",
+    avatarColor: "from-blue-500 to-indigo-600",
+    description: "Collaborated in an intensive agile engineering squad developing URUS, an SME inventory, wave dispatch, and workforce management platform. Built atomic database transactions, deterministic workforce KPI formulas, and automated test pipelines.",
+    keyHighlights: [
+      "Engineered backend routes and database schemas in NestJS/Fastify with zero race-condition inventory locking.",
+      "Paired with frontend teammates to design real-time dispatcher podiums and intuitive supplier receiving hubs.",
+      "Authored 452 automated unit and integration tests ensuring reliable production releases."
+    ],
+    membersCount: 4,
+    tags: ["Agile Pair Programming", "PostgreSQL", "NestJS", "Fastify", "Automated Testing"]
+  },
+  {
+    id: "group65",
+    teamName: "Group 65 Engineering Team",
+    projectTitle: "Automated Walk-Through Disinfection Tunnel",
+    context: "Politeknik Port Dickson Final Year Project",
+    period: "2021 – 2022",
+    role: "Mechanical Fabrication & Pneumatics Lead",
+    avatarColor: "from-emerald-500 to-teal-600",
+    description: "Partnered with fellow mechanical diploma students to engineer a walk-through misting tunnel for COVID-19 workshop safety. Led structural metal fabrication, pipe routing, and pneumatic nozzle calibration.",
+    keyHighlights: [
+      "Welded hollow steel chassis and routed 10 high-pressure 0.2mm nozzles for 360-degree dry-fog misting.",
+      "Conducted usability and safety trials across 32 workshop operators, achieving 100% positive perception.",
+      "Delivered comprehensive technical documentation and maintenance guidelines for shop-floor technicians."
+    ],
+    membersCount: 3,
+    tags: ["Welding & Fabrication", "Pneumatics", "Workshop Safety", "User Survey Trials"]
+  }
+];
+
+export const engineeringValues = [
+  {
+    id: "empathy",
+    icon: "Layers",
+    title: "Cross-Disciplinary Empathy",
+    subtitle: "Speaking Both Hardware & Software Fluently",
+    description: "Real magic happens at the interface between mechanical parts and digital logic. Having built welded steel frames and coded 450+ test TypeScript APIs, I bridge the communication gap between shop-floor machinists and software developers without friction."
+  },
+  {
+    id: "rigor",
+    icon: "Target",
+    title: "Deterministic Rigor Over Guesswork",
+    subtitle: "Physics, Math & Automated Verification",
+    description: "Whether verifying that a water pressure vessel maintains a 2.45 Factor of Safety under 3,000 N or ensuring financial calculations in an ERP never drop a single cent, I rely on solid math, structural FEA, and deterministic automated testing."
+  },
+  {
+    id: "pragmatic",
+    icon: "DollarSign",
+    title: "Pragmatic & Resourceful Engineering",
+    subtitle: "Delivering Maximum Value Within Real Constraints",
+    description: "The best engineering design isn't the most expensive one; it's the one that solves the user's problem cleanly. By redesigning structural frames and sourcing modular components, our capstone team cut fabrication costs by 63%."
+  },
+  {
+    id: "teamwork",
+    icon: "HeartHandshake",
+    title: "Ego-Free Teamwork & Knowledge Sharing",
+    subtitle: "Empowering Everyone to Build Confidently",
+    description: "Great systems are built by great teams. I prioritize clear documentation, open communication, transparent git commit histories, and constructive feedback so that teammates always feel supported and aligned."
+  }
+];
+
+export const humanBento = {
+  workshop: {
+    title: "Hardware Tinkering & Maker Lab",
+    subtitle: "From CAD screens to solder smoke",
+    description: "You'll often find me with a soldering iron, calibrating ultrasonic sensors on breadboards, flashing ESP32 firmware, or assembling 3D-printed brackets."
+  },
+  setup: {
+    title: "Everyday Engineering Toolkit",
+    tools: [
+      { name: "SolidWorks 2024", category: "3D CAD & FEA" },
+      { name: "VS Code", category: "Primary Editor" },
+      { name: "ESP32 & Arduino", category: "Microcontrollers" },
+      { name: "React 19 & TypeScript", category: "Frontend" },
+      { name: "PostgreSQL & Supabase", category: "Database" },
+      { name: "Python 3.11", category: "Simulation & Data" },
+      { name: "Blynk IoT", category: "Telemetry" },
+      { name: "Spotify Synthwave", category: "Deep Focus Fuel" }
+    ]
+  },
+  hobbies: [
+    { name: "Railway Tech & DCC++ Protocols", detail: "Author of peer-reviewed simulation on NMRA railway signaling", icon: "Train" },
+    { name: "Badminton & Weekend Cycling", detail: "Staying agile and energized away from computer monitors", icon: "Activity" },
+    { name: "Automotive Mechanics", detail: "Fascinated by internal combustion tuning and chassis dynamics", icon: "Car" },
+    { name: "Specialty Coffee Brewing", detail: "Aeropress & pour-over enthusiast powering late-night build sessions", icon: "Coffee" }
+  ],
+  currentlyExploring: {
+    title: "Currently Exploring & Experimenting",
+    topics: [
+      "Edge AI on low-power microcontrollers (TinyML)",
+      "Next-generation responsive UI architectures",
+      "Autonomous warehouse robotic telemetry"
+    ]
+  }
+};
+
