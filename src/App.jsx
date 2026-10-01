@@ -19,42 +19,52 @@ import {
   Award, 
   CheckCircle2, 
   Calendar,
-  X,
-  Search,
-  ChevronLeft,
-  ChevronRight,
-  Sparkles,
-  Cpu,
-  Droplets,
-  FileText,
-  Users,
-  Users2,
-  ShieldCheck,
-  Wrench,
-  Maximize2,
-  HeartHandshake,
-  Layers,
-  Target,
-  DollarSign,
-  Coffee,
-  Car,
-  Train,
-  Activity,
-  Terminal,
-  Lightbulb,
-  ExternalLink,
-  Download,
-  ArrowRight,
-  Sliders,
-  Compass,
-  Zap,
-  Repeat
+  X, 
+  Search, 
+  ChevronLeft, 
+  ChevronRight, 
+  Sparkles, 
+  Cpu, 
+  Droplets, 
+  FileText, 
+  Users, 
+  Users2, 
+  ShieldCheck, 
+  Wrench, 
+  Maximize2, 
+  HeartHandshake, 
+  Layers, 
+  Target, 
+  DollarSign, 
+  Coffee, 
+  Car, 
+  Train, 
+  Activity, 
+  Terminal, 
+  Lightbulb, 
+  ExternalLink, 
+  Download, 
+  ArrowRight, 
+  Sliders, 
+  Compass, 
+  Zap, 
+  Repeat,
+  Briefcase,
+  Clock
 } from 'lucide-react';
 
 function Linkedin({ className = "w-4 h-4" }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46v-8.37M7.84 6.2a1.62 1.62 0 0 0-1.62 1.62c0 .89.73 1.62 1.62 1.62.9 0 1.62-.73 1.62-1.62 0-.9-.72-1.62-1.62-1.62Z" />
+    </svg>
+  );
+}
+
+function Github({ className = "w-4 h-4" }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
     </svg>
   );
 }
@@ -109,30 +119,38 @@ export default function App() {
                 {personalInfo.name}
               </span>
               <span className="text-sky-300 font-mono text-[10px] tracking-wider uppercase block mt-0.5">
-                Systems &amp; Mechanical Engineer
+                B.Eng (Hons) · Graduate Engineer
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-slate-300">
+          <div className="hidden lg:flex items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-slate-300">
             <a href="#hero" className="hover:text-sky-400 transition">Home</a>
-            <a href="#about" className="hover:text-sky-400 transition">Profile</a>
-            <a href="#projects" className="hover:text-sky-400 transition">Case Studies</a>
-            <a href="#triz-section" className="hover:text-sky-400 transition">TRIZ</a>
-            <a href="#experience" className="hover:text-sky-400 transition">Experience</a>
+            <a href="#about" className="hover:text-sky-400 transition">About</a>
+            <a href="#values" className="hover:text-sky-400 transition">Values</a>
+            <a href="#teams" className="hover:text-sky-400 transition">Collaborations</a>
+            <a href="#beyond" className="hover:text-sky-400 transition">Bento</a>
             <a href="#skills" className="hover:text-sky-400 transition">Skills</a>
-            <a href="#teams" className="hover:text-sky-400 transition">Teams</a>
-            <a href="#beyond" className="hover:text-sky-400 transition">Beyond Code</a>
+            <a href="#education" className="hover:text-sky-400 transition">Education</a>
+            <a href="#experience" className="hover:text-sky-400 transition">Experience</a>
+            <a href="#projects" className="hover:text-sky-400 transition text-sky-400 font-bold">Projects</a>
+            <a href="#contact" className="hover:text-sky-400 transition">Contact</a>
           </div>
 
           <div className="flex items-center gap-3">
+            {/* Actively Seeking Job Indicator */}
+            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Open to Work</span>
+            </div>
+
             <a 
-              href={`mailto:${personalInfo.email}`}
+              href="#contact"
               className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold transition shadow-sm flex items-center gap-1.5"
             >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Contact</span>
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>Hire Me</span>
             </a>
 
             {/* Mobile menu hamburger */}
@@ -152,14 +170,15 @@ export default function App() {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-navy-950 border-b border-navy-800 px-6 py-4 space-y-3 text-sm text-slate-200">
             <a href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Home</a>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Profile</a>
-            <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Case Studies</a>
-            <a href="#triz-section" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">TRIZ Innovation</a>
-            <a href="#experience" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Experience &amp; Education</a>
-            <a href="#skills" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Skills</a>
-            <a href="#teams" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Team Collaborations</a>
-            <a href="#beyond" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Beyond Code</a>
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Contact</a>
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">About Me</a>
+            <a href="#values" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Philosophy &amp; Values</a>
+            <a href="#teams" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Capstone Collaborations</a>
+            <a href="#beyond" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Beyond Engineering</a>
+            <a href="#skills" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Technical Skills</a>
+            <a href="#education" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Education &amp; Achievements</a>
+            <a href="#experience" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Work Experience</a>
+            <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400 font-bold text-sky-400">Engineering Projects</a>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Contact / Hire Me</a>
           </div>
         )}
       </nav>
@@ -174,10 +193,10 @@ export default function App() {
 
         <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center text-center">
           
-          {/* Section Kicker Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-sky-300 text-xs font-mono font-medium mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-            ENGINEER RESUME &amp; PORTFOLIO · 2026
+          {/* Section Job-Seeking Kicker Pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono font-medium mb-8 backdrop-blur-sm shadow-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>ACTIVELY SEEKING FULL-TIME OPPORTUNITIES · IMMEDIATE START</span>
           </div>
 
           {/* THE CANVA CENTERPIECE COLOR BLOCK: Sky-Blue Architectural Box */}
@@ -185,32 +204,50 @@ export default function App() {
             <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-[2px] pointer-events-none"></div>
             
             <div className="relative z-10 space-y-3">
+              <span className="text-xs sm:text-sm uppercase font-mono tracking-widest text-sky-200 block font-semibold">
+                Industrial &amp; Mechatronics Systems Engineer
+              </span>
+              
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white drop-shadow-sm">
-                {personalInfo.name}
+                {personalInfo.fullName}
               </h1>
               
               <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
-                <span className="text-xl sm:text-2xl font-bold text-sky-100 font-sans tracking-wide">
-                  Mechanical &amp; Systems Engineer
+                <span className="text-lg sm:text-xl font-bold text-sky-100 font-sans tracking-wide">
+                  Graduated Mechanical Engineer (B.Eng Hons)
                 </span>
                 <span className="text-sm sm:text-base text-sky-200/90 font-mono font-normal">
                   {personalInfo.pronouns || '(he/him)'}
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm text-sky-100/90 max-w-xl mx-auto font-sans leading-relaxed pt-2">
-                Specialized in CAD/CAE physical modeling, IoT firmware, deterministic algorithms, and systematic TRIZ product innovation.
+              <p className="text-xs sm:text-sm text-sky-100/95 max-w-xl mx-auto font-sans leading-relaxed pt-2">
+                Honours graduate actively looking for full-time engineering roles. Specialized in CAD/CAE physical modeling, embedded IoT firmware, automation control, and systematic TRIZ innovation.
               </p>
+            </div>
+          </div>
+
+          {/* Target Roles Banner */}
+          <div className="w-full max-w-3xl p-3.5 rounded-2xl bg-navy-900/90 border border-navy-700/80 mb-8 shadow-inner">
+            <span className="text-[11px] font-mono uppercase text-sky-300 font-bold block mb-1.5">
+              🎯 Open For Roles:
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
+              {personalInfo.targetRoles.map((role) => (
+                <span key={role} className="px-3 py-1 rounded-md bg-white/10 text-white font-medium border border-white/15">
+                  {role}
+                </span>
+              ))}
             </div>
           </div>
 
           {/* Core Credentials & Tags Bar */}
           <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mb-10">
             <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              UniKL MFI · B.Eng (Hons)
+              UniKL MFI · B.Eng (Hons) (2023–2026)
             </span>
             <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              Politeknik Port Dickson · Diploma
+              Politeknik Port Dickson · Diploma (2019–2022)
             </span>
             <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
               KADA Cohort 2 Full-Stack Core
@@ -226,17 +263,18 @@ export default function App() {
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
             <a 
-              href="#projects" 
+              href="#contact" 
               className="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-2 cursor-pointer"
             >
-              <span>Explore 5 Engineering Case Studies</span>
-              <ArrowRight className="w-4 h-4" />
+              <Briefcase className="w-4 h-4" />
+              <span>Hire Me / Get in Touch</span>
             </a>
             <a 
-              href="#about" 
+              href="#projects" 
               className="px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center gap-2 cursor-pointer"
             >
-              <span>About My Background</span>
+              <Search className="w-4 h-4 text-sky-400" />
+              <span>Explore 5 Engineering Projects &amp; Slides</span>
             </a>
           </div>
 
@@ -244,45 +282,45 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
             <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
               <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">5</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Systems Engineered</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Lifecycle</span>
+              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Engineering Systems</span>
+              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Design-to-Build</span>
             </div>
 
             <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
-              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">452</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Automated Tests</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">100% CI Pass Gate</span>
+              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">85+</span>
+              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Flow Slides</span>
+              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Presentation Decks</span>
             </div>
 
             <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
-              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">100%</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">NMRA Timing</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Published Research</span>
+              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">0 Days</span>
+              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Notice Period</span>
+              <span className="text-[11px] text-emerald-400 font-mono mt-0.5 block">Available Immediately</span>
             </div>
 
             <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
               <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">63%</span>
               <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Cost Reduction</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">BOM Optimization</span>
+              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">BOM &amp; Design Lead</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================
-          3. ABOUT ME / PROFILE (Crisp Pure White Color Block)
+          3. ABOUT ME: Interactive Section with Portrait Photo (Crisp Pure White Color Block)
          ======================================================== */}
       <section id="about" className="py-24 px-6 max-w-6xl mx-auto bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-            01 / Professional Profile
+            01 / Professional Profile &amp; Job Seeker Overview
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             About Muhammad Aiman
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
           <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-            From hands-on metal fabrication to finite element stress simulation, embedded firmware, and production cloud software.
+            Fresh graduate engineer (he/him) bridging physical mechanical design, embedded control firmware, and modern full-stack systems.
           </p>
         </div>
 
@@ -299,6 +337,9 @@ export default function App() {
                   src={asset(personalInfo.avatarUrl)} 
                   alt={personalInfo.name} 
                   className="w-full h-full object-cover object-top filter contrast-[1.03]"
+                  onError={(e) => {
+                    e.currentTarget.src = asset('/team.png');
+                  }}
                 />
               </div>
 
@@ -306,32 +347,79 @@ export default function App() {
               <div className="absolute -bottom-4 -right-4 bg-navy-900 text-white p-3 rounded-xl border-2 border-white shadow-lg flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-sky-400 shrink-0" />
                 <div className="text-left">
-                  <span className="text-[10px] text-sky-300 font-mono block leading-none">ACCREDITED</span>
-                  <span className="text-xs font-bold block leading-tight">B.Eng (Hons)</span>
+                  <span className="text-[10px] text-sky-300 font-mono block leading-none">GRADUATE ENGINEER</span>
+                  <span className="text-xs font-bold block leading-tight">B.Eng (Hons) · 2026</span>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 text-center space-y-1">
-              <span className="text-sm font-bold text-navy-900 block">{personalInfo.fullName}</span>
+              <span className="text-sm font-bold text-navy-900 block">
+                {personalInfo.fullName} <span className="font-normal text-slate-500 text-xs">(he/him)</span>
+              </span>
               <span className="text-xs text-slate-500 font-mono flex items-center justify-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-blue-600" /> {personalInfo.location}
+              </span>
+              <span className="inline-block mt-1 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+                Available Immediately for Full-Time Hire
               </span>
             </div>
           </div>
 
-          {/* Right Column: Narrative & Key Strengths */}
+          {/* Right Column: Narrative & "Why Hire Me?" Pillars */}
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-              <p className="font-medium text-navy-900">
+              <p className="font-semibold text-navy-900 text-base">
                 {personalInfo.storyIntro}
+              </p>
+              <p>
+                {personalInfo.aboutBio[0]}
               </p>
               <p>
                 {personalInfo.aboutBio[1]}
               </p>
               <p>
-                {personalInfo.aboutBio[2]}
+                {personalInfo.aboutBio[3]}
               </p>
+            </div>
+
+            {/* Why Hire Me 4 Value Boxes */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <Zap className="w-3.5 h-3.5" /> Immediate Availability
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  Zero notice period. Available to onboard and contribute from Day 1 with high motivation.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <Cpu className="w-3.5 h-3.5" /> Full Hardware + Software
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  SolidWorks 3D CAD/FEA, embedded C++/ESP32, and modern full-stack web platforms.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <Lightbulb className="w-3.5 h-3.5" /> TRIZ Systematic Rigor
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  Trained to decompose complex functional contradictions rather than patching symptoms.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <Users className="w-3.5 h-3.5" /> Proven Team Delivery
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  Led 6-engineer capstone team, cut fabrication costs by 63%, and published research.
+                </p>
+              </div>
             </div>
 
             {/* Interest Badges */}
@@ -359,11 +447,11 @@ export default function App() {
               </button>
               
               <a 
-                href={`mailto:${personalInfo.email}`}
-                className="px-5 py-2.5 rounded-lg bg-ice-100 hover:bg-ice-200 text-navy-900 font-semibold text-xs sm:text-sm border border-slate-300 transition flex items-center gap-2"
+                href="#contact"
+                className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition shadow-sm flex items-center gap-2"
               >
-                <Mail className="w-4 h-4 text-blue-600" />
-                <span>Get In Touch</span>
+                <Briefcase className="w-4 h-4" />
+                <span>Discuss Full-Time Role</span>
               </a>
             </div>
           </div>
@@ -371,103 +459,38 @@ export default function App() {
       </section>
 
       {/* ========================================================
-          4. FEATURED PROJECTS (Ice-Blue Color Block: #F0F6FB)
+          3.1 ENGINEERING PHILOSOPHY & WORK VALUES (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="projects" className="py-24 px-6 bg-ice-100 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+      <section id="values" className="py-20 px-6 bg-ice-100 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-              02 / Verified Case Studies
+              01.1 / Core Work Ethics
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-              Featured Projects &amp; Systems
-            </h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Hover cards to flip for technical specifications, or open the Slide Flow viewer to examine full presentation decks.
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
+              Engineering Philosophy &amp; Work Values
+            </h3>
+            <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+            <p className="text-slate-600 text-sm mt-3 leading-relaxed">
+              Guiding principles derived from workshop floor fabrication, simulation physics, and agile software development.
             </p>
           </div>
 
-          {/* Project Flip Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {projects.map((project) => (
-              <div 
-                key={project.id} 
-                className="flip-card-container h-[450px] rounded-2xl cursor-pointer group"
-              >
-                <div className="flip-card-inner">
-                  
-                  {/* FLIP FRONT (White Color Block Card) */}
-                  <div className="flip-card-front bg-white border border-slate-200 shadow-md flex flex-col justify-between p-6 rounded-2xl group-hover:shadow-xl transition-all duration-300">
-                    <div>
-                      <div className="flex items-center justify-between mb-3.5">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
-                          {project.category}
-                        </span>
-                        <span className="text-xs text-slate-500 font-mono flex items-center gap-1">
-                          <span>Hover to flip</span>
-                          <Repeat className="w-3.5 h-3.5" />
-                        </span>
-                      </div>
-
-                      <div className="relative h-44 w-full rounded-xl overflow-hidden border border-slate-200 mb-4 bg-slate-100">
-                        <img 
-                          src={asset(project.heroImage)} 
-                          alt={project.frontTitle} 
-                          className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent"></div>
-                      </div>
-
-                      <h3 className="text-xl font-bold text-navy-950 mb-1 leading-snug">
-                        {project.frontTitle}
-                      </h3>
-                      <p className="text-xs text-blue-600 font-mono font-medium">
-                        {project.frontSub}
-                      </p>
-                    </div>
-
-                    <div className="text-xs text-slate-500 border-t border-slate-200 pt-3 flex items-center justify-between">
-                      <span className="font-semibold text-slate-700">
-                        {project.storySteps.length} Flow Slides Available
-                      </span>
-                      <span className="text-blue-600 font-bold group-hover:translate-x-1 transition">
-                        View Spec →
-                      </span>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {engineeringValues.map((val) => (
+              <div key={val.id} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
+                    <Target className="w-5 h-5" />
                   </div>
-
-                  {/* FLIP BACK (Navy Blue Color Block Card) */}
-                  <div className="flip-card-back bg-navy-900 border border-blue-600/50 text-white flex flex-col justify-between p-6 rounded-2xl shadow-2xl">
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1">
-                        {project.category}
-                      </span>
-                      <h3 className="text-lg font-bold text-white mb-2 leading-tight">
-                        {project.backTitle}
-                      </h3>
-                      <p className="text-xs text-slate-300 leading-relaxed mb-4">
-                        {project.backDesc}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5 mb-4">
-                        {project.toolTags.map((tool) => (
-                          <span key={tool} className="px-2 py-0.5 text-[11px] rounded bg-navy-800 text-sky-300 border border-navy-700 font-mono">
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <button 
-                      onClick={() => openProjectOverview(project)}
-                      className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-lg cursor-pointer"
-                    >
-                      <Search className="w-4 h-4" />
-                      <span>Open {project.storySteps.length}-Slide Presentation Deck</span>
-                    </button>
+                  <div>
+                    <h4 className="text-base font-bold text-navy-950">{val.title}</h4>
+                    <span className="text-xs text-blue-600 font-mono font-medium block">{val.subtitle}</span>
                   </div>
                 </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  {val.description}
+                </p>
               </div>
             ))}
           </div>
@@ -475,200 +498,151 @@ export default function App() {
       </section>
 
       {/* ========================================================
-          5. TRIZ & SYSTEMATIC INNOVATION (Deep Navy / Cobalt Color Block)
+          3.2 COLLABORATORS & CAPSTONE TEAMS (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="triz-section" className="py-24 px-6 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 text-white border-b border-navy-800 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-sky-400 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-              03 / Systematic Inventive Methodology
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-              Engineering with Classical TRIZ
-            </h2>
-            <div className="w-16 h-1 bg-sky-400 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
-              Applying the Theory of Inventive Problem Solving to resolve fundamental engineering contradictions without compromise.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            
-            {/* Principle 1 Card */}
-            <div className="p-7 rounded-2xl bg-navy-850 border border-navy-700/80 space-y-4 hover:border-sky-400/60 transition shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-blue-600/20 text-sky-400 flex items-center justify-center font-mono font-bold text-lg">
-                #1
-              </div>
-              <h3 className="text-lg font-bold text-white">Segmentation Principle</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Divided continuous athletic training into isolated terrain modalities (Uphill, Downhill, Road, Trail, Strength). Decouples conflicting training demands so each physical variable adapts in isolation.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-sky-300">
-                Resolution: Modality &amp; HR Zone Isolation
-              </div>
-            </div>
-
-            {/* Principle 16 Card */}
-            <div className="p-7 rounded-2xl bg-navy-850 border border-navy-700/80 space-y-4 hover:border-sky-400/60 transition shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-blue-600/20 text-sky-400 flex items-center justify-center font-mono font-bold text-lg">
-                #16
-              </div>
-              <h3 className="text-lg font-bold text-white">Partial or Excessive Action</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Targeted uphill and downhill micro-doses deliberately applied in concentrated sets. Conditions eccentric quadriceps decelerators to build tendon resilience before ultra-distance exposure.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-sky-300">
-                Resolution: Eccentric Knee Conditioning
-              </div>
-            </div>
-
-            {/* Principle 23 Card */}
-            <div className="p-7 rounded-2xl bg-navy-850 border border-navy-700/80 space-y-4 hover:border-sky-400/60 transition shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-blue-600/20 text-sky-400 flex items-center justify-center font-mono font-bold text-lg">
-                #23
-              </div>
-              <h3 className="text-lg font-bold text-white">Closed-Loop Feedback</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Replaces static calendars with real-time biometric telemetry: 13 min/km pacer benchmark paired with continuous cardiac monitoring to prevent dangerous cardiovascular drift and overtraining.
-              </p>
-              <div className="pt-2 text-[11px] font-mono text-sky-300">
-                Resolution: Telemetric Pacing Control
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Launch Banner for TRIZ Project Deck */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-blue-900/60 to-sky-950/60 border border-sky-400/40 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-1 text-center md:text-left">
-              <span className="text-xs font-mono uppercase text-sky-400 font-bold tracking-wider">
-                Case Study Highlight
-              </span>
-              <h4 className="text-xl font-bold text-white">
-                Heart-Rate-Zone Trail Training: Complete 11-Slide Defense Deck
-              </h4>
-              <p className="text-xs text-slate-300">
-                Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA).
-              </p>
-            </div>
-            
-            <button 
-              onClick={() => {
-                const trizProj = projects.find(p => p.id === 'triz');
-                if (trizProj) openProjectOverview(trizProj);
-              }}
-              className="px-6 py-3 rounded-xl bg-sky-400 hover:bg-sky-300 text-navy-950 font-bold text-xs sm:text-sm transition shadow-lg shrink-0 flex items-center gap-2 cursor-pointer"
-            >
-              <Search className="w-4 h-4" />
-              <span>Inspect 11 TRIZ Slides</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          6. EXPERIENCE & EDUCATION (Crisp Pure White Color Block)
-         ======================================================== */}
-      <section id="experience" className="py-24 px-6 max-w-6xl mx-auto bg-white">
+      <section id="teams" className="py-24 px-6 max-w-6xl mx-auto bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-            04 / Career &amp; Academia
+            01.2 / Collaborative Leadership
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-            Experience &amp; Education
-          </h2>
+          <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            Engineering Teams &amp; Squads
+          </h3>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+            Collaborating in multidisciplinary teams across mechanical CAD, electronics, software sprints, and systematic product innovation.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          
-          {/* Work Experience Column */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 border-b-2 border-slate-200 pb-3">
-              <Wrench className="w-5 h-5 text-blue-600" />
-              <h3 className="text-xl font-bold text-navy-950 font-serif">
-                Industrial Work Experience
-              </h3>
-            </div>
-
-            <div className="space-y-6">
-              {experience.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-ice-100 border border-slate-200 shadow-sm space-y-3">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-mono text-xs font-bold">
-                      {item.period}
-                    </span>
-                    <span className="text-xs text-slate-500 font-mono">{item.location}</span>
-                  </div>
-                  
-                  <h4 className="text-base font-bold text-navy-900 leading-snug">
-                    {item.role}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {teamCollaborations.map((team) => (
+            <div key={team.id} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 space-y-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <span className="text-[11px] font-mono text-blue-700 font-bold uppercase tracking-wider block">
+                    {team.context} · {team.period}
+                  </span>
+                  <h4 className="text-xl font-bold text-navy-950 mt-1 font-serif">
+                    {team.teamName}
                   </h4>
-                  <p className="text-xs font-semibold text-blue-700">
-                    {item.company}
-                  </p>
-                  
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+                <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200">
+                  {team.membersCount} Members
+                </span>
+              </div>
 
-          {/* Education Column */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 border-b-2 border-slate-200 pb-3">
-              <GraduationCap className="w-5 h-5 text-blue-600" />
-              <h3 className="text-xl font-bold text-navy-950 font-serif">
-                Formal Academic Degrees
-              </h3>
-            </div>
+              <div className="text-xs font-bold text-sky-800 bg-sky-50 px-3 py-1.5 rounded-lg border border-sky-100">
+                Role: {team.role}
+              </div>
 
-            <div className="space-y-6">
-              {education.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-ice-100 border border-slate-200 shadow-sm space-y-3">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="px-2.5 py-1 rounded bg-navy-900 text-white font-mono text-xs font-bold">
-                      {item.period}
-                    </span>
-                    <span className="px-2 py-0.5 rounded bg-sky-100 text-sky-800 text-[11px] font-bold">
-                      {item.badge}
-                    </span>
-                  </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {team.description}
+              </p>
 
-                  <h4 className="text-base font-bold text-navy-900 leading-snug">
-                    {item.degree}
-                  </h4>
-                  <p className="text-xs font-semibold text-blue-700">
-                    {item.institution}
+              <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                <span className="text-[11px] font-bold text-navy-900 uppercase tracking-wider block font-mono">Key Highlights:</span>
+                {team.keyHighlights.map((h, i) => (
+                  <p key={i} className="text-xs text-slate-600 flex items-start gap-1.5">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>{h}</span>
                   </p>
-                  
-                  <p className="text-xs text-slate-500 italic">
-                    {item.subtitle}
-                  </p>
+                ))}
+              </div>
 
-                  <p className="text-xs text-slate-600 border-t border-slate-200/80 pt-2.5">
-                    <strong className="text-navy-900 font-semibold">Key Highlights: </strong>
-                    {item.highlights}
-                  </p>
-                </div>
-              ))}
+              <div className="flex flex-wrap gap-1.5 pt-2">
+                {team.tags.map((t) => (
+                  <span key={t} className="px-2 py-0.5 text-[11px] rounded bg-ice-100 text-slate-700 font-mono border border-slate-200">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* ========================================================
-          7. TECHNICAL SKILLS (Soft Sky-Blue Color Block: #E8F1F9)
+          3.3 BEYOND ENGINEERING / THE HUMAN BENTO (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="skills" className="py-24 px-6 bg-ice-150 border-y border-slate-200">
+      <section id="beyond" className="py-24 px-6 bg-ice-100 border-y border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-              05 / Technical Toolkit
+              01.3 / Beyond Engineering
+            </span>
+            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+              Workplace, Tools &amp; Balance
+            </h3>
+            <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+              Balancing rigorous technical analysis with hands-on maker experiments, trail endurance, and active curiosity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Card 1: Active Workbench */}
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <Wrench className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-bold text-navy-950">{humanBento.workshop.title}</h4>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {humanBento.workshop.description}
+              </p>
+              <div className="pt-2 text-xs font-mono text-blue-600 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Active Maker Setup
+              </div>
+            </div>
+
+            {/* Card 2: Passions */}
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <Activity className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-bold text-navy-950">Trail &amp; Recharge</h4>
+              <div className="space-y-2 pt-1">
+                {humanBento.hobbies.map((h, i) => (
+                  <div key={i} className="text-xs text-slate-600">
+                    <strong className="text-navy-900">{h.name}: </strong>
+                    <span>{h.detail}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 3: Everyday Toolkit */}
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <Terminal className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-bold text-navy-950">{humanBento.setup.title}</h4>
+              <div className="grid grid-cols-2 gap-1.5 pt-1">
+                {humanBento.setup.tools.map((t, i) => (
+                  <div key={i} className="p-2 rounded-lg bg-ice-50 border border-slate-200 text-[11px]">
+                    <span className="font-bold text-navy-950 block truncate">{t.name}</span>
+                    <span className="text-[10px] text-slate-500 block truncate">{t.category}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          4. SKILLS SECTION (Soft Sky-Blue Color Block: #E8F1F9)
+         ======================================================== */}
+      <section id="skills" className="py-24 px-6 bg-ice-150 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
+              02 / Technical Competencies
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-              Skills &amp; Engineering Competencies
+              Skills &amp; Engineering Capabilities
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
             <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
@@ -785,219 +759,380 @@ export default function App() {
       </section>
 
       {/* ========================================================
-          8. TEAM COLLABORATIONS (Crisp Pure White Color Block)
+          5. EDUCATION SECTION (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="teams" className="py-24 px-6 max-w-6xl mx-auto bg-white">
+      <section id="education" className="py-24 px-6 max-w-6xl mx-auto bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-            06 / Collaborative Leadership
+            03 / Academic Degrees
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-            Engineering Teams &amp; Squads
+            Academic Background
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
           <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-            Leading multidisciplinary squads across mechanical CAD, electronics, software sprints, and systematic product innovation.
+            Rigorous university honours education combined with technical diploma hands-on workshop training.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {teamCollaborations.map((team) => (
-            <div key={team.id} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 space-y-4">
-              <div className="flex items-start justify-between">
-                <div>
-                  <span className="text-[11px] font-mono text-blue-700 font-bold uppercase tracking-wider block">
-                    {team.context} · {team.period}
-                  </span>
-                  <h3 className="text-xl font-bold text-navy-950 mt-1">
-                    {team.teamName}
-                  </h3>
-                </div>
-                <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200">
-                  {team.membersCount} Members
+          {education.map((item, idx) => (
+            <div key={idx} className="p-7 rounded-2xl bg-ice-50 border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="px-3 py-1 rounded bg-navy-900 text-white font-mono text-xs font-bold">
+                  {item.period}
+                </span>
+                <span className="px-2.5 py-0.5 rounded bg-sky-100 text-sky-800 text-xs font-bold font-mono">
+                  {item.badge}
                 </span>
               </div>
 
-              <div className="text-xs font-bold text-sky-800 bg-sky-50 px-3 py-1.5 rounded-lg border border-sky-100">
-                Role: {team.role}
+              <div>
+                <h3 className="text-xl font-bold text-navy-900 leading-snug font-serif">
+                  {item.degree}
+                </h3>
+                <p className="text-sm font-semibold text-blue-700 mt-1">
+                  {item.institution}
+                </p>
               </div>
-
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {team.description}
+              
+              <p className="text-xs text-slate-500 italic">
+                {item.subtitle}
               </p>
 
-              <div className="space-y-1.5 pt-2 border-t border-slate-100">
-                <span className="text-[11px] font-bold text-navy-900 uppercase tracking-wider block font-mono">Key Highlights:</span>
-                {team.keyHighlights.map((h, i) => (
-                  <p key={i} className="text-xs text-slate-600 flex items-start gap-1.5">
-                    <span className="text-blue-600 font-bold">•</span>
-                    <span>{h}</span>
-                  </p>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-1.5 pt-2">
-                {team.tags.map((t) => (
-                  <span key={t} className="px-2 py-0.5 text-[11px] rounded bg-ice-100 text-slate-700 font-mono border border-slate-200">
-                    {t}
-                  </span>
-                ))}
-              </div>
+              <p className="text-xs text-slate-600 border-t border-slate-200/80 pt-3 leading-relaxed">
+                <strong className="text-navy-900 font-semibold">Key Highlights: </strong>
+                {item.highlights}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ========================================================
-          9. BEYOND CODE (Soft Ice-Blue Color Block)
+          6. ACHIEVEMENTS SECTION (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="beyond" className="py-24 px-6 bg-ice-100 border-y border-slate-200">
+      <section id="achievements" className="py-20 px-6 bg-ice-100 border-y border-slate-200">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-              07 / Beyond Engineering
+              04 / Key Recognitions
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-              Workplace, Tools &amp; Balance
-            </h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Balancing rigorous technical analysis with hands-on maker work and outdoor endurance.
-            </p>
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
+              Engineering Achievements &amp; Milestones
+            </h3>
+            <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Card 1: Active Workbench */}
-            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                <Wrench className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievements.map((item, idx) => (
+              <div key={idx} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
+                  <Award className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-navy-950 font-serif">{item.title}</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {item.subtitle}
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-navy-950">{humanBento.workshop.title}</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {humanBento.workshop.description}
-              </p>
-              <div className="pt-2 text-xs font-mono text-blue-600 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                Active Maker Setup
-              </div>
-            </div>
-
-            {/* Card 2: Passions */}
-            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                <Activity className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-navy-950">Trail &amp; Recharge</h3>
-              <div className="space-y-2 pt-1">
-                {humanBento.hobbies.map((h, i) => (
-                  <div key={i} className="text-xs text-slate-600">
-                    <strong className="text-navy-900">{h.name}: </strong>
-                    <span>{h.detail}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Card 3: Continuous Learning */}
-            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                <Lightbulb className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-bold text-navy-950">{humanBento.currentlyExploring.title}</h3>
-              <ul className="space-y-1.5 text-xs text-slate-600">
-                {humanBento.currentlyExploring.topics.map((t, idx) => (
-                  <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-blue-600 font-bold">•</span>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-2 text-[11px] font-mono text-slate-500">
-                Always iterating &amp; prototyping
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
       {/* ========================================================
-          10. CERTIFICATIONS & ACHIEVEMENTS (Crisp White Block)
+          7. LICENSES & CERTIFICATIONS SECTION (Crisp Pure White Color Block)
          ======================================================== */}
       <section id="certifications" className="py-24 px-6 max-w-6xl mx-auto bg-white">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-            08 / Accreditations &amp; Recognition
+            05 / Professional Credentials
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-            Verified Credentials &amp; Milestones
+            Licenses &amp; Certifications
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+            Recognized national industry safety passports and technical software engineering accreditations.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {certifications.map((cert) => (
             <div 
-              key={cert.id} 
+              key={cert.id}
               onClick={() => setSelectedCert(cert)}
-              className="p-6 rounded-2xl bg-ice-50 border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition cursor-pointer space-y-3"
+              className="p-6 rounded-2xl bg-ice-50 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition cursor-pointer space-y-3 group"
             >
               <div className="flex items-center justify-between">
-                <Award className="w-6 h-6 text-blue-600" />
-                <span className="text-xs font-mono font-bold text-slate-500">{cert.date}</span>
+                <span className="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-mono text-[11px] font-bold">
+                  {cert.date}
+                </span>
+                <span className="text-xs text-blue-600 font-semibold group-hover:translate-x-0.5 transition flex items-center gap-1">
+                  <span>View</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </span>
               </div>
-              <h4 className="text-base font-bold text-navy-950 leading-snug">{cert.title}</h4>
-              <p className="text-xs text-blue-700 font-medium">{cert.issuer}</p>
-              <p className="text-xs text-slate-600 line-clamp-2">{cert.description}</p>
-              <span className="text-xs text-blue-600 font-bold block pt-1">Click to view details →</span>
-            </div>
-          ))}
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {achievements.map((ach, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-white border border-slate-200 flex items-start gap-3 shadow-xs">
-              <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-              <div>
-                <span className="text-xs font-bold text-navy-950 block">{ach.title}</span>
-                <span className="text-[11px] text-slate-500 block leading-tight mt-0.5">{ach.subtitle}</span>
-              </div>
+              <h4 className="text-base font-bold text-navy-950 font-serif leading-snug group-hover:text-blue-700 transition">
+                {cert.title}
+              </h4>
+              <p className="text-xs font-medium text-slate-500">
+                {cert.issuer}
+              </p>
+              <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                {cert.description}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ========================================================
-          11. CONTACT & FOOTER (Deep Architectural Midnight Navy Block)
+          8. WORK EXPERIENCE (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="contact" className="py-24 px-6 bg-navy-950 text-white border-t border-navy-800">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-3">
-            <span className="text-sky-400 font-mono text-xs font-bold uppercase tracking-widest block">
-              09 / Get In Touch
+      <section id="experience" className="py-24 px-6 bg-ice-100 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
+              06 / Practical Industry Roles
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
-              Let's Build Something Engineered to Last
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+              Work Experience &amp; Internships
             </h2>
-            <div className="w-16 h-1 bg-sky-400 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Open to technical engineering opportunities, mechanical systems design, embedded IoT projects, and full-stack software development.
+            <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+              Real factory floor maintenance, preventive equipment servicing, and infrastructure installation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {experience.map((item, idx) => (
+              <div key={idx} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-md space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="px-3 py-1 rounded bg-blue-100 text-blue-800 font-mono text-xs font-bold">
+                    {item.period}
+                  </span>
+                  <span className="text-xs text-slate-500 font-mono flex items-center gap-1">
+                    <MapPin className="w-3 h-3 text-blue-600" />
+                    {item.location}
+                  </span>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-bold text-navy-900 leading-snug font-serif">
+                    {item.role}
+                  </h3>
+                  <p className="text-xs font-bold text-blue-700 mt-1 uppercase tracking-wider font-mono">
+                    {item.company}
+                  </p>
+                </div>
+                
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          9. PROJECTS SECTION: 3D Flip Grid with Slide Deck Viewer (Soft Ice-Blue Color Block)
+         ======================================================== */}
+      <section id="projects" className="py-24 px-6 bg-ice-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
+              07 / Verified Engineering Case Studies
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+              Engineering Projects &amp; Slide Decks
+            </h2>
+            <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+              Hover cards to flip for technical specifications, or open the Slide Flow viewer to inspect all 85+ presentation slides directly.
+            </p>
+          </div>
+
+          {/* Project Flip Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+            {projects.map((project) => (
+              <div 
+                key={project.id} 
+                className="flip-card-container h-[470px] rounded-2xl cursor-pointer group"
+              >
+                <div className="flip-card-inner">
+                  
+                  {/* FLIP FRONT (White Color Block Card) */}
+                  <div className="flip-card-front bg-white border border-slate-200 shadow-md flex flex-col justify-between p-6 rounded-2xl group-hover:shadow-xl transition-all duration-300">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200 truncate max-w-[200px]">
+                          {project.category}
+                        </span>
+                        <span className="text-xs text-slate-500 font-mono flex items-center gap-1 shrink-0">
+                          <span>Hover to flip</span>
+                          <Repeat className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+
+                      <div className="relative h-44 w-full rounded-xl overflow-hidden border border-slate-200 mb-4 bg-slate-100">
+                        <img 
+                          src={asset(project.heroImage)} 
+                          alt={project.frontTitle} 
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent"></div>
+                      </div>
+
+                      <h3 className="text-lg font-bold text-navy-950 mb-1 leading-snug font-serif">
+                        {project.frontTitle}
+                      </h3>
+                      <p className="text-xs text-blue-600 font-mono font-medium line-clamp-2">
+                        {project.frontSub}
+                      </p>
+                    </div>
+
+                    <div className="text-xs text-slate-500 border-t border-slate-200 pt-3 flex items-center justify-between">
+                      <span className="font-semibold text-slate-700">
+                        {project.storySteps.length} Presentation Slides
+                      </span>
+                      <span className="text-blue-600 font-bold group-hover:translate-x-1 transition">
+                        View Spec →
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* FLIP BACK (Navy Blue Color Block Card) */}
+                  <div className="flip-card-back bg-navy-900 border border-blue-600/50 text-white flex flex-col justify-between p-6 rounded-2xl shadow-2xl">
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1 font-mono">
+                        {project.category}
+                      </span>
+                      <h3 className="text-base font-bold text-white mb-2 leading-tight font-serif">
+                        {project.backTitle}
+                      </h3>
+                      <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-4">
+                        {project.backDesc}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {project.toolTags.map((tool) => (
+                          <span key={tool} className="px-2 py-0.5 text-[10px] rounded bg-navy-800 text-sky-300 border border-navy-700 font-mono">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <button 
+                      onClick={() => openProjectOverview(project)}
+                      className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg cursor-pointer"
+                    >
+                      <Search className="w-3.5 h-3.5" />
+                      <span>Open {project.storySteps.length}-Slide Presentation Deck</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* DEDICATED TRIZ SYSTEMATIC INNOVATION SPOTLIGHT BLOCK */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white border border-navy-800 shadow-2xl">
+            <div className="max-w-4xl mx-auto space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-800 pb-5">
+                <div>
+                  <span className="text-sky-400 font-mono text-xs font-bold uppercase tracking-widest block">
+                    Systematic Product Innovation Spotlight
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+                    Heart-Rate-Zone Trail Training: TRIZ Innovation
+                  </h3>
+                </div>
+                <button 
+                  onClick={() => {
+                    const trizProj = projects.find(p => p.id === 'triz');
+                    if (trizProj) openProjectOverview(trizProj);
+                  }}
+                  className="px-5 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-navy-950 font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer shadow-lg"
+                >
+                  <Search className="w-4 h-4" />
+                  <span>Inspect 11 TRIZ Slides</span>
+                </button>
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA). Applied classical TRIZ (Theory of Inventive Problem Solving) Function and Component Analysis to resolve the contradiction between increasing weekly endurance training volume and joint degradation.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                <div className="p-4 rounded-xl bg-navy-850 border border-navy-700/80 space-y-1.5">
+                  <span className="text-xs font-mono font-bold text-sky-400">Principle #1: Segmentation</span>
+                  <h4 className="text-sm font-bold text-white">Terrain Modality Decoupling</h4>
+                  <p className="text-xs text-slate-300">
+                    Divides training into uphill power, downhill eccentric loading, and flat turnover to isolate biological adaptations.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-navy-850 border border-navy-700/80 space-y-1.5">
+                  <span className="text-xs font-mono font-bold text-sky-400">Principle #16: Partial / Excessive</span>
+                  <h4 className="text-sm font-bold text-white">Eccentric Micro-Dosing</h4>
+                  <p className="text-xs text-slate-300">
+                    Concentrated eccentric knee shock conditioning applied before long runs to build tendon durability.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-navy-850 border border-navy-700/80 space-y-1.5">
+                  <span className="text-xs font-mono font-bold text-sky-400">Principle #23: Feedback</span>
+                  <h4 className="text-sm font-bold text-white">Closed-Loop Cardiac Loop</h4>
+                  <p className="text-xs text-slate-300">
+                    Calculates Max HR and provides real-time 13 min/km pacer telemetry to eliminate overtraining drift.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================
+          10. CONTACT SECTION (Midnight Navy Color Block: #030816)
+         ======================================================== */}
+      <section id="contact" className="py-24 px-6 bg-navy-950 text-white border-t border-navy-800 relative">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>AVAILABLE FOR IMMEDIATE FULL-TIME HIRE</span>
+            </div>
+            
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
+              Looking to Hire a Graduate Engineer?
+            </h2>
+            <div className="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
+            
+            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed pt-2">
+              I am actively interviewing and available for immediate start in Mechatronics, Embedded IoT, Automation &amp; Robotics, and Mechanical Design roles across Malaysia and internationally.
+            </p>
+          </div>
+
+          {/* Quick Contact Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left pt-4">
             <a 
               href={`mailto:${personalInfo.email}`} 
               className="p-5 rounded-2xl bg-navy-900 border border-navy-800 hover:border-sky-400 transition space-y-1 block shadow-md group"
             >
               <Mail className="w-5 h-5 text-sky-400 mb-2 group-hover:scale-110 transition" />
-              <span className="text-[11px] font-mono text-slate-400 uppercase block">Email Me</span>
+              <span className="text-[11px] font-mono text-slate-400 uppercase block">Direct Email</span>
               <span className="text-xs font-bold text-white block truncate">{personalInfo.email}</span>
             </a>
 
             <a 
-              href={`tel:${personalInfo.phone}`} 
+              href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`} 
               className="p-5 rounded-2xl bg-navy-900 border border-navy-800 hover:border-sky-400 transition space-y-1 block shadow-md group"
             >
               <Phone className="w-5 h-5 text-sky-400 mb-2 group-hover:scale-110 transition" />
@@ -1007,8 +1142,8 @@ export default function App() {
 
             <div className="p-5 rounded-2xl bg-navy-900 border border-navy-800 space-y-1 block shadow-md">
               <MapPin className="w-5 h-5 text-sky-400 mb-2" />
-              <span className="text-[11px] font-mono text-slate-400 uppercase block">Base Location</span>
-              <span className="text-xs font-bold text-white block">{personalInfo.location}</span>
+              <span className="text-[11px] font-mono text-slate-400 uppercase block">Base &amp; Mobility</span>
+              <span className="text-xs font-bold text-white block">Klang, Selangor · Willing to Relocate</span>
             </div>
           </div>
 
@@ -1030,17 +1165,35 @@ export default function App() {
               <Linkedin className="w-4 h-4 text-sky-400" />
               <span>Connect on LinkedIn</span>
             </a>
+
+            <a 
+              href={personalInfo.github} 
+              target="_blank" 
+              rel="noreferrer"
+              className="px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center gap-2"
+            >
+              <Github className="w-4 h-4 text-sky-400" />
+              <span>View GitHub</span>
+            </a>
+          </div>
+
+          {/* Hiring Invariants Banner */}
+          <div className="p-4 rounded-xl bg-navy-900/60 border border-navy-800 text-xs text-slate-300 flex flex-wrap justify-around gap-3 font-mono">
+            <span>✓ Notice Period: 0 Days (Immediate)</span>
+            <span>✓ Degree: B.Eng (Hons) Accredited</span>
+            <span>✓ Own Transport: Yes (Class D)</span>
+            <span>✓ Relocation: Open (Nationwide / SG)</span>
           </div>
 
           <div className="pt-16 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
-            <span>© 2026 {personalInfo.fullName}. All rights reserved.</span>
-            <span className="font-mono">Engineered with React 19, Vite &amp; Tailwind CSS</span>
+            <span>© {new Date().getFullYear()} {personalInfo.fullName} (he/him). All rights reserved.</span>
+            <span className="font-mono">Graduated Mechanical &amp; Systems Engineer</span>
           </div>
         </div>
       </section>
 
       {/* ========================================================
-          12. INTERACTIVE MODAL: PROJECT SLIDE FLOW VIEWER
+          11. INTERACTIVE MODAL: PROJECT SLIDE FLOW VIEWER
          ======================================================== */}
       {activeProjectModal && (
         <div 
@@ -1092,7 +1245,7 @@ export default function App() {
               <div className="bg-navy-950 p-4 sm:p-5 rounded-2xl border border-navy-800 space-y-3">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-bold uppercase tracking-wider text-sky-400 flex items-center gap-2 font-mono">
-                    <FileText className="w-4 h-4" /> Official Project Slide Presentation
+                    <FileText className="w-4 h-4" /> Official Project Presentation &amp; Operational Flow
                   </p>
                   <p className="text-xs font-mono text-slate-400">
                     Slide {slideIndex + 1} / {activeProjectModal.storySteps.length}
@@ -1178,7 +1331,7 @@ export default function App() {
       )}
 
       {/* ========================================================
-          13. INTERACTIVE MODAL: EXPANDED ABOUT ME
+          12. INTERACTIVE MODAL: EXPANDED ABOUT ME
          ======================================================== */}
       {isAboutOpen && (
         <div 
@@ -1225,7 +1378,7 @@ export default function App() {
       )}
 
       {/* ========================================================
-          14. INTERACTIVE MODAL: CERTIFICATE DETAILS
+          13. INTERACTIVE MODAL: CERTIFICATE DETAILS
          ======================================================== */}
       {selectedCert && (
         <div 
