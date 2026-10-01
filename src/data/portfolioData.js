@@ -1,6 +1,7 @@
 export const personalInfo = {
   name: "Muhammad Aiman",
   fullName: "Muhammad Aiman Bin Mohd Sazali",
+  pronouns: "(he/him)",
   title: "Mechanical & Systems Engineer | Full-Stack & IoT Developer",
   avatarUrl: "/profile.jpg",
   tagline: "Aspiring systems & full-stack engineer bridging mechanical design, IoT firmware, and scalable web architecture.",
