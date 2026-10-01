@@ -256,11 +256,11 @@ export const projects = [
       },
       {
         step: 5,
-        phase: "Executive Summary",
-        title: "Project Lifecycle & Impact Dashboard",
-        image: "/projects/gallery/rainwater_step5_summary.svg",
-        caption: "Figure 5: Executive summary dashboard synthesizing 63% BOM savings, 3,000 N static load capacity (FoS 2.45), and 4-phase lifecycle.",
-        detail: "Comprehensive engineering breakdown summarizing BangMan Solutions' delivery: SolidWorks 3D CAD modeling, structural FEA & CFD flow validation, in-house workshop fabrication, and ESP32 cloud telemetry cutting pump power during dry conditions in under 500 ms."
+        phase: "FEA Simulation Data",
+        title: "Raw FEA Stress & Displacement Results",
+        image: "/projects/gallery/rainwater_step5_raw_data.png",
+        caption: "Figure 5: Raw SolidWorks FEA contour plots and Table 4.1 summary from report page 28 showing resultant displacement (0.006 mm) and Von Mises stress distribution.",
+        detail: "Authentic engineering results directly from report page 28: SolidWorks FEA displacement contour and Von Mises stress distribution under 3,000 N static water load, recording a maximum displacement of only 0.006 mm and 2.495 × 10⁷ N/m² stress with safety factor > 2.45."
       }
     ]
   },
@@ -313,11 +313,11 @@ export const projects = [
       },
       {
         step: 5,
-        phase: "Research Summary",
-        title: "Academic Protocol Benchmark & Findings",
-        image: "/projects/gallery/dcc_step5_summary.svg",
-        caption: "Figure 5: Academic research summary detailing 100% NMRA S-9.1 compliance, 0.48 µs pulse jitter, speed linearity r = 0.999999, and zero packet loss across 8 trains.",
-        detail: "Synthesizes the complete findings of the published research paper: mathematical modeling of ATmega328P Timer1 prescalers, microsecond pulse generation, multi-locomotive discrete event queues (< 8.82 ms latency), and live JMRI TCP socket integration with 8.17 ms emergency stop latency."
+        phase: "Validation Data",
+        title: "Raw 12-Criterion Research Validation Matrix",
+        image: "/projects/gallery/dcc_step5_raw_data.png",
+        caption: "Figure 5: Original research validation matrix (Figure 12 / Table 13 from report page 88) validating 100% compliance across all NMRA timing, speed linearity, and packet queue criteria.",
+        detail: "Authentic validation data directly from report page 88: empirical benchmarking against physical Arduino DCC++ hardware demonstrating 100% NMRA S-9.1 timing accuracy (jitter σ = 0.48 µs), Pearson r = 0.999999 speed linearity, 7.50 ms packet response, and zero packet drop across 8 active locomotives."
       }
     ]
   },
@@ -370,11 +370,11 @@ export const projects = [
       },
       {
         step: 5,
-        phase: "Executive Summary",
-        title: "Fabrication Lifecycle & Validation Metrics",
-        image: "/projects/gallery/disinfection_step5_summary.svg",
-        caption: "Figure 5: Executive prototype summary synthesizing 1500W thermal fogging system, 10x 0.2mm nozzles, 360-degree coverage, and 100% positive user survey rating.",
-        detail: "Concludes the final year diploma engineering project for Group 65: walk-through chassis sizing, pneumatic routing, welding and acrylic assembly, and rigorous workshop trials confirming 0% surface wetting with 100% approval across 32 workshop respondents."
+        phase: "Empirical Survey Data",
+        title: "Raw Workshop Operator Perception Survey",
+        image: "/projects/gallery/disinfection_step5_raw_data.png",
+        caption: "Figure 5: Original survey results charts from slide 15 of Group 65 presentation evaluating 32 operators on surface dryness, speed, and operational satisfaction.",
+        detail: "Authentic survey results from presentation slide 15 (Keputusan Analisis): empirical evaluation across 32 workshop operators confirming 100% dry sanitization with no wetting of clothes/equipment, sub-second fog immersion speed, and unanimous operational approval."
       }
     ]
   }
