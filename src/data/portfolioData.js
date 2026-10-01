@@ -1,7 +1,6 @@
 export const personalInfo = {
   name: "Muhammad Aiman",
   fullName: "Muhammad Aiman Bin Mohd Sazali",
-  pronouns: "(he/him)",
   title: "Graduated Mechanical & Mechatronics Systems Engineer (B.Eng Hons)",
   status: "Actively Seeking Full-Time Opportunities",
   availability: "Available for Immediate Start • Zero Notice Period",
@@ -14,7 +13,7 @@ export const personalInfo = {
     "Equipment & Maintenance Engineer"
   ],
   degree: "Bachelor of Mechanical Engineering with Honours (UniKL MFI, 2026)",
-  avatarUrl: "/photo.png",
+  avatarUrl: "/profile.jpg",
   tagline: "Recent B.Eng (Hons) Graduate engineer actively seeking full-time roles in Mechatronics, Embedded IoT, Automation & Control, and CAD Engineering. Ready to deliver immediate impact.",
   heroGreeting: "Hello, I am",
   storyIntro: "Graduated Mechanical & Mechatronics Engineer (2026) with proven hands-on experience across CAD part design, structural/flow simulation, embedded microcontrollers (ESP32/Arduino), and modern full-stack web platforms. Open to work immediately.",

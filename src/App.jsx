@@ -125,12 +125,9 @@ export default function App() {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center space-x-5 text-xs font-semibold uppercase tracking-wider text-slate-300">
-            <a href="#hero" className="hover:text-sky-400 transition">Home</a>
+          <div className="hidden lg:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-slate-300">
             <a href="#about" className="hover:text-sky-400 transition">About</a>
             <a href="#values" className="hover:text-sky-400 transition">Values</a>
-            <a href="#teams" className="hover:text-sky-400 transition">Collaborations</a>
-            <a href="#beyond" className="hover:text-sky-400 transition">Bento</a>
             <a href="#skills" className="hover:text-sky-400 transition">Skills</a>
             <a href="#education" className="hover:text-sky-400 transition">Education</a>
             <a href="#experience" className="hover:text-sky-400 transition">Experience</a>
@@ -172,10 +169,8 @@ export default function App() {
             <a href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Home</a>
             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">About Me</a>
             <a href="#values" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Philosophy &amp; Values</a>
-            <a href="#teams" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Capstone Collaborations</a>
-            <a href="#beyond" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Beyond Engineering</a>
             <a href="#skills" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Technical Skills</a>
-            <a href="#education" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Education &amp; Achievements</a>
+            <a href="#education" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Education &amp; Degrees</a>
             <a href="#experience" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Work Experience</a>
             <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400 font-bold text-sky-400">Engineering Projects</a>
             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Contact / Hire Me</a>
@@ -186,7 +181,7 @@ export default function App() {
       {/* ========================================================
           2. HERO SECTION (Iconic Canva Architectural Blue Color Block)
          ======================================================== */}
-      <section id="hero" className="pt-28 pb-20 px-6 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-850 text-white relative overflow-hidden border-b border-navy-800">
+      <section id="hero" className="pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-850 text-white relative overflow-hidden border-b border-navy-800 scroll-mt-24">
         {/* Subtle Architectural Grid Lines */}
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -194,13 +189,13 @@ export default function App() {
         <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center text-center">
           
           {/* Section Job-Seeking Kicker Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono font-medium mb-8 backdrop-blur-sm shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono font-medium mb-6 sm:mb-8 backdrop-blur-sm shadow-sm">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>ACTIVELY SEEKING FULL-TIME OPPORTUNITIES · IMMEDIATE START</span>
           </div>
 
           {/* THE CANVA CENTERPIECE COLOR BLOCK: Sky-Blue Architectural Box */}
-          <div className="w-full max-w-3xl bg-gradient-to-r from-blue-700 via-sky-600 to-blue-700 text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-sky-400/30 mb-8 relative group hover:shadow-sky-500/20 transition-all duration-500">
+          <div className="w-full max-w-3xl bg-gradient-to-r from-blue-700 via-sky-600 to-blue-700 text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-sky-400/30 mb-8 relative group hover:shadow-sky-500/20 transition-all duration-500">
             <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-[2px] pointer-events-none"></div>
             
             <div className="relative z-10 space-y-3">
@@ -208,16 +203,13 @@ export default function App() {
                 Industrial &amp; Mechatronics Systems Engineer
               </span>
               
-              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white drop-shadow-sm">
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-sm leading-tight sm:leading-tight">
                 {personalInfo.fullName}
               </h1>
               
               <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
-                <span className="text-lg sm:text-xl font-bold text-sky-100 font-sans tracking-wide">
+                <span className="text-base sm:text-xl font-bold text-sky-100 font-sans tracking-wide">
                   Graduated Mechanical Engineer (B.Eng Hons)
-                </span>
-                <span className="text-sm sm:text-base text-sky-200/90 font-mono font-normal">
-                  {personalInfo.pronouns || '(he/him)'}
                 </span>
               </div>
 
@@ -310,7 +302,7 @@ export default function App() {
       {/* ========================================================
           3. ABOUT ME: Interactive Section with Portrait Photo (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="about" className="py-24 px-6 max-w-6xl mx-auto bg-white">
+      <section id="about" className="py-20 sm:py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             01 / Professional Profile &amp; Job Seeker Overview
@@ -320,7 +312,7 @@ export default function App() {
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
           <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-            Fresh graduate engineer (he/him) bridging physical mechanical design, embedded control firmware, and modern full-stack systems.
+            Fresh graduate engineer bridging physical mechanical design, embedded control firmware, and modern full-stack systems.
           </p>
         </div>
 
@@ -332,13 +324,13 @@ export default function App() {
               {/* Outer Navy Architectural Shadow Frame */}
               <div className="absolute -inset-3 rounded-3xl bg-ice-200 border border-blue-200/80 -rotate-1"></div>
               
-              <div className="relative w-64 sm:w-72 aspect-[4/5] rounded-2xl overflow-hidden border-4 border-navy-900 bg-navy-950 shadow-xl">
+              <div className="relative w-64 sm:w-72 aspect-[4/5] rounded-2xl overflow-hidden border-4 border-navy-900 bg-slate-100 shadow-xl">
                 <img 
-                  src={asset(personalInfo.avatarUrl)} 
+                  src={asset('/profile.jpg')} 
                   alt={personalInfo.name} 
-                  className="w-full h-full object-cover object-top filter contrast-[1.03]"
+                  className="w-full h-full object-cover object-top filter contrast-[1.02]"
                   onError={(e) => {
-                    e.currentTarget.src = asset('/team.png');
+                    e.currentTarget.src = asset('/photo.png');
                   }}
                 />
               </div>
@@ -355,7 +347,7 @@ export default function App() {
 
             <div className="mt-8 text-center space-y-1">
               <span className="text-sm font-bold text-navy-900 block">
-                {personalInfo.fullName} <span className="font-normal text-slate-500 text-xs">(he/him)</span>
+                {personalInfo.fullName}
               </span>
               <span className="text-xs text-slate-500 font-mono flex items-center justify-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-blue-600" /> {personalInfo.location}
@@ -461,7 +453,7 @@ export default function App() {
       {/* ========================================================
           3.1 ENGINEERING PHILOSOPHY & WORK VALUES (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="values" className="py-20 px-6 bg-ice-100 border-y border-slate-200">
+      <section id="values" className="py-20 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
@@ -500,7 +492,7 @@ export default function App() {
       {/* ========================================================
           3.2 COLLABORATORS & CAPSTONE TEAMS (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="teams" className="py-24 px-6 max-w-6xl mx-auto bg-white">
+      <section id="teams" className="py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             01.2 / Collaborative Leadership
@@ -564,7 +556,7 @@ export default function App() {
       {/* ========================================================
           3.3 BEYOND ENGINEERING / THE HUMAN BENTO (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="beyond" className="py-24 px-6 bg-ice-100 border-y border-slate-200">
+      <section id="beyond" className="py-24 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
@@ -635,7 +627,7 @@ export default function App() {
       {/* ========================================================
           4. SKILLS SECTION (Soft Sky-Blue Color Block: #E8F1F9)
          ======================================================== */}
-      <section id="skills" className="py-24 px-6 bg-ice-150 border-b border-slate-200">
+      <section id="skills" className="py-24 px-6 bg-ice-150 border-b border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
@@ -761,7 +753,7 @@ export default function App() {
       {/* ========================================================
           5. EDUCATION SECTION (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="education" className="py-24 px-6 max-w-6xl mx-auto bg-white">
+      <section id="education" className="py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             03 / Academic Degrees
@@ -812,7 +804,7 @@ export default function App() {
       {/* ========================================================
           6. ACHIEVEMENTS SECTION (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="achievements" className="py-20 px-6 bg-ice-100 border-y border-slate-200">
+      <section id="achievements" className="py-20 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
@@ -843,7 +835,7 @@ export default function App() {
       {/* ========================================================
           7. LICENSES & CERTIFICATIONS SECTION (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="certifications" className="py-24 px-6 max-w-6xl mx-auto bg-white">
+      <section id="certifications" className="py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             05 / Professional Credentials
@@ -891,7 +883,7 @@ export default function App() {
       {/* ========================================================
           8. WORK EXPERIENCE (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="experience" className="py-24 px-6 bg-ice-100 border-y border-slate-200">
+      <section id="experience" className="py-24 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
@@ -940,7 +932,7 @@ export default function App() {
       {/* ========================================================
           9. PROJECTS SECTION: 3D Flip Grid with Slide Deck Viewer (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="projects" className="py-24 px-6 bg-ice-50 border-b border-slate-200">
+      <section id="projects" className="py-24 px-6 bg-ice-50 border-b border-slate-200 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
@@ -1101,7 +1093,7 @@ export default function App() {
       {/* ========================================================
           10. CONTACT SECTION (Midnight Navy Color Block: #030816)
          ======================================================== */}
-      <section id="contact" className="py-24 px-6 bg-navy-950 text-white border-t border-navy-800 relative">
+      <section id="contact" className="py-24 px-6 bg-navy-950 text-white border-t border-navy-800 relative scroll-mt-24">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           
           <div className="space-y-3">
@@ -1186,7 +1178,7 @@ export default function App() {
           </div>
 
           <div className="pt-16 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
-            <span>© {new Date().getFullYear()} {personalInfo.fullName} (he/him). All rights reserved.</span>
+            <span>© {new Date().getFullYear()} {personalInfo.fullName}. All rights reserved.</span>
             <span className="font-mono">Graduated Mechanical &amp; Systems Engineer</span>
           </div>
         </div>
