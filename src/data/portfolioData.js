@@ -633,52 +633,108 @@ export const projects = [
     backTitle: "Automated Disinfection Walk-Through Chamber",
     backDesc: "Designed and fabricated an automated walk-through sanitization tunnel incorporating a 1500W fogging system, 0.2mm misting nozzles, and push-button controls to optimize sanitization speed and eliminate liquid wastage.",
     toolTags: ["Pneumatics", "Misting Sprayers", "1500W Fogger", "Mild Steel Chassis", "Acrylic Panels"],
-    heroImage: "/projects/gallery/disinfection_step1_cad.jpg",
+    heroImage: "/projects/slides/disinfection/slide_01.png",
     overviewList: [
       "Designed a complete 3D walk-through chassis with 25mm mild steel tubing and clear acrylic observation shields.",
       "Engineered a pneumatic routing network with 10x 0.2mm precision misting nozzles driven by a 1500W thermal fogging unit.",
       "Achieved 100% positive user survey validation across 32 workshop respondents, confirming surface dry-sanitization in seconds."
     ],
-    storySteps: [
+    storySteps:     [
       {
         step: 1,
-        phase: "Chamber Sizing",
-        title: "3D CAD Structural Design",
-        image: "/projects/gallery/disinfection_step1_cad.jpg",
-        caption: "Figure 1: Walk-through enclosure model with structural chassis and roof equipment housing.",
-        detail: "Modeled a compact, stable walk-through enclosure using 25mm x 25mm mild steel hollow tube framework with clear acrylic observation panels to contain fog dispersion."
+        phase: "Tajuk Projek",
+        title: "Disinfection Tunnel - Politeknik Port Dickson",
+        image: "/projects/slides/disinfection/slide_01.png",
+        caption: "Slide 1: Projek Tahun Akhir Diploma Kejuruteraan Mekanikal.",
+        detail: "Diselia oleh Puan Siti Hajar Binti Mohd Noh bersama barisan panel En. Ahmad Zailani dan En. Mohd Hamdan di Jabatan Kejuruteraan Mekanikal Politeknik Port Dickson."
       },
       {
         step: 2,
-        phase: "Pneumatic Layout",
-        title: "10-Nozzle Radial Dispersion",
-        image: "/projects/gallery/disinfection_step2_nozzles.jpg",
-        caption: "Figure 2: Component breakdown and 360-degree misting nozzle layout.",
-        detail: "Arranged ten 0.2mm high-pressure misting nozzles linked via 3-way and 90-degree 6mm quick-connect couplings, ensuring uniform mist envelope without blind spots."
+        phase: "Ahli Kumpulan",
+        title: "Ahli Kumpulan & Pengkhususan Teknikal",
+        image: "/projects/slides/disinfection/slide_02.png",
+        caption: "Slide 2: Kumpulan projek 4 ahli (Kidtiksak, Haziq, Luqman, Muhammad Aiman).",
+        detail: "Muhammad Aiman Bin Mohd Sazali (06DKM19F1064) bersama ahli pasukan merangkumi reka bentuk CAD, fabrikasi logam, sistem pneumatik semburan, dan ujian keberkesanan sanitasi."
       },
       {
         step: 3,
-        phase: "Chassis Assembly",
-        title: "Welding, Coating & Tubing Route",
-        image: "/projects/gallery/disinfection_step3_fab.jpg",
-        caption: "Figure 3: Fabrication assembly and pneumatic routing.",
-        detail: "Welded the steel frame, applied anti-rust protective coating, fitted transparent acrylic side walls, and secured the 1500W fogger inside the top protective housing."
+        phase: "Penyataan Masalah",
+        title: "Penyataan Masalah & Cabaran Sanitasi Manual",
+        image: "/projects/slides/disinfection/slide_03.png",
+        caption: "Slide 3: Mengenalpasti barangan basah, sanitasi tidak menyeluruh, dan masa operasi lama.",
+        detail: "Kaedah konvensional menggunakan semburan cecair menyebabkan barangan basah dan rosak, mengambil masa yang lama untuk troli/bakul, serta pembaziran cecair pembasmi kuman."
       },
       {
         step: 4,
-        phase: "Survey Validation",
-        title: "Testing & User Perception Study",
-        image: "/projects/gallery/disinfection_step4_survey.jpg",
-        caption: "Figure 4: Survey analysis across 32 respondents validating speed and absence of wetness.",
-        detail: "Conducted sanitization trials with workshop items and trolleys. 100% of 32 respondents confirmed items remained dry and the process was significantly faster than manual spraying."
+        phase: "Objektif Projek",
+        title: "Objektif Utama Inovasi Disinfection Tunnel",
+        image: "/projects/slides/disinfection/slide_04.png",
+        caption: "Slide 4: Menghapuskan kelembapan permukaan, menjimatkan masa, dan mengurangkan pembaziran ubat.",
+        detail: "Merekabentuk kebuk sanitasi dry-fog automatik yang menyahkuman barangan tanpa membasahkan permukaan, menjimatkan masa pembersihan troli bengkel, dan mengurangkan penggunaan bahan kimia secara efisien."
       },
       {
         step: 5,
-        phase: "Empirical Survey Data",
-        title: "Raw Workshop Operator Perception Survey",
-        image: "/projects/gallery/disinfection_step5_raw_data.png",
-        caption: "Figure 5: Original survey results charts from slide 15 of Group 65 presentation evaluating 32 operators on surface dryness, speed, and operational satisfaction.",
-        detail: "Authentic survey results from presentation slide 15 (Keputusan Analisis): empirical evaluation across 32 workshop operators confirming 100% dry sanitization with no wetting of clothes/equipment, sub-second fog immersion speed, and unanimous operational approval."
+        phase: "Skop Projek",
+        title: "Skop & Aplikasi Operasi di Bengkel",
+        image: "/projects/slides/disinfection/slide_05.png",
+        caption: "Slide 5: Pemasangan khusus untuk persekitaran bengkel institusi dan industri.",
+        detail: "Ditumpukan khusus untuk sanitasi pantas peralatan bengkel, kotak alat, troli bahan, dan bakul perkakas bagi mematuhi SOP kebersihan industri."
+      },
+      {
+        step: 6,
+        phase: "Reka Bentuk CAD",
+        title: "Reka Bentuk Kebuk Walk-Through 3D",
+        image: "/projects/slides/disinfection/slide_06.png",
+        caption: "Slide 6: Model 3D SolidWorks struktur rangka keluli dan perumah mesin kabus.",
+        detail: "Merekabentuk rangka kubus padat dengan tiub keluli lembut 25mm x 25mm, dinding akrilik lutsinar bagi memerangkap kabus sanitasi, dan platform siling bagi menempatkan unit mesin fogging 1500W."
+      },
+      {
+        step: 7,
+        phase: "Sistem Pneumatik",
+        title: "Komponen Utama & Rangkaian Paip Pneumatik",
+        image: "/projects/slides/disinfection/slide_07.png",
+        caption: "Slide 7: Peta komponen: 10x nozel 0.2mm, penyambung 3-way, suis tolak, dan tiub 6mm.",
+        detail: "Mengintegrasikan mesin kabus terma 1500W dengan rangkaian 10 nozel penyembur mikron 0.2mm melalui gandingan pantas pneumatik 6mm dan suis butang tekan untuk semburan 360 darjah."
+      },
+      {
+        step: 8,
+        phase: "Spesifikasi Bahan",
+        title: "Pemilihan Bahan Binaan Rangka & Panel",
+        image: "/projects/slides/disinfection/slide_08.png",
+        caption: "Slide 8: Papan lapis 9mm, tiub keluli lembut, akrilik lutsinar, dan mesin 1500W.",
+        detail: "Menggabungkan tiub keluli berongga untuk ketahanan beban struktur, kepingan akrilik kalis pecah untuk pemerhatian dalaman, dan bumbung papan lapis 9mm untuk sokongan peralatan mekanikal."
+      },
+      {
+        step: 9,
+        phase: "Bajet Projek",
+        title: "Bajet Perancangan Bahan & Anggaran Kos (RM 952.00)",
+        image: "/projects/slides/disinfection/slide_09.png",
+        caption: "Slide 9: Senarai komponen, kuantiti, dan anggaran harga pasaran asal.",
+        detail: "Merangkumi kos keluli berongga (RM 120), mesin fogging (RM 265), nozel semburan (RM 60), penyambung pneumatik (RM 50), akrilik/pvc sheet (RM 360), dan aksesori dengan jumlah anggaran RM 952.00."
+      },
+      {
+        step: 10,
+        phase: "Perbelanjaan Sebenar",
+        title: "Perbelanjaan Sebenar Fabrikasi Projek (RM 675.44)",
+        image: "/projects/slides/disinfection/slide_10.png",
+        caption: "Slide 10: Kos perbelanjaan sebenar menunjukkan penjimatan sebanyak RM 276.56.",
+        detail: "Melalui perolehan bahan secara strategik dan diskaun pembekal, kos sebenar berjaya dikurangkan kepada RM 675.44 (mesin fogging RM 236.80, cecair fogging RM 40.64, kepingan akrilik RM 220.00, tiub keluli RM 80.00)."
+      },
+      {
+        step: 11,
+        phase: "Keputusan Analisis",
+        title: "Keputusan Analisis & Kajian Soal Selidik (32 Responden)",
+        image: "/projects/slides/disinfection/slide_11.png",
+        caption: "Slide 11: 100% jimat masa, 100% barangan tidak basah, dan analisis penerimaan harga.",
+        detail: "Ujian empirikal ke atas 32 pengguna bengkel membuktikan 100% pengesahan penjimatan masa dan 100% barangan kekal kering selepas sanitasi, dengan 59.4% menyokong harga pasaran bawah RM 1,500."
+      },
+      {
+        step: 12,
+        phase: "Penutup & Q&A",
+        title: "Sesi Soal Jawab & Kesimpulan Projek",
+        image: "/projects/slides/disinfection/slide_12.png",
+        caption: "Slide 12: Penutup pembentangan projek tahun akhir Diploma Kejuruteraan Mekanikal.",
+        detail: "Menyimpulkan kejayaan pembinaan terowong sanitasi dry-fog automatik berprestasi tinggi yang menyelesaikan masalah kebasahan dan kelembapan cecair sanitasi di persekitaran bengkel."
       }
     ]
   }
