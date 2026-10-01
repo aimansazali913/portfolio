@@ -253,6 +253,14 @@ export const projects = [
         image: "/projects/gallery/rainwater_step4_prototype.jpg",
         caption: "Figure 4: The completed, operational prototype delivering filtered water with mobile telemetry.",
         detail: "Conducted hydrostatic leakage checks, pump suction validation, and ultrasonic depth calibration. Connected ESP32 to Blynk cloud over Wi-Fi for live monitoring of tank levels and TDS quality."
+      },
+      {
+        step: 5,
+        phase: "Executive Summary",
+        title: "Project Lifecycle & Impact Dashboard",
+        image: "/projects/gallery/rainwater_step5_summary.svg",
+        caption: "Figure 5: Executive summary dashboard synthesizing 63% BOM savings, 3,000 N static load capacity (FoS 2.45), and 4-phase lifecycle.",
+        detail: "Comprehensive engineering breakdown summarizing BangMan Solutions' delivery: SolidWorks 3D CAD modeling, structural FEA & CFD flow validation, in-house workshop fabrication, and ESP32 cloud telemetry cutting pump power during dry conditions in under 500 ms."
       }
     ]
   },
@@ -302,6 +310,14 @@ export const projects = [
         image: "/projects/gallery/dcc_step4_jmri.jpg",
         caption: "Figure 4: TCP server and client benchmarking live round-trip response times.",
         detail: "Connected genuine JMRI DecoderPro to the Python emulator over localhost TCP port 2560. Validated throttle response in ~15 ms and emergency stops in 8.17 ms with 100% protocol reliability."
+      },
+      {
+        step: 5,
+        phase: "Research Summary",
+        title: "Academic Protocol Benchmark & Findings",
+        image: "/projects/gallery/dcc_step5_summary.svg",
+        caption: "Figure 5: Academic research summary detailing 100% NMRA S-9.1 compliance, 0.48 µs pulse jitter, speed linearity r = 0.999999, and zero packet loss across 8 trains.",
+        detail: "Synthesizes the complete findings of the published research paper: mathematical modeling of ATmega328P Timer1 prescalers, microsecond pulse generation, multi-locomotive discrete event queues (< 8.82 ms latency), and live JMRI TCP socket integration with 8.17 ms emergency stop latency."
       }
     ]
   },
@@ -351,6 +367,14 @@ export const projects = [
         image: "/projects/gallery/disinfection_step4_survey.jpg",
         caption: "Figure 4: Survey analysis across 32 respondents validating speed and absence of wetness.",
         detail: "Conducted sanitization trials with workshop items and trolleys. 100% of 32 respondents confirmed items remained dry and the process was significantly faster than manual spraying."
+      },
+      {
+        step: 5,
+        phase: "Executive Summary",
+        title: "Fabrication Lifecycle & Validation Metrics",
+        image: "/projects/gallery/disinfection_step5_summary.svg",
+        caption: "Figure 5: Executive prototype summary synthesizing 1500W thermal fogging system, 10x 0.2mm nozzles, 360-degree coverage, and 100% positive user survey rating.",
+        detail: "Concludes the final year diploma engineering project for Group 65: walk-through chassis sizing, pneumatic routing, welding and acrylic assembly, and rigorous workshop trials confirming 0% surface wetting with 100% approval across 32 workshop respondents."
       }
     ]
   }
