@@ -215,14 +215,14 @@ export default function App() {
                 Industrial Mechatronics &amp; Mechanical Systems Engineer
               </span>
               
-              <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+              <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight uppercase">
                 {personalInfo.fullName}
               </h1>
               
               <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sky-200 font-medium text-sm sm:text-base">
                 <span>Graduated Mechanical Engineer</span>
                 <span className="text-sky-400">•</span>
-                <span className="font-mono text-xs sm:text-sm font-semibold">B.Eng (Hons) · CGPA 3.42</span>
+                <span className="font-mono text-xs sm:text-sm font-semibold">B.Eng (Hons)</span>
               </div>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed pt-2">
