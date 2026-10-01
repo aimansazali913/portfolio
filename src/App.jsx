@@ -316,15 +316,15 @@ export default function App() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Architectural Photo Frame */}
-          <div className="lg:col-span-5 flex flex-col items-center">
+          {/* Left Column: Architectural Photo Frame (Compact) */}
+          <div className="lg:col-span-4 flex flex-col items-center">
             <div className="relative">
               {/* Outer Navy Architectural Shadow Frame */}
-              <div className="absolute -inset-3 rounded-3xl bg-ice-200 border border-blue-200/80 -rotate-1"></div>
+              <div className="absolute -inset-2.5 rounded-2xl bg-ice-200 border border-blue-200/80 -rotate-1"></div>
               
-              <div className="relative w-64 sm:w-72 aspect-[4/5] rounded-2xl overflow-hidden border-4 border-navy-900 bg-slate-100 shadow-xl">
+              <div className="relative w-44 sm:w-52 aspect-[4/5] rounded-xl overflow-hidden border-[3px] border-navy-900 bg-slate-100 shadow-lg">
                 <img 
                   src={asset('/profile.jpg')} 
                   alt={personalInfo.name} 
@@ -336,30 +336,30 @@ export default function App() {
               </div>
 
               {/* Verified Engineer Seal */}
-              <div className="absolute -bottom-4 -right-4 bg-navy-900 text-white p-3 rounded-xl border-2 border-white shadow-lg flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-sky-400 shrink-0" />
+              <div className="absolute -bottom-3 -right-3 bg-navy-900 text-white px-2.5 py-1.5 rounded-lg border-2 border-white shadow-md flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
                 <div className="text-left">
-                  <span className="text-[10px] text-sky-300 font-mono block leading-none">GRADUATE ENGINEER</span>
-                  <span className="text-xs font-bold block leading-tight">B.Eng (Hons) · 2026</span>
+                  <span className="text-[9px] text-sky-300 font-mono block leading-none">GRADUATE</span>
+                  <span className="text-[11px] font-bold block leading-tight">B.Eng (Hons)</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 text-center space-y-1">
+            <div className="mt-6 text-center space-y-1">
               <span className="text-sm font-bold text-navy-900 block">
                 {personalInfo.fullName}
               </span>
               <span className="text-xs text-slate-500 font-mono flex items-center justify-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-blue-600" /> {personalInfo.location}
               </span>
-              <span className="inline-block mt-1 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
-                Available Immediately for Full-Time Hire
+              <span className="inline-block mt-1 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+                Available Immediately
               </span>
             </div>
           </div>
 
           {/* Right Column: Narrative & "Why Hire Me?" Pillars */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-8 space-y-6">
             <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
               <p className="font-semibold text-navy-900 text-base">
                 {personalInfo.storyIntro}
