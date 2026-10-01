@@ -881,6 +881,23 @@ export default function App() {
                   </button>
                 </div>
 
+                {/* Quick Slide Navigation Pill Bar */}
+                <div className="flex items-center justify-center gap-1 overflow-x-auto py-1 px-2 max-w-full">
+                  {activeProjectModal.storySteps.map((st, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSlideIndex(idx)}
+                      title={`Slide ${idx + 1}: ${st.title}`}
+                      className={`h-1.5 rounded-full transition-all cursor-pointer shrink-0 ${
+                        slideIndex === idx 
+                          ? 'w-5 bg-cyan-400 shadow-sm shadow-cyan-400/50' 
+                          : 'w-1.5 bg-slate-700 hover:bg-slate-500'
+                      }`}
+                      aria-label={`Jump to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
                 {/* Active Slide Narrative & How It Operates */}
                 <div className="p-4 rounded-lg bg-slate-900 border border-slate-800 space-y-1.5">
                   <div className="flex items-center justify-between">
