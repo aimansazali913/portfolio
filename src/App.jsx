@@ -534,8 +534,8 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {teamCollaborations.map((team) => (
             <div key={team.id} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 space-y-4">
-              <div className="flex items-start justify-between">
-                <div>
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0 flex-1">
                   <span className="text-[11px] font-mono text-blue-700 font-bold uppercase tracking-wider block">
                     {team.context} · {team.period}
                   </span>
@@ -543,7 +543,7 @@ export default function App() {
                     {team.teamName}
                   </h4>
                 </div>
-                <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200">
+                <span className="shrink-0 whitespace-nowrap px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 inline-flex items-center">
                   {team.membersCount} Members
                 </span>
               </div>

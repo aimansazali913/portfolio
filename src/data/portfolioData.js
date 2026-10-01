@@ -943,7 +943,7 @@ export const teamCollaborations = [
     id: "bangman",
     teamName: "BangMan Solutions",
     projectTitle: "IoT Smart Rainwater Harvesting & Filtration System",
-    context: "UniKL MFI Final Year Capstone Team (6 Members)",
+    context: "UniKL MFI Final Year Capstone Project",
     period: "2025 – 2026",
     role: "Capstone Project Lead & Pressure Vessel Engineer",
     avatarColor: "from-cyan-500 to-blue-600",
@@ -968,14 +968,14 @@ export const teamCollaborations = [
     keyHighlights: [
       "Engineered backend routes and database schemas in NestJS/Fastify with zero race-condition inventory locking.",
       "Paired with frontend teammates to design real-time dispatcher podiums and intuitive supplier receiving hubs.",
-      "Authored 452 automated unit and integration tests ensuring reliable production releases."
+      "Authored 452 automated unit and integration tests ensuring reliable production releases.",
     ],
     membersCount: 4,
     tags: ["Agile Pair Programming", "PostgreSQL", "NestJS", "Fastify", "Automated Testing"]
   },
   {
-    id: "group65",
-    teamName: "Group 65 Engineering Team",
+    id: "disinfection-tunnel",
+    teamName: "Disinfection Tunnel Team",
     projectTitle: "Automated Walk-Through Disinfection Tunnel",
     context: "Politeknik Port Dickson Final Year Project",
     period: "2021 – 2022",
