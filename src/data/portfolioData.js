@@ -30,6 +30,9 @@ export const personalInfo = {
 };
 
 export const skills = [
+  "Engineering Contradiction Resolution",
+  "System & Super-System Decomposition",
+  "New Product Development (NPD)",
   "SolidWorks 3D CAD",
   "AutoCAD",
   "FEA Structural Simulation",
@@ -81,6 +84,11 @@ export const education = [
 ];
 
 export const achievements = [
+  {
+    icon: "lightbulb",
+    title: "TRIZ Engineering Innovation Excellence",
+    subtitle: "Formulated closed-loop trail training product using Classical TRIZ Function Analysis & Inventive Principles under Assoc. Prof. Dr. Ir. Zainal Fitri (UniKL · MARA)"
+  },
   {
     icon: "file-text",
     title: "Published Technical Research Paper",
@@ -158,52 +166,230 @@ export const projects = [
     backTitle: "URUS - Centralized ERP & AI Platform",
     backDesc: "An integrated business operations platform for stock-based SMEs connecting inbound procurement, inventory, outbound wave fulfillment, deterministic KPI scoring, and automated payroll.",
     toolTags: ["React 19", "TypeScript", "NestJS", "Fastify", "PostgreSQL", "DeepSeek AI"],
-    heroImage: "/projects/gallery/urus_step2_outbound.png",
+    heroImage: "/projects/slides/urus/slide_01.png",
     overviewList: [
       "Engineered an operational pipeline connecting supplier purchasing, barcode receiving, and atomic order dispatch with 452 automated tests.",
       "Formulated a deterministic workforce KPI formula (40% Output, 30% Accuracy, 20% Efficiency, 10% Attendance) to power live performance podiums.",
       "Integrated receipt OCR and deterministic profit-leak detection algorithms with assistive AI narration."
     ],
-    storySteps: [
+    storySteps:     [
       {
         step: 1,
-        phase: "Inbound Receiving",
-        title: "Supplier Procurement & Barcode Intake",
-        image: "/projects/gallery/urus_step1_inbound.png",
-        caption: "Figure 1: Inbound Procurement & Supplier Hub showing PO lifecycle from Draft to AP Ledger.",
-        detail: "Managers create purchase orders. When delivery trucks arrive at the dock, workers scan barcodes. Each scan atomically increments stock in PostgreSQL and upserts Accounts Payable, logging a tamper-proof STOCK_RECEIVED event."
+        phase: "Pitch Overview",
+        title: "URUS - Centralized Stock, Staff & Money Management",
+        image: "/projects/slides/urus/slide_01.png",
+        caption: "Slide 1: Official 2026 software pitch deck for the URUS business platform.",
+        detail: "Engineered by Muhammad Ariff Mukhrish, Farah Athiirah, Muhammad Kamil Aqili, Muhammad Aiman Bin Mohd Sazali, and Ahmad Hafizi as an integrated operations engine for SMEs."
       },
       {
         step: 2,
-        phase: "Outbound Fulfillment",
-        title: "Wave Dispatch & Atomic Claiming",
-        image: "/projects/gallery/urus_step2_outbound.png",
-        caption: "Figure 2: Outbound Wave Dispatch queue tracking orders through Ready to Pick, Picking, Packing, and Fulfilled.",
-        detail: "Orders are claimed by warehouse workers using atomic conditional updates, preventing race conditions where multiple workers grab the same order. Items are verified via barcode scanning before packaging."
+        phase: "Problem Analysis",
+        title: "Disconnected Systems & Silent Profit Leakage",
+        image: "/projects/slides/urus/slide_02.png",
+        caption: "Slide 2: Four systemic operational gaps: integration, manual reconciliation, race conditions, and lack of unit economics.",
+        detail: "Analyzed critical pain points: inventory and payroll operate in silos, finance spends days manually cross-referencing CSVs, concurrent warehouse scans overwrite stock, and decisions fly blind without order gross margins."
       },
       {
         step: 3,
-        phase: "Workforce & Operations",
-        title: "Deterministic KPI & Shift Tracking",
-        image: "/projects/gallery/urus_step3_kpi.png",
-        caption: "Figure 3: Worker Shift & KPI Dashboard showing real-time productivity scores and assigned tasks.",
-        detail: "Worker attendance and throughput feed into a transparent, deterministic mathematical formula. Unlike opaque scoring, every worker sees exactly how their KPI score is computed to qualify for daily performance bonuses."
+        phase: "Unified Pipeline",
+        title: "One Pipeline: Stock, Fulfillment, KPI, Finance & BI",
+        image: "/projects/slides/urus/slide_03.png",
+        caption: "Slide 3: Single audited ledger with strict role-based access control.",
+        detail: "Centralizes business events into an immutable audited ledger with dedicated personas (Manager, HR, Finance, Worker) eliminating spreadsheets, manual reconciliation, and financial drift."
       },
       {
         step: 4,
-        phase: "Financial Intelligence",
-        title: "Unit Economics & Payroll Engine",
-        image: "/projects/gallery/urus_step4_economics.png",
-        caption: "Figure 4: Executive Insights displaying labor cost vs. stock velocity and worker cohort ledger.",
-        detail: "Aggregates authoritative domain data to compute real unit economics. Approved receipt expense claims automatically merge with base salaries and KPI bonuses for integer-cent payroll disbursement."
+        phase: "System Modules",
+        title: "Seven Production Modules & Autonomous AI Floor",
+        image: "/projects/slides/urus/slide_04.png",
+        caption: "Slide 4: Architecture invariant: 15 PostgreSQL tables, 5 roles, 1 ledger, 0 reconciliation.",
+        detail: "Features Inbound & Receiving, Outbound Fulfillment, Workforce & KPI, Expenses & OCR (DeepSeek Vision), Statutory Payroll, Executive BI, and an autonomous AI Agent Floor with 5 anomaly detectors."
       },
       {
         step: 5,
-        phase: "Autonomous Oversight",
-        title: "Agent Floor & Profit-Leak Detection",
-        image: "/projects/gallery/urus_step5_agents.png",
-        caption: "Figure 5: 3D Agent Floor visualizing autonomous ops monitors (Margin Analyst, Stock Keeper, Floor Supervisor).",
-        detail: "A deterministic background agent continuously monitors fulfilled orders against product unit costs. If discounts erode margins below threshold floors, the agent flags profit leaks with optional AI narration."
+        phase: "User Journeys",
+        title: "Dual Role Journeys: Manager & Warehouse Worker",
+        image: "/projects/slides/urus/slide_05.png",
+        caption: "Slide 5: Every operational step writes an audited event with zero offline drift.",
+        detail: "Manager creates POs, allocates dock shifts, monitors live velocity, and approves payroll with MONEY_WRITE authority. Worker clocks in on /me, claims orders atomically, barcode-picks, and scans receipts."
+      },
+      {
+        step: 6,
+        phase: "SDLC Pipeline",
+        title: "Software Development Life Cycle & Quality Gates",
+        image: "/projects/slides/urus/slide_06.png",
+        caption: "Slide 6: Schema-first, spec-driven development with 452 automated tests.",
+        detail: "Six-stage lifecycle from domain interviews to Supabase Postgres 18 and VitePWA deployment, enforcing a 100% CI pass gate across unit, integration, and e2e test suites."
+      },
+      {
+        step: 7,
+        phase: "Executive UI",
+        title: "Executive Operations & Real-Time Business Pulse",
+        image: "/projects/slides/urus/slide_07.png",
+        caption: "Slide 7: Live telemetry: inventory value (RM 124,500), fulfillment rate, and active crew.",
+        detail: "Role-aware management dashboard tracking 38/45 order fulfillment, cost-per-order (RM 306), 4 on-shift workers, and live operational alerts across the 5 autonomous crew members."
+      },
+      {
+        step: 8,
+        phase: "Payroll & Finance",
+        title: "Statutory Payroll Register & Unit Economics",
+        image: "/projects/slides/urus/slide_08.png",
+        caption: "Slide 8: Malaysian statutory compliance schedule and labor cost vs stock velocity.",
+        detail: "Reconciles gross payroll (RM 3,145.00) combining base salary, KPI performance bonus (RM 280.00), and approved OCR expense claims (RM 65.00) against PCB, EPF, and SOCSO guidelines."
+      },
+      {
+        step: 9,
+        phase: "Warehouse Ops",
+        title: "Inbound Procurement & Outbound Wave Dispatch",
+        image: "/projects/slides/urus/slide_09.png",
+        caption: "Slide 9: Purchase order lifecycle and atomic order claiming queue.",
+        detail: "Manages vendor purchase orders from Draft to AP Ledger, and processes outbound orders through Ready to Pick, Picking, Packing, and Fulfilled with barcode validation."
+      },
+      {
+        step: 10,
+        phase: "Workforce & AI",
+        title: "Deterministic KPI Leaderboard & 3D Agent Floor",
+        image: "/projects/slides/urus/slide_10.png",
+        caption: "Slide 10: Transparent podium bonuses and autonomous 3D supervisor floor.",
+        detail: "Mathematically scores workers (40% Output, 30% Accuracy, 20% Efficiency, 10% Attendance) alongside 5 autonomous monitors (Margin Analyst, Stock Keeper, Floor Supervisor, HR Clerk, Payroll Auditor)."
+      },
+      {
+        step: 11,
+        phase: "Architecture",
+        title: "Three-Tier Architecture & Security Boundaries",
+        image: "/projects/slides/urus/slide_11.png",
+        caption: "Slide 11: Frontend PWA, NestJS/Fastify REST Gateway, and Postgres RLS fortress.",
+        detail: "React 19 VitePWA with offline sync, Fastify HTTP adapter with sub-millisecond routing, Helmet CSP, and Supabase Postgres 18 with Row-Level Security on all 15 tables."
+      },
+      {
+        step: 12,
+        phase: "Tech Stack",
+        title: "End-to-End TypeScript Production Ecosystem",
+        image: "/projects/slides/urus/slide_12.png",
+        caption: "Slide 12: Modern choices for strict type-safety, performance, and simplicity.",
+        detail: "TypeScript 5.7 monorepo, React 19, Tailwind v4, NestJS, Fastify, PostgreSQL 18+, Zod runtime validation, DeepSeek Vision OCR, PNPM workspaces, and Vitest."
+      },
+      {
+        step: 13,
+        phase: "Backend Invariants",
+        title: "Hardcore Backend Invariants & Financial Math",
+        image: "/projects/slides/urus/slide_13.png",
+        caption: "Slide 13: Atomic row locks, cents-math integer precision, and deterministic algorithms.",
+        detail: "Guards inventory with atomic conditional WHERE clauses preventing negative balances; processes money in integer cents to eliminate floating-point drift; enforces strict RBAC."
+      },
+      {
+        step: 14,
+        phase: "Business Value",
+        title: "Engineering Rigor & Operational Trust Metrics",
+        image: "/projects/slides/urus/slide_14.png",
+        caption: "Slide 14: 452 automated tests translating directly to operational business trust.",
+        detail: "Delivers traceable cost-per-order, automated cents-math payroll, zero negative-inventory risk, self-serve audit trails, and continuous real-time anomaly detection."
+      }
+    ]
+  },
+  {
+    id: "triz",
+    frontTitle: "TRIZ Trail Training System",
+    frontSub: "Systematic Product Innovation",
+    category: "TRIZ & Product Design",
+    backTitle: "Heart-Rate-Zone Trail Training: TRIZ Innovation",
+    backDesc: "Applied classical TRIZ (Theory of Inventive Problem Solving) Function & Component Analysis to systematically eliminate alpine running fatigue and joint injury through closed-loop cardiac telemetric adaptation.",
+    toolTags: ["TRIZ Methodology", "Function Analysis", "40 Inventive Principles", "System Decomposition", "Biomechanical Engineering", "Cardiac Telemetry"],
+    heroImage: "/projects/slides/triz/slide_01.png",
+    overviewList: [
+      "Conducted systematic TRIZ Function & Component Analysis and Super-System boundary modeling under Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA).",
+      "Resolved the physical contradiction between increasing weekly endurance training volume and preventing joint/connective tissue degradation.",
+      "Synthesized 3 core TRIZ Inventive Principles: #1 (Segmentation by terrain modality), #16 (Partial/Excessive Action via targeted hill intervals), and #23 (Closed-Loop Cardiac & Pace Feedback).",
+      "Formulated an adaptive weekly training matrix and telemetric pacer benchmark (13 min/km) eliminating guess-work for alpine runners."
+    ],
+    storySteps:     [
+      {
+        step: 1,
+        phase: "Title & Context",
+        title: "Heart-Rate-Zone Trail Training: TRIZ Innovation",
+        image: "/projects/slides/triz/slide_01.png",
+        caption: "Slide 1: NMB 25403 New Product Development presented at Universiti Kuala Lumpur \u00b7 MARA.",
+        detail: "Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin. Authored by student engineering team M. Syazwan, Faris Hadzre, Muhammad Aiman Bin Mohd Sazali, and Mamduh Nufail."
+      },
+      {
+        step: 2,
+        phase: "Core Problem",
+        title: "Trail Races Are Lost on Fatigue and Injury, Not Talent",
+        image: "/projects/slides/triz/slide_02.png",
+        caption: "Slide 2: Identifying physiological failure modes: pace fade, injury exposure, and friction damage.",
+        detail: "Steep inclines and rocky paths break metabolic rhythm and cause uncalibrated pacing; unchecked eccentric downhill forces trigger joint inflammation; friction causes severe blistering."
+      },
+      {
+        step: 3,
+        phase: "Paradigm Shift",
+        title: "From a Generic Static Schedule to an Adaptive Bio-Plan",
+        image: "/projects/slides/triz/slide_03.png",
+        caption: "Slide 3: Legacy calendar advice vs TRIZ-engineered closed-loop governance.",
+        detail: "Replaces generic 'Cardio/Hiking' calendars with a system that calculates individual Max HR, prevents overtraining, and provides real-time 13 min/km pacer feedback against cardiac drift."
+      },
+      {
+        step: 4,
+        phase: "TRIZ Decomposition",
+        title: "Super-System Boundary & Product Architecture",
+        image: "/projects/slides/triz/slide_04.png",
+        caption: "Slide 4: Mapping external environmental inputs to the engineered algorithmic core.",
+        detail: "Decomposes the system into contextual super-system inputs (Age, Fitness Baseline, Terrain Gradient, HR Sensor) and governing product components (HR Zone Engine, Modalities, Cadence & Rest, 13 min/km Pacer)."
+      },
+      {
+        step: 5,
+        phase: "Algorithmic Flow",
+        title: "Single-Input Physiological Intensity Formulation",
+        image: "/projects/slides/triz/slide_05.png",
+        caption: "Slide 5: One user input (Age) generates a full week of mathematically bounded intensities.",
+        detail: "User inputs chronological age (e.g. 24 yrs). System calculates Max HR (220 - Age = 196 BPM), safe aerobic bounds (137 - 176 BPM), and prescribes discrete Zones 2, 3, and 4 per session."
+      },
+      {
+        step: 6,
+        phase: "Execution Matrix",
+        title: "The Innovated Weekly Trail Training Plan",
+        image: "/projects/slides/triz/slide_06.png",
+        caption: "Slide 6: Comprehensive 7-day schedule with distances, repetitions, intervals, and HR ceilings.",
+        detail: "Monday: Uphill/Stair (Zone 3, 137-157 BPM); Tuesday: Downhill eccentric control (Zone 3); Wednesday: Full body strength; Thursday: Road threshold (Zone 4, 157-176 BPM); Friday: Rest; Saturday: 6.0km Trail run (Zone 2); Sunday: Rest."
+      },
+      {
+        step: 7,
+        phase: "Biomechanical Roles",
+        title: "Every Training Session Has a Specific Biomechanical Job",
+        image: "/projects/slides/triz/slide_07.png",
+        caption: "Slide 7: Isolating distinct physical variables to eliminate compounding fatigue.",
+        detail: "Trail runs hone technical footwork; road runs sharpen turnover pace; uphill intervals recruit posterior chain climbing power; downhill runs condition eccentric knee decelerators; strength stabilizes core kinetics."
+      },
+      {
+        step: 8,
+        phase: "TRIZ Principles",
+        title: "Why It Works: Three TRIZ Principles Applied",
+        image: "/projects/slides/triz/slide_08.png",
+        caption: "Slide 8: Resolving the physical contradiction between endurance volume and joint longevity.",
+        detail: "Principle #1 (Segmentation: dividing training into isolated terrain modalities and HR zones); Principle #16 (Partial or Excessive Action: concentrated hill micro-doses); Principle #23 (Feedback: telemetric pace and cardiac loop)."
+      },
+      {
+        step: 9,
+        phase: "Athletic Impact",
+        title: "Faster Race Times with Minimized Downtime",
+        image: "/projects/slides/triz/slide_09.png",
+        caption: "Slide 9: Measurable athletic benefits: pace consistency, joint longevity, and psychological confidence.",
+        detail: "Maintains steady physiological output over volatile elevation changes, prevents chronic overuse downtime through eccentric shock conditioning, and removes race-day panic."
+      },
+      {
+        step: 10,
+        phase: "Scientific Foundations",
+        title: "Academic & Methodological Foundations",
+        image: "/projects/slides/triz/slide_10.png",
+        caption: "Slide 10: Grounded in peer-reviewed exercise physiology and TRIZ engineering standards.",
+        detail: "Synthesizes Simplified TRIZ (Rantanen & Domb), Dr. Phil Maffetone's MAF Aerobic Method, Jack Daniels' & Matt Fitzgerald's 80/20 Polarity Running, and Jeff Nippard's minimalist resistance protocols."
+      },
+      {
+        step: 11,
+        phase: "Project Synthesis",
+        title: "Train to the Zone, Not the Guess: Closed-Loop Governance",
+        image: "/projects/slides/triz/slide_11.png",
+        caption: "Slide 11: Final project synthesis delivered for Universiti Kuala Lumpur \u00b7 MARA.",
+        detail: "Demonstrates how systematic TRIZ problem-solving transforms sports science into an engineered, reproducible product that eliminates guesswork and insulates athletes from injury."
       }
     ]
   },
@@ -791,6 +977,23 @@ export const teamCollaborations = [
     ],
     membersCount: 3,
     tags: ["Welding & Fabrication", "Pneumatics", "Workshop Safety", "User Survey Trials"]
+  },
+  {
+    id: "triz-npd",
+    teamName: "TRIZ Engineering Squad",
+    projectTitle: "Heart-Rate-Zone Trail Training: TRIZ Innovation",
+    context: "UniKL · MARA New Product Development (NMB 25403)",
+    period: "December 2024",
+    role: "System Decomposition & TRIZ Principles Lead",
+    avatarColor: "from-amber-500 to-orange-600",
+    description: "Collaborated in a 4-member student engineering squad under Assoc. Prof. Dr. Ir. Zainal Fitri to develop an adaptive athletic training product. Applied classical TRIZ function analysis, super-system boundary modeling, and 40 inventive principles to decouple cardiac drift from joint impact.",
+    keyHighlights: [
+      "Executed function/component analysis to model the interactions between biological inputs and training modalities.",
+      "Resolved the physical contradiction of increasing endurance volume without joint degradation using Principles #1, #16, and #23.",
+      "Engineered an automated age-to-zone algorithmic formulation and telemetric 13 min/km pacer benchmark."
+    ],
+    membersCount: 4,
+    tags: ["TRIZ Methodology", "Function Analysis", "Contradiction Resolution", "Product Innovation", "UniKL · MARA"]
   }
 ];
 
