@@ -111,7 +111,7 @@ export default function App() {
       <nav className="fixed top-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-navy-800/80 transition-all">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-serif font-black text-base shadow-sm group-hover:bg-blue-500 transition">
+            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-heading font-black text-base shadow-sm group-hover:bg-blue-500 transition">
               A
             </div>
             <div>
@@ -179,123 +179,148 @@ export default function App() {
       </nav>
 
       {/* ========================================================
-          2. HERO SECTION (Iconic Canva Architectural Blue Color Block)
+          2. HERO SECTION: Executive Engineering Dashboard Console
          ======================================================== */}
-      <section id="hero" className="pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-850 text-white relative overflow-hidden border-b border-navy-800 scroll-mt-24">
-        {/* Subtle Architectural Grid Lines */}
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <section id="hero" className="pt-32 sm:pt-40 lg:pt-44 pb-20 px-4 sm:px-6 bg-gradient-to-br from-navy-950 via-[#0a1526] to-navy-900 text-white relative overflow-hidden border-b border-navy-800 scroll-mt-24">
+        {/* Subtle Architectural Grid Lines & Ambient Technical Light */}
+        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center text-center">
+        <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
           
-          {/* Section Job-Seeking Kicker Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono font-medium mb-6 sm:mb-8 backdrop-blur-sm shadow-sm">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>ACTIVELY SEEKING FULL-TIME OPPORTUNITIES · IMMEDIATE START</span>
-          </div>
+          {/* Executive Engineering Command Console Card */}
+          <div className="w-full bg-navy-900/90 border border-slate-700/60 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center transition-all duration-300">
+            {/* Top Accent Gradient Line */}
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-500"></div>
 
-          {/* THE CANVA CENTERPIECE COLOR BLOCK: Sky-Blue Architectural Box */}
-          <div className="w-full max-w-3xl bg-gradient-to-r from-blue-700 via-sky-600 to-blue-700 text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-sky-400/30 mb-8 relative group hover:shadow-sky-500/20 transition-all duration-500">
-            <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-[2px] pointer-events-none"></div>
-            
-            <div className="relative z-10 space-y-3">
-              <span className="text-xs sm:text-sm uppercase font-mono tracking-widest text-sky-200 block font-semibold">
-                Industrial &amp; Mechatronics Systems Engineer
+            {/* Top Telemetry & Status Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-navy-800/80 text-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 font-mono font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>ACTIVELY SEEKING GRADUATE ROLES · IMMEDIATE START</span>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[11px] text-slate-400">
+                <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-slate-300">
+                  Selangor / KL, Malaysia (Open to Relocation)
+                </span>
+                <span className="hidden sm:inline-block px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-sky-300">
+                  Notice: 0 Days
+                </span>
+              </div>
+            </div>
+
+            {/* Candidate Identity & Executive Summary */}
+            <div className="pt-8 pb-6 space-y-4">
+              <span className="text-xs sm:text-sm uppercase font-mono tracking-widest text-sky-400 font-bold block">
+                Industrial Mechatronics &amp; Mechanical Systems Engineer
               </span>
               
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-sm leading-tight sm:leading-tight">
+              <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
                 {personalInfo.fullName}
               </h1>
               
-              <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
-                <span className="text-base sm:text-xl font-bold text-sky-100 font-sans tracking-wide">
-                  Graduated Mechanical Engineer (B.Eng Hons)
-                </span>
+              <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sky-200 font-medium text-sm sm:text-base">
+                <span>Graduated Mechanical Engineer</span>
+                <span className="text-sky-400">•</span>
+                <span className="font-mono text-xs sm:text-sm font-semibold">B.Eng (Hons) · CGPA 3.42</span>
               </div>
 
-              <p className="text-xs sm:text-sm text-sky-100/95 max-w-xl mx-auto font-sans leading-relaxed pt-2">
-                Honours graduate actively looking for full-time engineering roles. Specialized in CAD/CAE physical modeling, embedded IoT firmware, automation control, and systematic TRIZ innovation.
+              <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed pt-2">
+                Honours graduate combining physical CAD/CAE modeling, embedded IoT firmware, automation control, and systematic TRIZ innovation to engineer production-ready hardware solutions.
               </p>
             </div>
-          </div>
 
-          {/* Target Roles Banner */}
-          <div className="w-full max-w-3xl p-3.5 rounded-2xl bg-navy-900/90 border border-navy-700/80 mb-8 shadow-inner">
-            <span className="text-[11px] font-mono uppercase text-sky-300 font-bold block mb-1.5">
-              🎯 Open For Roles:
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
-              {personalInfo.targetRoles.map((role) => (
-                <span key={role} className="px-3 py-1 rounded-md bg-white/10 text-white font-medium border border-white/15">
-                  {role}
+            {/* Target Engineering Roles Strip */}
+            <div className="pt-5 border-t border-navy-800/80">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
+                  Target Roles:
                 </span>
-              ))}
+                <div className="flex flex-wrap items-center justify-center gap-1.5">
+                  {personalInfo.targetRoles.map((role) => (
+                    <span 
+                      key={role} 
+                      className="px-3 py-1 rounded-lg bg-navy-850 border border-slate-700/70 text-slate-200 font-medium text-xs hover:border-sky-400/60 hover:text-white transition"
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Verified Academic & Technical Credential Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+                UniKL MFI · B.Eng Hons (2023–2026)
+              </span>
+              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+                Politeknik Port Dickson · Dip (2019–2022)
+              </span>
+              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+                SolidWorks CAD &amp; FEA
+              </span>
+              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+                C++ / ESP32 Firmware
+              </span>
+              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+                TRIZ Level 1
+              </span>
+            </div>
+
+            {/* Action CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-8">
+              <a 
+                href="#contact" 
+                className="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-2 cursor-pointer"
+              >
+                <Briefcase className="w-4 h-4" />
+                <span>Contact / Hire Me</span>
+              </a>
+              <a 
+                href="#projects" 
+                className="px-7 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-750 text-white font-semibold text-sm border border-slate-700 hover:border-sky-400/50 transition flex items-center gap-2 cursor-pointer"
+              >
+                <Search className="w-4 h-4 text-sky-400" />
+                <span>Explore 5 Projects &amp; 85 Slides</span>
+              </a>
+              <a 
+                href="#about" 
+                className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm border border-white/10 transition flex items-center gap-1.5 cursor-pointer"
+              >
+                <span>Read Profile</span>
+                <ChevronRight className="w-4 h-4 text-slate-400" />
+              </a>
             </div>
           </div>
 
-          {/* Core Credentials & Tags Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mb-10">
-            <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              UniKL MFI · B.Eng (Hons) (2023–2026)
-            </span>
-            <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              Politeknik Port Dickson · Diploma (2019–2022)
-            </span>
-            <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              KADA Cohort 2 Full-Stack Core
-            </span>
-            <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              TRIZ Systematic Innovation
-            </span>
-            <span className="px-3.5 py-1.5 rounded-lg bg-white/10 text-white text-xs font-semibold border border-white/15">
-              SolidWorks FEA &amp; CFD
-            </span>
-          </div>
-
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-            <a 
-              href="#contact" 
-              className="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-2 cursor-pointer"
-            >
-              <Briefcase className="w-4 h-4" />
-              <span>Hire Me / Get in Touch</span>
-            </a>
-            <a 
-              href="#projects" 
-              className="px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center gap-2 cursor-pointer"
-            >
-              <Search className="w-4 h-4 text-sky-400" />
-              <span>Explore 5 Engineering Projects &amp; Slides</span>
-            </a>
-          </div>
-
-          {/* Quick Metrics Color-Block Strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
-            <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
-              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">5</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Engineering Systems</span>
+          {/* Precision Engineering Telemetry & Metrics Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-6">
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">05</span>
+              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Engineering Systems</span>
               <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Design-to-Build</span>
             </div>
 
-            <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
-              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">85+</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Flow Slides</span>
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">85+</span>
+              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Technical Slides</span>
               <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Presentation Decks</span>
             </div>
 
-            <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
-              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">0 Days</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Notice Period</span>
-              <span className="text-[11px] text-emerald-400 font-mono mt-0.5 block">Available Immediately</span>
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-emerald-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">0 Days</span>
+              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Notice Period</span>
+              <span className="text-[11px] text-emerald-300/80 font-mono mt-0.5 block">Immediate Availability</span>
             </div>
 
-            <div className="bg-navy-850/80 border border-navy-700/80 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
-              <span className="font-serif text-3xl sm:text-4xl font-black text-sky-400 block mb-1">63%</span>
-              <span className="text-xs text-slate-300 font-semibold block uppercase tracking-wider">Cost Reduction</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">BOM &amp; Design Lead</span>
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">63%</span>
+              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Cost Reduction</span>
+              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">BOM Optimization Lead</span>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -307,7 +332,7 @@ export default function App() {
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             01 / Professional Profile &amp; Job Seeker Overview
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             About Muhammad Aiman
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -459,7 +484,7 @@ export default function App() {
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               01.1 / Core Work Ethics
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
+            <h3 className="font-heading text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
               Engineering Philosophy &amp; Work Values
             </h3>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
@@ -497,7 +522,7 @@ export default function App() {
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             01.2 / Collaborative Leadership
           </span>
-          <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             Engineering Teams &amp; Squads
           </h3>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -514,7 +539,7 @@ export default function App() {
                   <span className="text-[11px] font-mono text-blue-700 font-bold uppercase tracking-wider block">
                     {team.context} · {team.period}
                   </span>
-                  <h4 className="text-xl font-bold text-navy-950 mt-1 font-serif">
+                  <h4 className="text-xl font-bold text-navy-950 mt-1 font-heading">
                     {team.teamName}
                   </h4>
                 </div>
@@ -562,7 +587,7 @@ export default function App() {
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               01.3 / Beyond Engineering
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Workplace, Tools &amp; Balance
             </h3>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -633,7 +658,7 @@ export default function App() {
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               02 / Technical Competencies
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Skills &amp; Engineering Capabilities
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -758,7 +783,7 @@ export default function App() {
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             03 / Academic Degrees
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             Academic Background
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -780,7 +805,7 @@ export default function App() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-navy-900 leading-snug font-serif">
+                <h3 className="text-xl font-bold text-navy-900 leading-snug font-heading">
                   {item.degree}
                 </h3>
                 <p className="text-sm font-semibold text-blue-700 mt-1">
@@ -810,7 +835,7 @@ export default function App() {
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               04 / Key Recognitions
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
+            <h3 className="font-heading text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
               Engineering Achievements &amp; Milestones
             </h3>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
@@ -822,7 +847,7 @@ export default function App() {
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
                   <Award className="w-5 h-5" />
                 </div>
-                <h4 className="text-base font-bold text-navy-950 font-serif">{item.title}</h4>
+                <h4 className="text-base font-bold text-navy-950 font-heading">{item.title}</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {item.subtitle}
                 </p>
@@ -840,7 +865,7 @@ export default function App() {
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             05 / Professional Credentials
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             Licenses &amp; Certifications
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -866,7 +891,7 @@ export default function App() {
                 </span>
               </div>
 
-              <h4 className="text-base font-bold text-navy-950 font-serif leading-snug group-hover:text-blue-700 transition">
+              <h4 className="text-base font-bold text-navy-950 font-heading leading-snug group-hover:text-blue-700 transition">
                 {cert.title}
               </h4>
               <p className="text-xs font-medium text-slate-500">
@@ -889,7 +914,7 @@ export default function App() {
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               06 / Practical Industry Roles
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Work Experience &amp; Internships
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -912,7 +937,7 @@ export default function App() {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-bold text-navy-900 leading-snug font-serif">
+                  <h3 className="text-lg font-bold text-navy-900 leading-snug font-heading">
                     {item.role}
                   </h3>
                   <p className="text-xs font-bold text-blue-700 mt-1 uppercase tracking-wider font-mono">
@@ -938,7 +963,7 @@ export default function App() {
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               07 / Verified Engineering Case Studies
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Engineering Projects &amp; Slide Decks
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
@@ -978,7 +1003,7 @@ export default function App() {
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent"></div>
                       </div>
 
-                      <h3 className="text-lg font-bold text-navy-950 mb-1 leading-snug font-serif">
+                      <h3 className="text-lg font-bold text-navy-950 mb-1 leading-snug font-heading">
                         {project.frontTitle}
                       </h3>
                       <p className="text-xs text-blue-600 font-mono font-medium line-clamp-2">
@@ -1002,7 +1027,7 @@ export default function App() {
                       <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1 font-mono">
                         {project.category}
                       </span>
-                      <h3 className="text-base font-bold text-white mb-2 leading-tight font-serif">
+                      <h3 className="text-base font-bold text-white mb-2 leading-tight font-heading">
                         {project.backTitle}
                       </h3>
                       <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-4">
@@ -1039,7 +1064,7 @@ export default function App() {
                   <span className="text-sky-400 font-mono text-xs font-bold uppercase tracking-widest block">
                     Systematic Product Innovation Spotlight
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mt-1">
                     Heart-Rate-Zone Trail Training: TRIZ Innovation
                   </h3>
                 </div>
@@ -1102,7 +1127,7 @@ export default function App() {
               <span>AVAILABLE FOR IMMEDIATE FULL-TIME HIRE</span>
             </div>
             
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
               Looking to Hire a Graduate Engineer?
             </h2>
             <div className="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
@@ -1202,7 +1227,7 @@ export default function App() {
                 <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-1 font-mono">
                   {activeProjectModal.category}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white font-serif">
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
                   {activeProjectModal.backTitle}
                 </h3>
               </div>
@@ -1339,7 +1364,7 @@ export default function App() {
                 <span className="text-xs font-mono font-bold text-blue-700 uppercase tracking-wider">
                   Biography &amp; Engineering Philosophy
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-navy-950 mt-1">
+                <h3 className="font-heading text-2xl font-bold text-navy-950 mt-1">
                   {personalInfo.fullName}
                 </h3>
               </div>
