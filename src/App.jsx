@@ -50,7 +50,11 @@ import {
   Zap, 
   Repeat,
   Briefcase,
-  Clock
+  Clock,
+  QrCode,
+  Copy,
+  Check,
+  Share2
 } from 'lucide-react';
 
 function Linkedin({ className = "w-4 h-4" }) {
@@ -87,6 +91,18 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // Mobile flip card state for touch interactions
   const [flippedCards, setFlippedCards] = useState({});
+
+  // QR & Share Modal state
+  const [isQrModalOpen, setIsQrModalOpen] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  const publicPortfolioUrl = 'https://aimansazali913.github.io/portfolio/';
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(publicPortfolioUrl);
+    setCopiedLink(true);
+    setTimeout(() => setCopiedLink(false), 2200);
+  };
 
   const toggleCardFlip = (id) => {
     setFlippedCards((prev) => ({
@@ -150,6 +166,15 @@ export default function App() {
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>Open to Work</span>
             </div>
+
+            <button 
+              onClick={() => setIsQrModalOpen(true)}
+              title="Scan QR Code or Share"
+              className="p-2 sm:px-3 sm:py-2 rounded-lg bg-navy-900 hover:bg-navy-850 text-sky-400 hover:text-sky-300 border border-navy-800 hover:border-sky-500/40 transition cursor-pointer flex items-center gap-1.5 text-xs font-mono"
+            >
+              <QrCode className="w-4 h-4 shrink-0" />
+              <span className="hidden sm:inline font-bold">QR / Share</span>
+            </button>
 
             <a 
               href="#contact"
@@ -253,6 +278,19 @@ export default function App() {
               <span>Engineering Projects &amp; Slides</span>
               <ChevronRight className="w-4 h-4 text-sky-400" />
             </a>
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsQrModalOpen(true);
+              }} 
+              className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-navy-900 text-sky-300 font-semibold transition border border-navy-800"
+            >
+              <div className="flex items-center gap-2.5">
+                <QrCode className="w-4 h-4 text-sky-400" />
+                <span>Show QR Code &amp; Share</span>
+              </div>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </button>
             <a 
               href="#contact" 
               onClick={() => setIsMobileMenuOpen(false)} 
@@ -1283,15 +1321,13 @@ export default function App() {
               <span>Connect on LinkedIn</span>
             </a>
 
-            <a 
-              href={personalInfo.github} 
-              target="_blank" 
-              rel="noreferrer"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center justify-center gap-2"
+            <button 
+              onClick={() => setIsQrModalOpen(true)}
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold text-sm border border-sky-500/40 transition flex items-center justify-center gap-2 cursor-pointer"
             >
-              <Github className="w-4 h-4 text-sky-400" />
-              <span>View GitHub</span>
-            </a>
+              <QrCode className="w-4 h-4 text-sky-400" />
+              <span>Scan QR Code</span>
+            </button>
           </div>
 
           {/* Hiring Invariants Banner */}
@@ -1558,6 +1594,99 @@ export default function App() {
                 className="w-full sm:w-auto px-4 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition"
               >
                 Done
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================
+          14. INTERACTIVE MODAL: PORTFOLIO QR CODE & SHARING
+         ======================================================== */}
+      {isQrModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+          onClick={() => setIsQrModalOpen(false)}
+        >
+          <div 
+            className="relative max-w-md w-full bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-800 space-y-5 my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-start justify-between border-b border-slate-200 pb-3">
+              <div>
+                <span className="text-[11px] font-mono font-bold text-blue-700 uppercase tracking-wider block">
+                  Quick Mobile &amp; Resume Access
+                </span>
+                <h3 className="font-heading text-xl font-bold text-navy-950 mt-0.5">
+                  Scan Portfolio QR Code
+                </h3>
+              </div>
+              <button 
+                onClick={() => setIsQrModalOpen(false)}
+                className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 transition cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* QR Code Presentation Frame */}
+            <div className="flex flex-col items-center justify-center p-5 rounded-2xl bg-ice-50 border border-slate-200 text-center space-y-3">
+              <div className="w-56 h-56 rounded-xl bg-white p-3 border-2 border-slate-200 shadow-inner flex items-center justify-center">
+                <img 
+                  src={asset('/portfolio-qr.png')} 
+                  alt="Portfolio QR Code" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <p className="text-xs text-slate-600 max-w-xs leading-relaxed">
+                Scan with any iPhone or Android camera to open this portfolio instantly on mobile.
+              </p>
+            </div>
+
+            {/* Public Link Box with 1-Click Copy */}
+            <div className="space-y-1.5">
+              <span className="text-[11px] font-mono font-bold text-slate-600 uppercase block">
+                Public Live URL
+              </span>
+              <div className="flex items-center gap-2 p-2 rounded-xl bg-slate-100 border border-slate-200 text-xs">
+                <span className="font-mono text-slate-800 truncate flex-1 pl-1">
+                  {publicPortfolioUrl}
+                </span>
+                <button 
+                  onClick={handleCopyLink}
+                  className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition flex items-center gap-1.5 shrink-0 cursor-pointer shadow-sm"
+                >
+                  {copiedLink ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-300" />
+                      <span>Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>Copy Link</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="pt-2 flex flex-col sm:flex-row gap-2">
+              <a 
+                href={asset('/portfolio-qr.png')}
+                download="Muhammad_Aiman_Portfolio_QR.png"
+                className="flex-1 py-2.5 px-4 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-sm"
+              >
+                <Download className="w-4 h-4 text-sky-400" />
+                <span>Save QR Image (for Resume)</span>
+              </a>
+              <button 
+                onClick={() => setIsQrModalOpen(false)}
+                className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition cursor-pointer"
+              >
+                Close
               </button>
             </div>
           </div>
