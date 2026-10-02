@@ -85,6 +85,15 @@ export default function App() {
 
   // Mobile nav toggle
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Mobile flip card state for touch interactions
+  const [flippedCards, setFlippedCards] = useState({});
+
+  const toggleCardFlip = (id) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
   // Helper for opening project overview modal
   const openProjectOverview = (project) => {
@@ -109,16 +118,16 @@ export default function App() {
           1. NAVBAR (Architectural Glass Navy Block)
          ======================================================== */}
       <nav className="fixed top-0 w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-navy-800/80 transition-all">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-heading font-black text-base shadow-sm group-hover:bg-blue-500 transition">
               A
             </div>
             <div>
-              <span className="text-white font-bold tracking-tight text-sm sm:text-base block leading-none">
+              <span className="text-white font-bold tracking-tight text-xs sm:text-base block leading-none truncate max-w-[170px] sm:max-w-none">
                 {personalInfo.name}
               </span>
-              <span className="text-sky-300 font-mono text-[10px] tracking-wider uppercase block mt-0.5">
+              <span className="text-sky-300 font-mono text-[9px] sm:text-[10px] tracking-wider uppercase block mt-0.5">
                 B.Eng (Hons) · Graduate Engineer
               </span>
             </div>
@@ -135,7 +144,7 @@ export default function App() {
             <a href="#contact" className="hover:text-sky-400 transition">Contact</a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Actively Seeking Job Indicator */}
             <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -144,7 +153,7 @@ export default function App() {
 
             <a 
               href="#contact"
-              className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold transition shadow-sm flex items-center gap-1.5"
+              className="px-3.5 sm:px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold transition shadow-sm flex items-center gap-1.5"
             >
               <Briefcase className="w-3.5 h-3.5" />
               <span>Hire Me</span>
@@ -153,27 +162,105 @@ export default function App() {
             {/* Mobile menu hamburger */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg bg-navy-900 border border-navy-800 text-slate-300 hover:text-white"
+              className="lg:hidden p-2 rounded-lg bg-navy-900 border border-navy-800 text-slate-300 hover:text-white transition cursor-pointer"
               aria-label="Toggle Navigation"
             >
-              <span className="block w-5 h-0.5 bg-slate-300 mb-1"></span>
-              <span className="block w-5 h-0.5 bg-slate-300 mb-1"></span>
-              <span className="block w-5 h-0.5 bg-slate-300"></span>
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-sky-400" />
+              ) : (
+                <div className="space-y-1 w-5">
+                  <span className="block w-5 h-0.5 bg-slate-300"></span>
+                  <span className="block w-5 h-0.5 bg-slate-300"></span>
+                  <span className="block w-3.5 h-0.5 bg-sky-400"></span>
+                </div>
+              )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-navy-950 border-b border-navy-800 px-6 py-4 space-y-3 text-sm text-slate-200">
-            <a href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Home</a>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">About Me</a>
-            <a href="#values" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Philosophy &amp; Values</a>
-            <a href="#skills" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Technical Skills</a>
-            <a href="#education" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Education &amp; Degrees</a>
-            <a href="#experience" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Work Experience</a>
-            <a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400 font-bold text-sky-400">Engineering Projects</a>
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-sky-400">Contact / Hire Me</a>
+          <div className="lg:hidden bg-navy-950/98 backdrop-blur-xl border-b border-navy-800/90 px-4 py-3 space-y-1 text-sm shadow-2xl animate-in fade-in duration-150">
+            <a 
+              href="#hero" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Home / Overview</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#about" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>About Me &amp; Credentials</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#values" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Philosophy &amp; Values</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#teams" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Teams &amp; Squads</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#skills" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Technical Skills</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#education" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Education &amp; Degrees</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#certifications" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Certifications</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#experience" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-navy-900 text-slate-200 hover:text-sky-400 font-medium transition"
+            >
+              <span>Work Experience</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </a>
+            <a 
+              href="#projects" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-blue-600/15 border border-blue-500/30 text-sky-400 font-bold transition"
+            >
+              <span>Engineering Projects &amp; Slides</span>
+              <ChevronRight className="w-4 h-4 text-sky-400" />
+            </a>
+            <a 
+              href="#contact" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-blue-600 text-white font-bold transition mt-2 shadow-md shadow-blue-600/30"
+            >
+              <span>Contact / Hire Me</span>
+              <Briefcase className="w-4 h-4 text-white" />
+            </a>
           </div>
         )}
       </nav>
@@ -181,7 +268,7 @@ export default function App() {
       {/* ========================================================
           2. HERO SECTION: Executive Engineering Dashboard Console
          ======================================================== */}
-      <section id="hero" className="pt-32 sm:pt-40 lg:pt-44 pb-20 px-4 sm:px-6 bg-gradient-to-br from-navy-950 via-[#0a1526] to-navy-900 text-white relative overflow-hidden border-b border-navy-800 scroll-mt-24">
+      <section id="hero" className="pt-28 sm:pt-40 lg:pt-44 pb-14 sm:pb-20 px-4 sm:px-6 bg-gradient-to-br from-navy-950 via-[#0a1526] to-navy-900 text-white relative overflow-hidden border-b border-navy-800 scroll-mt-24">
         {/* Subtle Architectural Grid Lines & Ambient Technical Light */}
         <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
@@ -189,58 +276,58 @@ export default function App() {
         <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
           
           {/* Executive Engineering Command Console Card */}
-          <div className="w-full bg-navy-900/90 border border-slate-700/60 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center transition-all duration-300">
+          <div className="w-full bg-navy-900/90 border border-slate-700/60 rounded-2xl sm:rounded-3xl p-4 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center transition-all duration-300">
             {/* Top Accent Gradient Line */}
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-500"></div>
 
             {/* Top Telemetry & Status Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-navy-800/80 text-xs">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 font-mono font-medium">
+            <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2.5 sm:gap-3 pb-5 sm:pb-6 border-b border-navy-800/80 text-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 font-mono font-medium text-[11px] sm:text-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span>ACTIVELY SEEKING GRADUATE ROLES · IMMEDIATE START</span>
               </div>
-              <div className="flex items-center gap-2 font-mono text-[11px] text-slate-400">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-[11px] text-slate-400">
                 <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-slate-300">
                   Selangor / KL, Malaysia (Open to Relocation)
                 </span>
-                <span className="hidden sm:inline-block px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-sky-300">
+                <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-sky-300">
                   Notice: 0 Days
                 </span>
               </div>
             </div>
 
             {/* Candidate Identity & Executive Summary */}
-            <div className="pt-8 pb-6 space-y-4">
-              <span className="text-xs sm:text-sm uppercase font-mono tracking-widest text-sky-400 font-bold block">
+            <div className="pt-6 sm:pt-8 pb-5 sm:pb-6 space-y-3 sm:space-y-4">
+              <span className="text-[11px] sm:text-sm uppercase font-mono tracking-widest text-sky-400 font-bold block">
                 Industrial Mechatronics &amp; Mechanical Systems Engineer
               </span>
               
-              <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight uppercase">
+              <h1 className="font-heading text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase break-words">
                 {personalInfo.fullName}
               </h1>
               
-              <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sky-200 font-medium text-sm sm:text-base">
+              <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sky-200 font-medium text-xs sm:text-base">
                 <span>Graduated Mechanical Engineer</span>
                 <span className="text-sky-400">•</span>
                 <span className="font-mono text-xs sm:text-sm font-semibold">B.Eng (Hons)</span>
               </div>
 
-              <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed pt-2">
+              <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed pt-1 sm:pt-2">
                 Honours graduate combining physical CAD/CAE modeling, embedded IoT firmware, automation control, and systematic TRIZ innovation to engineer production-ready hardware solutions.
               </p>
             </div>
 
             {/* Target Engineering Roles Strip */}
-            <div className="pt-5 border-t border-navy-800/80">
+            <div className="pt-4 sm:pt-5 border-t border-navy-800/80">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
+                <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
                   Target Roles:
                 </span>
                 <div className="flex flex-wrap items-center justify-center gap-1.5">
                   {personalInfo.targetRoles.map((role) => (
                     <span 
                       key={role} 
-                      className="px-3 py-1 rounded-lg bg-navy-850 border border-slate-700/70 text-slate-200 font-medium text-xs hover:border-sky-400/60 hover:text-white transition"
+                      className="px-2.5 sm:px-3 py-1 rounded-lg bg-navy-850 border border-slate-700/70 text-slate-200 font-medium text-[11px] sm:text-xs hover:border-sky-400/60 hover:text-white transition"
                     >
                       {role}
                     </span>
@@ -250,43 +337,43 @@ export default function App() {
             </div>
 
             {/* Verified Academic & Technical Credential Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
-              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 sm:pt-4">
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
                 UniKL MFI · B.Eng Hons (2023–2026)
               </span>
-              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
                 Politeknik Port Dickson · Dip (2019–2022)
               </span>
-              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
                 SolidWorks CAD &amp; FEA
               </span>
-              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
                 C++ / ESP32 Firmware
               </span>
-              <span className="px-3 py-1 rounded-md bg-white/5 text-slate-300 text-xs font-mono border border-white/10">
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
                 TRIZ Level 1
               </span>
             </div>
 
             {/* Action CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4 pt-6 sm:pt-8 w-full max-w-md sm:max-w-none mx-auto">
               <a 
                 href="#contact" 
-                className="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 cursor-pointer text-center"
               >
                 <Briefcase className="w-4 h-4" />
                 <span>Contact / Hire Me</span>
               </a>
               <a 
                 href="#projects" 
-                className="px-7 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-750 text-white font-semibold text-sm border border-slate-700 hover:border-sky-400/50 transition flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-750 text-white font-semibold text-sm border border-slate-700 hover:border-sky-400/50 transition flex items-center justify-center gap-2 cursor-pointer text-center"
               >
                 <Search className="w-4 h-4 text-sky-400" />
                 <span>Explore 5 Projects &amp; 85 Slides</span>
               </a>
               <a 
                 href="#about" 
-                className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm border border-white/10 transition flex items-center gap-1.5 cursor-pointer"
+                className="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm border border-white/10 transition flex items-center justify-center gap-1.5 cursor-pointer text-center"
               >
                 <span>Read Profile</span>
                 <ChevronRight className="w-4 h-4 text-slate-400" />
@@ -295,29 +382,29 @@ export default function App() {
           </div>
 
           {/* Precision Engineering Telemetry & Metrics Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-6">
-            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
-              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">05</span>
-              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Engineering Systems</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Design-to-Build</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 w-full mt-4 sm:mt-6">
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">05</span>
+              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Engineering Systems</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">Full Design-to-Build</span>
             </div>
 
-            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
-              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">85+</span>
-              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Technical Slides</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">Full Presentation Decks</span>
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">85+</span>
+              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Technical Slides</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">Full Presentation Decks</span>
             </div>
 
-            <div className="bg-navy-900/80 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
-              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-emerald-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">0 Days</span>
-              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Notice Period</span>
-              <span className="text-[11px] text-emerald-300/80 font-mono mt-0.5 block">Immediate Availability</span>
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-emerald-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-emerald-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">0 Days</span>
+              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Notice Period</span>
+              <span className="text-[10px] sm:text-[11px] text-emerald-300/80 font-mono mt-0.5 block">Immediate Availability</span>
             </div>
 
-            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-2xl p-5 text-center shadow-lg transition group">
-              <span className="font-mono text-3xl sm:text-4xl font-extrabold text-sky-400 block mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">63%</span>
-              <span className="text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Cost Reduction</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-0.5 block">BOM Optimization Lead</span>
+            <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
+              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">63%</span>
+              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Cost Reduction</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">BOM Optimization Lead</span>
             </div>
           </div>
 
@@ -327,16 +414,16 @@ export default function App() {
       {/* ========================================================
           3. ABOUT ME: Interactive Section with Portrait Photo (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="about" className="py-20 sm:py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+      <section id="about" className="py-14 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             01 / Professional Profile &amp; Job Seeker Overview
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             About Muhammad Aiman
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
             Fresh graduate engineer bridging physical mechanical design, embedded control firmware, and modern full-stack systems.
           </p>
         </div>
@@ -478,26 +565,26 @@ export default function App() {
       {/* ========================================================
           3.1 ENGINEERING PHILOSOPHY & WORK VALUES (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="values" className="py-20 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
+      <section id="values" className="py-14 sm:py-20 px-4 sm:px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               01.1 / Core Work Ethics
             </span>
-            <h3 className="font-heading text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
+            <h3 className="font-heading text-2xl sm:text-4xl font-bold text-navy-950 tracking-tight">
               Engineering Philosophy &amp; Work Values
             </h3>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
-            <p className="text-slate-600 text-sm mt-3 leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed">
               Guiding principles derived from workshop floor fabrication, simulation physics, and agile software development.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {engineeringValues.map((val) => (
-              <div key={val.id} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition space-y-3">
+              <div key={val.id} className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold shrink-0">
                     <Target className="w-5 h-5" />
                   </div>
                   <div>
@@ -517,33 +604,33 @@ export default function App() {
       {/* ========================================================
           3.2 COLLABORATORS & CAPSTONE TEAMS (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="teams" className="py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+      <section id="teams" className="py-14 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             01.2 / Collaborative Leadership
           </span>
-          <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h3 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             Engineering Teams &amp; Squads
           </h3>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
             Collaborating in multidisciplinary teams across mechanical CAD, electronics, software sprints, and systematic product innovation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {teamCollaborations.map((team) => (
-            <div key={team.id} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 space-y-4">
-              <div className="flex items-start justify-between gap-4">
+            <div key={team.id} className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
                 <div className="min-w-0 flex-1">
                   <span className="text-[11px] font-mono text-blue-700 font-bold uppercase tracking-wider block">
                     {team.context} · {team.period}
                   </span>
-                  <h4 className="text-xl font-bold text-navy-950 mt-1 font-heading">
+                  <h4 className="text-lg sm:text-xl font-bold text-navy-950 mt-1 font-heading">
                     {team.teamName}
                   </h4>
                 </div>
-                <span className="shrink-0 whitespace-nowrap px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 inline-flex items-center">
+                <span className="self-start sm:self-auto shrink-0 whitespace-nowrap px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-bold border border-blue-200 inline-flex items-center">
                   {team.membersCount} Members
                 </span>
               </div>
@@ -581,25 +668,25 @@ export default function App() {
       {/* ========================================================
           3.3 BEYOND ENGINEERING / THE HUMAN BENTO (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="beyond" className="py-24 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
+      <section id="beyond" className="py-14 sm:py-24 px-4 sm:px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               01.3 / Beyond Engineering
             </span>
-            <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h3 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Workplace, Tools &amp; Balance
             </h3>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
               Balancing rigorous technical analysis with hands-on maker experiments, trail endurance, and active curiosity.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             
             {/* Card 1: Active Workbench */}
-            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
                 <Wrench className="w-5 h-5" />
               </div>
@@ -614,7 +701,7 @@ export default function App() {
             </div>
 
             {/* Card 2: Passions */}
-            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
                 <Activity className="w-5 h-5" />
               </div>
@@ -630,7 +717,7 @@ export default function App() {
             </div>
 
             {/* Card 3: Everyday Toolkit */}
-            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
                 <Terminal className="w-5 h-5" />
               </div>
@@ -652,25 +739,25 @@ export default function App() {
       {/* ========================================================
           4. SKILLS SECTION (Soft Sky-Blue Color Block: #E8F1F9)
          ======================================================== */}
-      <section id="skills" className="py-24 px-6 bg-ice-150 border-b border-slate-200 scroll-mt-24">
+      <section id="skills" className="py-14 sm:py-24 px-4 sm:px-6 bg-ice-150 border-b border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               02 / Technical Competencies
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Skills &amp; Engineering Capabilities
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
               Curated tools, frameworks, and domain standards applied across physical hardware and software production.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             
             {/* Category 1: Mechanical & Simulation */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 text-blue-700">
                 <Wrench className="w-4 h-4" />
                 <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
@@ -687,7 +774,7 @@ export default function App() {
             </div>
 
             {/* Category 2: Full-Stack & Cloud */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 text-blue-700">
                 <Terminal className="w-4 h-4" />
                 <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
@@ -704,7 +791,7 @@ export default function App() {
             </div>
 
             {/* Category 3: Embedded & IoT */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 text-blue-700">
                 <Cpu className="w-4 h-4" />
                 <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
@@ -721,7 +808,7 @@ export default function App() {
             </div>
 
             {/* Category 4: TRIZ & Systematic Innovation */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 text-blue-700">
                 <Lightbulb className="w-4 h-4" />
                 <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
@@ -738,7 +825,7 @@ export default function App() {
             </div>
 
             {/* Category 5: Python & Scientific Computing */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 text-blue-700">
                 <Activity className="w-4 h-4" />
                 <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
@@ -755,7 +842,7 @@ export default function App() {
             </div>
 
             {/* Category 6: Standards & Industry Safety */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 text-blue-700">
                 <ShieldCheck className="w-4 h-4" />
                 <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
@@ -778,23 +865,23 @@ export default function App() {
       {/* ========================================================
           5. EDUCATION SECTION (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="education" className="py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+      <section id="education" className="py-14 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             03 / Academic Degrees
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             Academic Background
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
             Rigorous university honours education combined with technical diploma hands-on workshop training.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {education.map((item, idx) => (
-            <div key={idx} className="p-7 rounded-2xl bg-ice-50 border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+            <div key={idx} className="p-5 sm:p-7 rounded-2xl bg-ice-50 border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="px-3 py-1 rounded bg-navy-900 text-white font-mono text-xs font-bold">
                   {item.period}
@@ -805,7 +892,7 @@ export default function App() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-navy-900 leading-snug font-heading">
+                <h3 className="text-lg sm:text-xl font-bold text-navy-900 leading-snug font-heading">
                   {item.degree}
                 </h3>
                 <p className="text-sm font-semibold text-blue-700 mt-1">
@@ -829,21 +916,21 @@ export default function App() {
       {/* ========================================================
           6. ACHIEVEMENTS SECTION (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="achievements" className="py-20 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
+      <section id="achievements" className="py-14 sm:py-20 px-4 sm:px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               04 / Key Recognitions
             </span>
-            <h3 className="font-heading text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight">
+            <h3 className="font-heading text-2xl sm:text-4xl font-bold text-navy-950 tracking-tight">
               Engineering Achievements &amp; Milestones
             </h3>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {achievements.map((item, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition">
+              <div key={idx} className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
                   <Award className="w-5 h-5" />
                 </div>
@@ -860,26 +947,26 @@ export default function App() {
       {/* ========================================================
           7. LICENSES & CERTIFICATIONS SECTION (Crisp Pure White Color Block)
          ======================================================== */}
-      <section id="certifications" className="py-24 px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+      <section id="certifications" className="py-14 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto bg-white scroll-mt-24">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
             05 / Professional Credentials
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
             Licenses &amp; Certifications
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
             Recognized national industry safety passports and technical software engineering accreditations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {certifications.map((cert) => (
             <div 
               key={cert.id}
               onClick={() => setSelectedCert(cert)}
-              className="p-6 rounded-2xl bg-ice-50 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition cursor-pointer space-y-3 group"
+              className="p-5 sm:p-6 rounded-2xl bg-ice-50 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition cursor-pointer space-y-3 group"
             >
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-mono text-[11px] font-bold">
@@ -908,24 +995,24 @@ export default function App() {
       {/* ========================================================
           8. WORK EXPERIENCE (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="experience" className="py-24 px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
+      <section id="experience" className="py-14 sm:py-24 px-4 sm:px-6 bg-ice-100 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               06 / Practical Industry Roles
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Work Experience &amp; Internships
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
               Real factory floor maintenance, preventive equipment servicing, and infrastructure installation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {experience.map((item, idx) => (
-              <div key={idx} className="p-7 rounded-2xl bg-white border border-slate-200 shadow-md space-y-4">
+              <div key={idx} className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-md space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="px-3 py-1 rounded bg-blue-100 text-blue-800 font-mono text-xs font-bold">
                     {item.period}
@@ -937,7 +1024,7 @@ export default function App() {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-bold text-navy-900 leading-snug font-heading">
+                  <h3 className="text-base sm:text-lg font-bold text-navy-900 leading-snug font-heading">
                     {item.role}
                   </h3>
                   <p className="text-xs font-bold text-blue-700 mt-1 uppercase tracking-wider font-mono">
@@ -957,44 +1044,48 @@ export default function App() {
       {/* ========================================================
           9. PROJECTS SECTION: 3D Flip Grid with Slide Deck Viewer (Soft Ice-Blue Color Block)
          ======================================================== */}
-      <section id="projects" className="py-24 px-6 bg-ice-50 border-b border-slate-200 scroll-mt-24">
+      <section id="projects" className="py-14 sm:py-24 px-4 sm:px-6 bg-ice-50 border-b border-slate-200 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
               07 / Verified Engineering Case Studies
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
               Engineering Projects &amp; Slide Decks
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Hover cards to flip for technical specifications, or open the Slide Flow viewer to inspect all 85+ presentation slides directly.
+            <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
+              Tap or hover cards to flip for technical specifications, or open the Slide Flow viewer to inspect all 85+ presentation slides directly.
             </p>
           </div>
 
           {/* Project Flip Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16">
             {projects.map((project) => (
               <div 
                 key={project.id} 
-                className="flip-card-container h-[470px] rounded-2xl cursor-pointer group"
+                onClick={() => toggleCardFlip(project.id)}
+                className={`flip-card-container h-[460px] sm:h-[470px] rounded-2xl cursor-pointer group select-none ${
+                  flippedCards[project.id] ? 'is-flipped' : ''
+                }`}
               >
                 <div className="flip-card-inner">
                   
                   {/* FLIP FRONT (White Color Block Card) */}
-                  <div className="flip-card-front bg-white border border-slate-200 shadow-md flex flex-col justify-between p-6 rounded-2xl group-hover:shadow-xl transition-all duration-300">
+                  <div className="flip-card-front bg-white border border-slate-200 shadow-md flex flex-col justify-between p-5 sm:p-6 rounded-2xl group-hover:shadow-xl transition-all duration-300">
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200 truncate max-w-[200px]">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200 truncate max-w-[190px]">
                           {project.category}
                         </span>
                         <span className="text-xs text-slate-500 font-mono flex items-center gap-1 shrink-0">
-                          <span>Hover to flip</span>
-                          <Repeat className="w-3.5 h-3.5" />
+                          <span className="hidden sm:inline">Hover to flip</span>
+                          <span className="sm:hidden">Tap to flip</span>
+                          <Repeat className="w-3.5 h-3.5 text-blue-600" />
                         </span>
                       </div>
 
-                      <div className="relative h-44 w-full rounded-xl overflow-hidden border border-slate-200 mb-4 bg-slate-100">
+                      <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden border border-slate-200 mb-3 sm:mb-4 bg-slate-100">
                         <img 
                           src={asset(project.heroImage)} 
                           alt={project.frontTitle} 
@@ -1003,7 +1094,7 @@ export default function App() {
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent"></div>
                       </div>
 
-                      <h3 className="text-lg font-bold text-navy-950 mb-1 leading-snug font-heading">
+                      <h3 className="text-base sm:text-lg font-bold text-navy-950 mb-1 leading-snug font-heading">
                         {project.frontTitle}
                       </h3>
                       <p className="text-xs text-blue-600 font-mono font-medium line-clamp-2">
@@ -1022,19 +1113,25 @@ export default function App() {
                   </div>
 
                   {/* FLIP BACK (Navy Blue Color Block Card) */}
-                  <div className="flip-card-back bg-navy-900 border border-blue-600/50 text-white flex flex-col justify-between p-6 rounded-2xl shadow-2xl">
+                  <div className="flip-card-back bg-navy-900 border border-blue-600/50 text-white flex flex-col justify-between p-5 sm:p-6 rounded-2xl shadow-2xl">
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block mb-1 font-mono">
-                        {project.category}
-                      </span>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block font-mono">
+                          {project.category}
+                        </span>
+                        <span className="text-xs text-sky-400/80 font-mono flex items-center gap-1 sm:hidden">
+                          <span>Flip back</span>
+                          <Repeat className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
                       <h3 className="text-base font-bold text-white mb-2 leading-tight font-heading">
                         {project.backTitle}
                       </h3>
-                      <p className="text-xs text-slate-300 leading-relaxed mb-4 line-clamp-4">
+                      <p className="text-xs text-slate-300 leading-relaxed mb-3 sm:mb-4 line-clamp-4">
                         {project.backDesc}
                       </p>
 
-                      <div className="flex flex-wrap gap-1.5 mb-4">
+                      <div className="flex flex-wrap gap-1.5 mb-3 sm:mb-4">
                         {project.toolTags.map((tool) => (
                           <span key={tool} className="px-2 py-0.5 text-[10px] rounded bg-navy-800 text-sky-300 border border-navy-700 font-mono">
                             {tool}
@@ -1044,11 +1141,14 @@ export default function App() {
                     </div>
 
                     <button 
-                      onClick={() => openProjectOverview(project)}
-                      className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openProjectOverview(project);
+                      }}
+                      className="w-full py-3 sm:py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg cursor-pointer"
                     >
                       <Search className="w-3.5 h-3.5" />
-                      <span>Open {project.storySteps.length}-Slide Presentation Deck</span>
+                      <span>Open {project.storySteps.length}-Slide Deck</span>
                     </button>
                   </div>
                 </div>
@@ -1057,14 +1157,14 @@ export default function App() {
           </div>
 
           {/* DEDICATED TRIZ SYSTEMATIC INNOVATION SPOTLIGHT BLOCK */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white border border-navy-800 shadow-2xl">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-800 pb-5">
+          <div className="p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white border border-navy-800 shadow-2xl">
+            <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-navy-800 pb-5">
                 <div>
                   <span className="text-sky-400 font-mono text-xs font-bold uppercase tracking-widest block">
                     Systematic Product Innovation Spotlight
                   </span>
-                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mt-1">
+                  <h3 className="font-heading text-xl sm:text-3xl font-bold text-white mt-1">
                     Heart-Rate-Zone Trail Training: TRIZ Innovation
                   </h3>
                 </div>
@@ -1073,7 +1173,7 @@ export default function App() {
                     const trizProj = projects.find(p => p.id === 'triz');
                     if (trizProj) openProjectOverview(trizProj);
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-navy-950 font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer shadow-lg"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-navy-950 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shrink-0"
                 >
                   <Search className="w-4 h-4" />
                   <span>Inspect 11 TRIZ Slides</span>
@@ -1084,7 +1184,7 @@ export default function App() {
                 Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA). Applied classical TRIZ (Theory of Inventive Problem Solving) Function and Component Analysis to resolve the contradiction between increasing weekly endurance training volume and joint degradation.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 pt-1 sm:pt-2">
                 <div className="p-4 rounded-xl bg-navy-850 border border-navy-700/80 space-y-1.5">
                   <span className="text-xs font-mono font-bold text-sky-400">Principle #1: Segmentation</span>
                   <h4 className="text-sm font-bold text-white">Terrain Modality Decoupling</h4>
@@ -1118,8 +1218,8 @@ export default function App() {
       {/* ========================================================
           10. CONTACT SECTION (Midnight Navy Color Block: #030816)
          ======================================================== */}
-      <section id="contact" className="py-24 px-6 bg-navy-950 text-white border-t border-navy-800 relative scroll-mt-24">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section id="contact" className="py-14 sm:py-24 px-4 sm:px-6 bg-navy-950 text-white border-t border-navy-800 relative scroll-mt-24">
+        <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
           
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-medium">
@@ -1127,21 +1227,21 @@ export default function App() {
               <span>AVAILABLE FOR IMMEDIATE FULL-TIME HIRE</span>
             </div>
             
-            <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
               Looking to Hire a Graduate Engineer?
             </h2>
             <div className="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
             
-            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed pt-2">
+            <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed pt-2">
               I am actively interviewing and available for immediate start in Mechatronics, Embedded IoT, Automation &amp; Robotics, and Mechanical Design roles across Malaysia and internationally.
             </p>
           </div>
 
           {/* Quick Contact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-left pt-2 sm:pt-4">
             <a 
               href={`mailto:${personalInfo.email}`} 
-              className="p-5 rounded-2xl bg-navy-900 border border-navy-800 hover:border-sky-400 transition space-y-1 block shadow-md group"
+              className="p-4 sm:p-5 rounded-2xl bg-navy-900 border border-navy-800 hover:border-sky-400 transition space-y-1 block shadow-md group"
             >
               <Mail className="w-5 h-5 text-sky-400 mb-2 group-hover:scale-110 transition" />
               <span className="text-[11px] font-mono text-slate-400 uppercase block">Direct Email</span>
@@ -1150,24 +1250,24 @@ export default function App() {
 
             <a 
               href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`} 
-              className="p-5 rounded-2xl bg-navy-900 border border-navy-800 hover:border-sky-400 transition space-y-1 block shadow-md group"
+              className="p-4 sm:p-5 rounded-2xl bg-navy-900 border border-navy-800 hover:border-sky-400 transition space-y-1 block shadow-md group"
             >
               <Phone className="w-5 h-5 text-sky-400 mb-2 group-hover:scale-110 transition" />
               <span className="text-[11px] font-mono text-slate-400 uppercase block">Call / WhatsApp</span>
               <span className="text-xs font-bold text-white block">{personalInfo.phone}</span>
             </a>
 
-            <div className="p-5 rounded-2xl bg-navy-900 border border-navy-800 space-y-1 block shadow-md">
+            <div className="p-4 sm:p-5 rounded-2xl bg-navy-900 border border-navy-800 space-y-1 block shadow-md">
               <MapPin className="w-5 h-5 text-sky-400 mb-2" />
               <span className="text-[11px] font-mono text-slate-400 uppercase block">Base &amp; Mobility</span>
               <span className="text-xs font-bold text-white block">Klang, Selangor · Willing to Relocate</span>
             </div>
           </div>
 
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-4">
+          <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
             <a 
               href={`mailto:${personalInfo.email}`}
-              className="px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center gap-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
             >
               <Mail className="w-4 h-4" />
               <span>Send An Email</span>
@@ -1177,7 +1277,7 @@ export default function App() {
               href={personalInfo.linkedin} 
               target="_blank" 
               rel="noreferrer"
-              className="px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center gap-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center justify-center gap-2"
             >
               <Linkedin className="w-4 h-4 text-sky-400" />
               <span>Connect on LinkedIn</span>
@@ -1187,7 +1287,7 @@ export default function App() {
               href={personalInfo.github} 
               target="_blank" 
               rel="noreferrer"
-              className="px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center gap-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition flex items-center justify-center gap-2"
             >
               <Github className="w-4 h-4 text-sky-400" />
               <span>View GitHub</span>
@@ -1195,14 +1295,14 @@ export default function App() {
           </div>
 
           {/* Hiring Invariants Banner */}
-          <div className="p-4 rounded-xl bg-navy-900/60 border border-navy-800 text-xs text-slate-300 flex flex-wrap justify-around gap-3 font-mono">
+          <div className="p-3.5 sm:p-4 rounded-xl bg-navy-900/60 border border-navy-800 text-[11px] sm:text-xs text-slate-300 flex flex-col sm:flex-row flex-wrap justify-around gap-2 sm:gap-3 font-mono text-center sm:text-left">
             <span>✓ Notice Period: 0 Days (Immediate)</span>
             <span>✓ Degree: B.Eng (Hons) Accredited</span>
             <span>✓ Own Transport: Yes (Class D)</span>
             <span>✓ Relocation: Open (Nationwide / SG)</span>
           </div>
 
-          <div className="pt-16 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+          <div className="pt-10 sm:pt-16 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
             <span>© {new Date().getFullYear()} {personalInfo.fullName}. All rights reserved.</span>
             <span className="font-mono">Graduated Mechanical &amp; Systems Engineer</span>
           </div>
@@ -1214,26 +1314,26 @@ export default function App() {
          ======================================================== */}
       {activeProjectModal && (
         <div 
-          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-6 overflow-y-auto"
           onClick={() => setActiveProjectModal(null)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-navy-900 border border-navy-700 rounded-3xl overflow-hidden shadow-2xl my-8 flex flex-col max-h-[92vh]"
+            className="relative max-w-4xl w-full bg-navy-900 border border-navy-700 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl my-auto flex flex-col max-h-[96vh] sm:max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-start justify-between p-5 sm:p-6 border-b border-navy-800 bg-navy-950 shrink-0">
-              <div>
+            <div className="flex items-start justify-between p-4 sm:p-6 border-b border-navy-800 bg-navy-950 shrink-0">
+              <div className="min-w-0 pr-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block mb-1 font-mono">
                   {activeProjectModal.category}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
+                <h3 className="text-lg sm:text-2xl font-bold text-white font-heading truncate">
                   {activeProjectModal.backTitle}
                 </h3>
               </div>
               <button 
                 onClick={() => setActiveProjectModal(null)}
-                className="p-2 rounded-xl bg-navy-800 hover:bg-navy-700 text-slate-400 hover:text-white transition cursor-pointer"
+                className="p-2 rounded-xl bg-navy-800 hover:bg-navy-700 text-slate-400 hover:text-white transition cursor-pointer shrink-0"
                 aria-label="Close Modal"
               >
                 <X className="w-5 h-5" />
@@ -1241,9 +1341,9 @@ export default function App() {
             </div>
 
             {/* Modal Scrollable Body */}
-            <div className="p-6 overflow-y-auto space-y-6 flex-grow bg-navy-900 text-slate-200">
+            <div className="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-6 flex-grow bg-navy-900 text-slate-200">
               {/* Bullets */}
-              <ul className="space-y-2 border-l-2 border-sky-400 pl-4 text-xs sm:text-sm text-slate-300">
+              <ul className="space-y-1.5 sm:space-y-2 border-l-2 border-sky-400 pl-3 sm:pl-4 text-xs sm:text-sm text-slate-300">
                 {activeProjectModal.overviewList.map((item, idx) => (
                   <li key={idx} className="leading-relaxed">• {item}</li>
                 ))}
@@ -1252,28 +1352,29 @@ export default function App() {
               {/* Tool Tags */}
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {activeProjectModal.toolTags.map((tool) => (
-                  <span key={tool} className="px-2.5 py-1 text-xs rounded bg-navy-800 text-sky-300 font-mono border border-navy-700">
+                  <span key={tool} className="px-2 sm:px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs rounded bg-navy-800 text-sky-300 font-mono border border-navy-700">
                     {tool}
                   </span>
                 ))}
               </div>
 
               {/* Slide Viewer Section */}
-              <div className="bg-navy-950 p-4 sm:p-5 rounded-2xl border border-navy-800 space-y-3">
+              <div className="bg-navy-950 p-3.5 sm:p-5 rounded-2xl border border-navy-800 space-y-3">
                 <div className="flex items-center justify-between">
-                  <p className="text-xs font-bold uppercase tracking-wider text-sky-400 flex items-center gap-2 font-mono">
-                    <FileText className="w-4 h-4" /> Official Project Presentation &amp; Operational Flow
+                  <p className="text-xs font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5 sm:gap-2 font-mono truncate">
+                    <FileText className="w-4 h-4 shrink-0" />
+                    <span className="truncate">Official Presentation Deck</span>
                   </p>
-                  <p className="text-xs font-mono text-slate-400">
+                  <p className="text-xs font-mono text-slate-400 shrink-0">
                     Slide {slideIndex + 1} / {activeProjectModal.storySteps.length}
                   </p>
                 </div>
 
                 {/* Slide Frame with Controls */}
-                <div className="relative flex items-center justify-center bg-black/60 rounded-xl overflow-hidden border border-navy-800 min-h-[300px] max-h-[46vh]">
+                <div className="relative flex items-center justify-center bg-black/60 rounded-xl overflow-hidden border border-navy-800 min-h-[190px] sm:min-h-[300px] max-h-[36vh] sm:max-h-[46vh]">
                   <button 
                     onClick={prevSlide}
-                    className="absolute left-2 z-10 p-2 rounded-full bg-navy-900/80 hover:bg-navy-800 text-white border border-navy-700 transition cursor-pointer"
+                    className="hidden sm:flex absolute left-2 z-10 p-2 rounded-full bg-navy-900/80 hover:bg-navy-800 text-white border border-navy-700 transition cursor-pointer"
                     aria-label="Previous Slide"
                   >
                     <ChevronLeft className="w-5 h-5" />
@@ -1282,20 +1383,41 @@ export default function App() {
                   <img 
                     src={asset(activeProjectModal.storySteps[slideIndex].image)} 
                     alt={activeProjectModal.storySteps[slideIndex].title} 
-                    className="w-auto h-auto max-h-[44vh] object-contain p-2"
+                    className="w-auto h-auto max-h-[34vh] sm:max-h-[44vh] object-contain p-1.5 sm:p-2"
                   />
 
                   <button 
                     onClick={nextSlide}
-                    className="absolute right-2 z-10 p-2 rounded-full bg-navy-900/80 hover:bg-navy-800 text-white border border-navy-700 transition cursor-pointer"
+                    className="hidden sm:flex absolute right-2 z-10 p-2 rounded-full bg-navy-900/80 hover:bg-navy-800 text-white border border-navy-700 transition cursor-pointer"
                     aria-label="Next Slide"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
                 </div>
 
+                {/* Mobile Prev / Next Control Bar */}
+                <div className="flex sm:hidden items-center justify-between gap-2 pt-0.5">
+                  <button 
+                    onClick={prevSlide}
+                    className="flex-1 py-2 px-3 rounded-lg bg-navy-800 hover:bg-navy-700 active:scale-95 text-white font-mono text-xs flex items-center justify-center gap-1.5 border border-navy-700"
+                  >
+                    <ChevronLeft className="w-4 h-4 text-sky-400" />
+                    <span>Previous</span>
+                  </button>
+                  <span className="text-[11px] font-mono text-slate-400 px-2 shrink-0">
+                    {slideIndex + 1}/{activeProjectModal.storySteps.length}
+                  </span>
+                  <button 
+                    onClick={nextSlide}
+                    className="flex-1 py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-mono text-xs flex items-center justify-center gap-1.5 border border-blue-500 font-semibold"
+                  >
+                    <span>Next</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+
                 {/* Quick Slide Navigation Pill Bar */}
-                <div className="flex items-center justify-center gap-1 overflow-x-auto py-1.5 px-2 max-w-full scrollbar-none">
+                <div className="flex items-center justify-center gap-1 overflow-x-auto py-1 px-1 max-w-full scrollbar-none">
                   {activeProjectModal.storySteps.map((st, idx) => (
                     <button
                       key={idx}
@@ -1312,7 +1434,7 @@ export default function App() {
                 </div>
 
                 {/* Narrative */}
-                <div className="p-4 rounded-xl bg-navy-900 border border-navy-800 space-y-1.5">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-navy-900 border border-navy-800 space-y-1.5">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 font-mono">
                       Stage {activeProjectModal.storySteps[slideIndex].step}: {activeProjectModal.storySteps[slideIndex].phase}
@@ -1332,15 +1454,15 @@ export default function App() {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 bg-navy-950 border-t border-navy-800 flex items-center justify-between shrink-0">
-              <span className="text-xs text-slate-400 font-mono">
-                Verified Technical Engineering Case Study
+            <div className="p-3.5 sm:p-4 bg-navy-950 border-t border-navy-800 flex items-center justify-between shrink-0">
+              <span className="text-[11px] sm:text-xs text-slate-400 font-mono truncate mr-2">
+                Verified Technical Case Study
               </span>
               <button 
                 onClick={() => setActiveProjectModal(null)}
-                className="px-4 py-2 rounded-xl bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold transition cursor-pointer"
+                className="px-4 py-2 rounded-xl bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold transition cursor-pointer shrink-0"
               >
-                Close Overview
+                Close
               </button>
             </div>
           </div>
@@ -1352,11 +1474,11 @@ export default function App() {
          ======================================================== */}
       {isAboutOpen && (
         <div 
-          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
           onClick={() => setIsAboutOpen(false)}
         >
           <div 
-            className="relative max-w-2xl w-full bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-800 space-y-4 my-8"
+            className="relative max-w-2xl w-full bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl text-slate-800 space-y-4 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between border-b border-slate-200 pb-4">
@@ -1364,7 +1486,7 @@ export default function App() {
                 <span className="text-xs font-mono font-bold text-blue-700 uppercase tracking-wider">
                   Biography &amp; Engineering Philosophy
                 </span>
-                <h3 className="font-heading text-2xl font-bold text-navy-950 mt-1">
+                <h3 className="font-heading text-xl sm:text-2xl font-bold text-navy-950 mt-1">
                   {personalInfo.fullName}
                 </h3>
               </div>
@@ -1376,7 +1498,7 @@ export default function App() {
               </button>
             </div>
 
-            <div className="space-y-3.5 text-sm sm:text-base leading-relaxed text-slate-700">
+            <div className="space-y-3.5 text-xs sm:text-base leading-relaxed text-slate-700">
               {personalInfo.aboutBio.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
@@ -1385,7 +1507,7 @@ export default function App() {
             <div className="pt-4 border-t border-slate-200 flex justify-end">
               <button 
                 onClick={() => setIsAboutOpen(false)}
-                className="px-5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition"
               >
                 Close Biography
               </button>
@@ -1399,11 +1521,11 @@ export default function App() {
          ======================================================== */}
       {selectedCert && (
         <div 
-          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
           onClick={() => setSelectedCert(null)}
         >
           <div 
-            className="relative max-w-md w-full bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-800 space-y-4 my-8"
+            className="relative max-w-md w-full bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl text-slate-800 space-y-4 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between border-b border-slate-200 pb-3">
@@ -1420,7 +1542,7 @@ export default function App() {
             </div>
 
             <div className="space-y-2">
-              <h4 className="text-lg font-bold text-navy-950 leading-snug">{selectedCert.title}</h4>
+              <h4 className="text-base sm:text-lg font-bold text-navy-950 leading-snug">{selectedCert.title}</h4>
               <p className="text-xs font-semibold text-blue-700">{selectedCert.issuer}</p>
               <span className="inline-block px-2.5 py-0.5 rounded bg-slate-100 text-slate-600 font-mono text-xs">
                 Accredited: {selectedCert.date}
@@ -1433,7 +1555,7 @@ export default function App() {
             <div className="pt-4 border-t border-slate-200 flex justify-end">
               <button 
                 onClick={() => setSelectedCert(null)}
-                className="px-4 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition"
+                className="w-full sm:w-auto px-4 py-2 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition"
               >
                 Done
               </button>
