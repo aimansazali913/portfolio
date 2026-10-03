@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { 
   personalInfo, 
   skills, 
+  skillsCategories,
   projects, 
   education, 
   achievements, 
@@ -96,6 +97,9 @@ export default function App() {
   const [isQrModalOpen, setIsQrModalOpen] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
 
+  // Project showcase tab filter ('pillars' | 'all')
+  const [projectFilter, setProjectFilter] = useState('pillars');
+
   const publicPortfolioUrl = 'https://aimansazali913.github.io/portfolio/';
 
   const handleCopyLink = () => {
@@ -144,7 +148,7 @@ export default function App() {
                 {personalInfo.name}
               </span>
               <span className="text-sky-300 font-mono text-[9px] sm:text-[10px] tracking-wider uppercase block mt-0.5">
-                B.Eng (Hons) · Graduate Engineer
+                Software &amp; QA Automation Engineer
               </span>
             </div>
           </a>
@@ -322,14 +326,15 @@ export default function App() {
             <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2.5 sm:gap-3 pb-5 sm:pb-6 border-b border-navy-800/80 text-xs">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 font-mono font-medium text-[11px] sm:text-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>ACTIVELY SEEKING GRADUATE ROLES · IMMEDIATE START</span>
+                <span>ACTIVELY SEEKING SOFTWARE &amp; QA ROLES · IMMEDIATE START</span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-[11px] text-slate-400">
-                <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-slate-300">
-                  Selangor / KL, Malaysia (Open to Relocation)
+                <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-slate-300 flex items-center gap-1">
+                  <MapPin className="w-3 h-3 text-sky-400" />
+                  {personalInfo.location}
                 </span>
-                <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-sky-300">
-                  Notice: 0 Days
+                <span className="px-2.5 py-1 rounded-md bg-navy-800 border border-navy-700 text-emerald-300 font-semibold">
+                  Notice: 0 Days (Immediate)
                 </span>
               </div>
             </div>
@@ -337,22 +342,50 @@ export default function App() {
             {/* Candidate Identity & Executive Summary */}
             <div className="pt-6 sm:pt-8 pb-5 sm:pb-6 space-y-3 sm:space-y-4">
               <span className="text-[11px] sm:text-sm uppercase font-mono tracking-widest text-sky-400 font-bold block">
-                Industrial Mechatronics &amp; Mechanical Systems Engineer
+                {personalInfo.targetTitle}
               </span>
               
               <h1 className="font-heading text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase break-words">
                 {personalInfo.fullName}
               </h1>
               
-              <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sky-200 font-medium text-xs sm:text-base">
-                <span>Graduated Mechanical Engineer</span>
-                <span className="text-sky-400">•</span>
-                <span className="font-mono text-xs sm:text-sm font-semibold">B.Eng (Hons)</span>
+              <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sky-200 font-medium text-xs sm:text-sm">
+                <GraduationCap className="w-4 h-4 text-sky-400" />
+                <span>{personalInfo.degree}</span>
               </div>
 
-              <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed pt-1 sm:pt-2">
-                Honours graduate combining physical CAD/CAE modeling, embedded IoT firmware, automation control, and systematic TRIZ innovation to engineer production-ready hardware solutions.
-              </p>
+              {/* High-Signal Executive Summary */}
+              <div className="max-w-3xl mx-auto p-4 sm:p-5 rounded-2xl bg-navy-950/80 border border-sky-500/25 text-left mt-2 shadow-inner">
+                <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-navy-800/80">
+                  <Terminal className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-sky-300 font-bold">
+                    Executive Summary / Technical Profile
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
+                  {personalInfo.executiveSummary}
+                </p>
+              </div>
+
+              {/* Direct Recruiter Contact & Links Strip */}
+              <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-2 text-xs font-mono text-slate-300">
+                <a href={`mailto:${personalInfo.email}`} className="inline-flex items-center gap-1.5 hover:text-sky-300 transition bg-navy-800/60 px-2.5 py-1 rounded-md border border-navy-700">
+                  <Mail className="w-3.5 h-3.5 text-sky-400" />
+                  <span>{personalInfo.email}</span>
+                </a>
+                <a href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, '')}`} className="inline-flex items-center gap-1.5 hover:text-sky-300 transition bg-navy-800/60 px-2.5 py-1 rounded-md border border-navy-700">
+                  <Phone className="w-3.5 h-3.5 text-sky-400" />
+                  <span>{personalInfo.phone}</span>
+                </a>
+                <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-sky-300 text-sky-400 font-bold transition bg-navy-800/60 px-2.5 py-1 rounded-md border border-navy-700">
+                  <Linkedin className="w-3.5 h-3.5" />
+                  <span>LinkedIn</span>
+                </a>
+                <a href={personalInfo.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-sky-300 text-sky-400 font-bold transition bg-navy-800/60 px-2.5 py-1 rounded-md border border-navy-700">
+                  <Github className="w-3.5 h-3.5" />
+                  <span>GitHub</span>
+                </a>
+              </div>
             </div>
 
             {/* Target Engineering Roles Strip */}
@@ -376,20 +409,23 @@ export default function App() {
 
             {/* Verified Academic & Technical Credential Badges */}
             <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 sm:pt-4">
-              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
-                UniKL MFI · B.Eng Hons (2023–2026)
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-blue-500/10 text-sky-300 text-[10px] sm:text-xs font-mono border border-sky-400/30 font-semibold">
+                React 19 &amp; TypeScript
+              </span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-blue-500/10 text-sky-300 text-[10px] sm:text-xs font-mono border border-sky-400/30 font-semibold">
+                NestJS &amp; Fastify
+              </span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-blue-500/10 text-sky-300 text-[10px] sm:text-xs font-mono border border-sky-400/30 font-semibold">
+                PostgreSQL &amp; Supabase
+              </span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] sm:text-xs font-mono border border-emerald-400/30 font-semibold">
+                452 Automated Test Suites (Jest/Supertest)
               </span>
               <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
-                Politeknik Port Dickson · Dip (2019–2022)
+                NMRA 12/12 Compliance
               </span>
               <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
-                SolidWorks CAD &amp; FEA
-              </span>
-              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
-                C++ / ESP32 Firmware
-              </span>
-              <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/5 text-slate-300 text-[10px] sm:text-xs font-mono border border-white/10">
-                TRIZ Level 1
+                Embedded C/C++ &amp; ESP32
               </span>
             </div>
 
@@ -407,7 +443,7 @@ export default function App() {
                 className="px-6 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-750 text-white font-semibold text-sm border border-slate-700 hover:border-sky-400/50 transition flex items-center justify-center gap-2 cursor-pointer text-center"
               >
                 <Search className="w-4 h-4 text-sky-400" />
-                <span>Explore 5 Projects &amp; 85 Slides</span>
+                <span>Explore The 4 Pillars</span>
               </a>
               <a 
                 href="#about" 
@@ -422,15 +458,15 @@ export default function App() {
           {/* Precision Engineering Telemetry & Metrics Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 w-full mt-4 sm:mt-6">
             <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
-              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">05</span>
-              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Engineering Systems</span>
-              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">Full Design-to-Build</span>
+              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">452</span>
+              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Automated Test Suites</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">100% CI Quality Gates</span>
             </div>
 
             <div className="bg-navy-900/80 border border-slate-800 hover:border-sky-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
-              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">85+</span>
-              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">Technical Slides</span>
-              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">Full Presentation Decks</span>
+              <span className="font-mono text-2xl sm:text-4xl font-extrabold text-sky-400 block mb-0.5 sm:mb-1 tracking-tight group-hover:scale-105 transition-transform duration-300">100%</span>
+              <span className="text-[11px] sm:text-xs text-slate-200 font-bold block uppercase tracking-wider font-heading">NMRA Compliance</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono mt-0.5 block">12/12 Criteria Validated</span>
             </div>
 
             <div className="bg-navy-900/80 border border-slate-800 hover:border-emerald-500/40 rounded-xl sm:rounded-2xl p-3.5 sm:p-5 text-center shadow-lg transition group">
@@ -462,7 +498,7 @@ export default function App() {
           </h2>
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
           <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
-            Fresh graduate engineer bridging physical mechanical design, embedded control firmware, and modern full-stack systems.
+            Software Engineer &amp; Systems Builder bridging modern full-stack web platforms, automated QA testing, and embedded systems validation.
           </p>
         </div>
 
@@ -489,8 +525,8 @@ export default function App() {
               <div className="absolute -bottom-3 -right-3 bg-navy-900 text-white px-2.5 py-1.5 rounded-lg border-2 border-white shadow-md flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
                 <div className="text-left">
-                  <span className="text-[9px] text-sky-300 font-mono block leading-none">GRADUATE</span>
-                  <span className="text-[11px] font-bold block leading-tight">B.Eng (Hons)</span>
+                  <span className="text-[9px] text-sky-300 font-mono block leading-none">VERIFIED</span>
+                  <span className="text-[11px] font-bold block leading-tight">SDET / SWE</span>
                 </div>
               </div>
             </div>
@@ -503,7 +539,7 @@ export default function App() {
                 <MapPin className="w-3.5 h-3.5 text-blue-600" /> {personalInfo.location}
               </span>
               <span className="inline-block mt-1 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
-                Available Immediately
+                Available Immediately · 0 Notice
               </span>
             </div>
           </div>
@@ -521,6 +557,9 @@ export default function App() {
                 {personalInfo.aboutBio[1]}
               </p>
               <p>
+                {personalInfo.aboutBio[2]}
+              </p>
+              <p>
                 {personalInfo.aboutBio[3]}
               </p>
             </div>
@@ -529,37 +568,37 @@ export default function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
                 <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <ShieldCheck className="w-3.5 h-3.5" /> 452 Automated Test Suites
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  Zero-regression delivery backed by unit, API integration, and contract tests with pre-merge CI/CD quality gates.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <Terminal className="w-3.5 h-3.5" /> Type-Safe Web Architecture
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  Layered web architectures using TypeScript, React 19, NestJS, Fastify, and PostgreSQL with Row-Level Security.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Deterministic Verification
+                </div>
+                <p className="text-xs text-slate-600 leading-snug">
+                  100% compliance across 12 NMRA criteria and microsecond timing protocols published in technical research (June 2026).
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
+                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
                   <Zap className="w-3.5 h-3.5" /> Immediate Availability
                 </div>
                 <p className="text-xs text-slate-600 leading-snug">
-                  Zero notice period. Available to onboard and contribute from Day 1 with high motivation.
-                </p>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
-                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
-                  <Cpu className="w-3.5 h-3.5" /> Full Hardware + Software
-                </div>
-                <p className="text-xs text-slate-600 leading-snug">
-                  SolidWorks 3D CAD/FEA, embedded C++/ESP32, and modern full-stack web platforms.
-                </p>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
-                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
-                  <Lightbulb className="w-3.5 h-3.5" /> TRIZ Systematic Rigor
-                </div>
-                <p className="text-xs text-slate-600 leading-snug">
-                  Trained to decompose complex functional contradictions rather than patching symptoms.
-                </p>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-ice-50 border border-ice-200 space-y-1">
-                <div className="flex items-center gap-1.5 text-blue-700 font-bold text-xs uppercase font-mono">
-                  <Users className="w-3.5 h-3.5" /> Proven Team Delivery
-                </div>
-                <p className="text-xs text-slate-600 leading-snug">
-                  Led 6-engineer capstone team, cut fabrication costs by 63%, and published research.
+                  Zero notice period. Available to onboard and contribute immediately for Software Engineering and QA Automation roles.
                 </p>
               </div>
             </div>
@@ -775,7 +814,7 @@ export default function App() {
       </section>
 
       {/* ========================================================
-          4. SKILLS SECTION (Soft Sky-Blue Color Block: #E8F1F9)
+          4. SKILLS SECTION: 4 Technical Categories (Soft Sky-Blue Color Block: #E8F1F9)
          ======================================================== */}
       <section id="skills" className="py-14 sm:py-24 px-4 sm:px-6 bg-ice-150 border-b border-slate-200 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
@@ -784,118 +823,77 @@ export default function App() {
               02 / Technical Competencies
             </span>
             <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-              Skills &amp; Engineering Capabilities
+              Technical Skills &amp; Domain Expertise
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
             <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
-              Curated tools, frameworks, and domain standards applied across physical hardware and software production.
+              Organized into clean, categorized competencies tailored for Software Engineering, QA Automation / SDET, and Backend Systems.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            
-            {/* Category 1: Mechanical & Simulation */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-blue-700">
-                <Wrench className="w-4 h-4" />
-                <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
-                  Mechanical &amp; Simulation
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["SolidWorks 3D CAD", "AutoCAD", "FEA Structural Simulation", "CFD Flow Simulation", "FMEA & FoS", "AISC 360 Standards"].map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs rounded bg-ice-100 text-navy-900 font-medium border border-slate-200">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            {skillsCategories.map((cat) => {
+              // Icon mapping based on category id
+              let CatIcon = Terminal;
+              if (cat.id === 'databases-cloud') CatIcon = Layers;
+              if (cat.id === 'testing-qa') CatIcon = ShieldCheck;
+              if (cat.id === 'engineering-systems') CatIcon = Wrench;
 
-            {/* Category 2: Full-Stack & Cloud */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-blue-700">
-                <Terminal className="w-4 h-4" />
-                <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
-                  Full-Stack Software
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["React 19", "TypeScript", "Tailwind CSS v4", "NestJS", "Fastify", "PostgreSQL", "Supabase RLS", "Zod Validation", "Docker"].map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs rounded bg-ice-100 text-navy-900 font-medium border border-slate-200">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
+              return (
+                <div 
+                  key={cat.id} 
+                  className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition space-y-4 flex flex-col justify-between"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold shrink-0">
+                        <CatIcon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-navy-950 font-heading">
+                          {cat.category}
+                        </h3>
+                        <p className="text-xs text-slate-500 font-mono">
+                          {cat.description}
+                        </p>
+                      </div>
+                    </div>
 
-            {/* Category 3: Embedded & IoT */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-blue-700">
-                <Cpu className="w-4 h-4" />
-                <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
-                  Embedded &amp; IoT
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["ESP32 & Arduino", "C/C++", "DCC++ Protocol", "JMRI Software", "Blynk IoT Platform", "Ultrasonic & TDS Sensors", "TCP/IP Sockets"].map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs rounded bg-ice-100 text-navy-900 font-medium border border-slate-200">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {cat.skills.map((skill) => {
+                        const isHighSignal = 
+                          skill.includes('452 Test') || 
+                          skill.includes('React 19') || 
+                          skill.includes('TypeScript') || 
+                          skill.includes('NestJS') || 
+                          skill.includes('PostgreSQL') || 
+                          skill.includes('Jest') || 
+                          skill.includes('NMRA') ||
+                          skill.includes('Fastify');
 
-            {/* Category 4: TRIZ & Systematic Innovation */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-blue-700">
-                <Lightbulb className="w-4 h-4" />
-                <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
-                  TRIZ &amp; Product Design
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["TRIZ Methodology", "Function & Component Analysis", "40 Inventive Principles", "Contradiction Resolution", "Super-System Modeling", "New Product Development"].map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs rounded bg-blue-50 text-blue-900 font-semibold border border-blue-200">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
+                        return (
+                          <span 
+                            key={skill} 
+                            className={`px-3 py-1.5 text-xs rounded-lg font-mono font-medium transition ${
+                              isHighSignal 
+                                ? 'bg-blue-50 text-blue-900 border border-blue-300 font-bold shadow-xs' 
+                                : 'bg-ice-100 text-slate-800 border border-slate-200'
+                            }`}
+                          >
+                            {skill}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
 
-            {/* Category 5: Python & Scientific Computing */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-blue-700">
-                <Activity className="w-4 h-4" />
-                <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
-                  Python &amp; Simulation
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["Python 3.10+", "NumPy & SciPy", "Matplotlib & Pandas", "Discrete-Event Simulation", "Statistical Repeatability (ICC)"].map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs rounded bg-ice-100 text-navy-900 font-medium border border-slate-200">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Category 6: Standards & Industry Safety */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-blue-700">
-                <ShieldCheck className="w-4 h-4" />
-                <h4 className="text-sm font-bold uppercase tracking-wider text-navy-950 font-mono">
-                  Standards &amp; Operations
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["NIOSH OGSP", "CIDB Green Card", "DOSH & OSHA Standards", "Equipment Maintenance", "Workshop Fabrication SOP"].map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs rounded bg-ice-100 text-navy-900 font-medium border border-slate-200">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-
+                  <div className="pt-3 border-t border-slate-100 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                    <span>{cat.skills.length} verified technologies</span>
+                    <span className="text-blue-600 font-semibold">Production Ready</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1080,30 +1078,54 @@ export default function App() {
       </section>
 
       {/* ========================================================
-          9. PROJECTS SECTION: 3D Flip Grid with Slide Deck Viewer (Soft Ice-Blue Color Block)
+          9. PROJECTS SECTION: The 4 Core Pillars of Systems Engineering (Soft Ice-Blue Color Block)
          ======================================================== */}
       <section id="projects" className="py-14 sm:py-24 px-4 sm:px-6 bg-ice-50 border-b border-slate-200 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
             <span className="text-blue-700 font-mono text-xs font-bold uppercase tracking-widest block mb-2">
-              07 / Verified Engineering Case Studies
+              07 / Core Project Showcase
             </span>
             <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight">
-              Engineering Projects &amp; Slide Decks
+              The 4 Pillars of Systems Engineering
             </h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
             <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
-              Tap or hover cards to flip for technical specifications, or open the Slide Flow viewer to inspect all 85+ presentation slides directly.
+              Curated evidence of production full-stack web platforms, 452 automated test suites, deterministic protocol verification, and IoT telemetry.
             </p>
+
+            {/* Filter Toggle: 4 Core Pillars vs All Projects */}
+            <div className="inline-flex items-center gap-1 p-1 bg-slate-200/80 rounded-xl mt-6 text-xs font-mono">
+              <button
+                onClick={() => setProjectFilter('pillars')}
+                className={`px-4 py-2 rounded-lg font-bold transition cursor-pointer ${
+                  projectFilter === 'pillars' 
+                    ? 'bg-navy-900 text-white shadow-sm' 
+                    : 'text-slate-700 hover:text-navy-950'
+                }`}
+              >
+                ★ The 4 Core Pillars
+              </button>
+              <button
+                onClick={() => setProjectFilter('all')}
+                className={`px-4 py-2 rounded-lg font-bold transition cursor-pointer ${
+                  projectFilter === 'all' 
+                    ? 'bg-navy-900 text-white shadow-sm' 
+                    : 'text-slate-700 hover:text-navy-950'
+                }`}
+              >
+                All Projects ({projects.length})
+              </button>
+            </div>
           </div>
 
-          {/* Project Flip Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16">
-            {projects.map((project) => (
+          {/* Project Flip Cards Grid (2-column layout for high readability & 90-second scanning) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16">
+            {(projectFilter === 'pillars' ? projects.slice(0, 4) : projects).map((project) => (
               <div 
                 key={project.id} 
                 onClick={() => toggleCardFlip(project.id)}
-                className={`flip-card-container h-[460px] sm:h-[470px] rounded-2xl cursor-pointer group select-none ${
+                className={`flip-card-container h-[580px] sm:h-[590px] rounded-2xl cursor-pointer group select-none ${
                   flippedCards[project.id] ? 'is-flipped' : ''
                 }`}
               >
@@ -1112,64 +1134,101 @@ export default function App() {
                   {/* FLIP FRONT (White Color Block Card) */}
                   <div className="flip-card-front bg-white border border-slate-200 shadow-md flex flex-col justify-between p-5 sm:p-6 rounded-2xl group-hover:shadow-xl transition-all duration-300">
                     <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200 truncate max-w-[190px]">
-                          {project.category}
+                      <div className="flex items-center justify-between mb-2.5">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200 truncate max-w-[240px]">
+                          {project.pillarTag || project.category}
                         </span>
                         <span className="text-xs text-slate-500 font-mono flex items-center gap-1 shrink-0">
-                          <span className="hidden sm:inline">Hover to flip</span>
+                          <span className="hidden sm:inline">Flip for Metrics</span>
                           <span className="sm:hidden">Tap to flip</span>
                           <Repeat className="w-3.5 h-3.5 text-blue-600" />
                         </span>
                       </div>
 
-                      <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden border border-slate-200 mb-3 sm:mb-4 bg-slate-100">
+                      <div className="relative h-44 sm:h-48 w-full rounded-xl overflow-hidden border border-slate-200 mb-3 bg-slate-100">
                         <img 
                           src={asset(project.heroImage)} 
                           alt={project.frontTitle} 
                           className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
+                        <div className="absolute bottom-2 left-2 right-2 text-white text-[11px] font-mono flex items-center justify-between px-2.5 py-1 bg-black/60 backdrop-blur-sm rounded-md">
+                          <span className="truncate max-w-[220px] text-slate-200">{project.stack}</span>
+                          <span className="text-sky-300 shrink-0 font-bold">{project.storySteps.length} Slides</span>
+                        </div>
                       </div>
 
                       <h3 className="text-base sm:text-lg font-bold text-navy-950 mb-1 leading-snug font-heading">
                         {project.frontTitle}
                       </h3>
-                      <p className="text-xs text-blue-600 font-mono font-medium line-clamp-2">
+                      <p className="text-xs text-blue-700 font-mono font-medium line-clamp-2">
                         {project.frontSub}
                       </p>
+
+                      <div className="mt-3 pt-2.5 border-t border-slate-100 space-y-1.5">
+                        <div className="text-[11px] font-mono text-slate-700 bg-ice-50 px-2.5 py-1 rounded border border-ice-200">
+                          <strong className="text-navy-950 font-bold">Role:</strong> {project.role}
+                        </div>
+                        
+                        {/* Quick 2-metric preview on front */}
+                        <div className="space-y-1 pt-1">
+                          {(project.keyMetrics || []).slice(0, 2).map((m, mIdx) => (
+                            <p key={mIdx} className="text-[11px] text-slate-600 line-clamp-1 flex items-start gap-1">
+                              <span className="text-blue-600 font-bold shrink-0">✓</span>
+                              <span className="truncate">{m}</span>
+                            </p>
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
                     <div className="text-xs text-slate-500 border-t border-slate-200 pt-3 flex items-center justify-between">
-                      <span className="font-semibold text-slate-700">
-                        {project.storySteps.length} Presentation Slides
+                      <span className="font-semibold text-slate-700 flex items-center gap-1 font-mono text-[11px]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> High-Signal Case Study
                       </span>
-                      <span className="text-blue-600 font-bold group-hover:translate-x-1 transition">
-                        View Spec →
+                      <span className="text-blue-600 font-bold group-hover:translate-x-1 transition text-xs font-mono">
+                        View Spec &amp; Impact →
                       </span>
                     </div>
                   </div>
 
-                  {/* FLIP BACK (Navy Blue Color Block Card) */}
-                  <div className="flip-card-back bg-navy-900 border border-blue-600/50 text-white flex flex-col justify-between p-5 sm:p-6 rounded-2xl shadow-2xl">
-                    <div>
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 block font-mono">
-                          {project.category}
+                  {/* FLIP BACK (Navy Blue Color Block Card with 90-Second Rule & Action Links) */}
+                  <div className="flip-card-back bg-navy-900 border border-blue-600/50 text-white flex flex-col justify-between p-5 sm:p-6 rounded-2xl shadow-2xl overflow-y-auto">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-sky-400 block font-mono truncate max-w-[240px]">
+                          {project.pillarTag || project.category}
                         </span>
-                        <span className="text-xs text-sky-400/80 font-mono flex items-center gap-1 sm:hidden">
-                          <span>Flip back</span>
+                        <span className="text-xs text-sky-400/80 font-mono flex items-center gap-1">
+                          <span className="hidden sm:inline">Flip back</span>
                           <Repeat className="w-3.5 h-3.5" />
                         </span>
                       </div>
-                      <h3 className="text-base font-bold text-white mb-2 leading-tight font-heading">
+
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-tight font-heading">
                         {project.backTitle}
                       </h3>
-                      <p className="text-xs text-slate-300 leading-relaxed mb-3 sm:mb-4 line-clamp-4">
-                        {project.backDesc}
-                      </p>
 
-                      <div className="flex flex-wrap gap-1.5 mb-3 sm:mb-4">
+                      <div className="text-[10px] sm:text-[11px] font-mono px-2.5 py-1 rounded-md bg-navy-950/80 border border-sky-500/30 text-sky-200">
+                        <span className="text-slate-400">Role: </span>
+                        <span className="font-semibold">{project.role}</span>
+                      </div>
+
+                      {/* Quantified Key Metrics & Impact (90-Second Rule) */}
+                      <div className="space-y-1.5 my-2 bg-navy-950/90 p-3 sm:p-3.5 rounded-xl border border-navy-800">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                          Key Metrics &amp; Engineering Impact:
+                        </span>
+                        {(project.keyMetrics || []).map((metric, mIdx) => (
+                          <p key={mIdx} className="text-[11px] sm:text-xs text-slate-200 leading-snug flex items-start gap-1.5">
+                            <span className="text-sky-400 font-bold shrink-0 mt-0.5">▸</span>
+                            <span>{metric}</span>
+                          </p>
+                        ))}
+                      </div>
+
+                      {/* Tech Badges */}
+                      <div className="flex flex-wrap gap-1.5">
                         {project.toolTags.map((tool) => (
                           <span key={tool} className="px-2 py-0.5 text-[10px] rounded bg-navy-800 text-sky-300 border border-navy-700 font-mono">
                             {tool}
@@ -1178,16 +1237,63 @@ export default function App() {
                       </div>
                     </div>
 
-                    <button 
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openProjectOverview(project);
-                      }}
-                      className="w-full py-3 sm:py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg cursor-pointer"
-                    >
-                      <Search className="w-3.5 h-3.5" />
-                      <span>Open {project.storySteps.length}-Slide Deck</span>
-                    </button>
+                    {/* Prominent Direct Action Links & Buttons */}
+                    <div className="pt-3 border-t border-navy-800 mt-2 space-y-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {(project.actionLinks || []).map((link, lIdx) => {
+                          if (link.action === 'openDeck') {
+                            return (
+                              <button
+                                key={lIdx}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  openProjectOverview(project);
+                                }}
+                                className={`py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition cursor-pointer ${
+                                  link.primary 
+                                    ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-md' 
+                                    : 'bg-navy-800 hover:bg-navy-750 text-sky-300 border border-navy-700'
+                                }`}
+                              >
+                                <Search className="w-3.5 h-3.5" />
+                                <span>{link.label}</span>
+                              </button>
+                            );
+                          }
+                          return (
+                            <a
+                              key={lIdx}
+                              href={link.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className={`py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition ${
+                                link.primary
+                                  ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-md'
+                                  : 'bg-navy-800 hover:bg-navy-750 text-slate-200 hover:text-white border border-navy-700'
+                              }`}
+                            >
+                              <ExternalLink className="w-3.5 h-3.5 text-sky-400" />
+                              <span>{link.label}</span>
+                            </a>
+                          );
+                        })}
+                      </div>
+
+                      {/* Secondary Slide Viewer Action if not primary */}
+                      {!(project.actionLinks || []).some(l => l.action === 'openDeck') && (
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openProjectOverview(project);
+                          }}
+                          className="w-full py-2 px-3 rounded-xl bg-navy-800 hover:bg-navy-750 text-sky-300 text-xs font-mono font-semibold flex items-center justify-center gap-1.5 border border-navy-700 transition cursor-pointer"
+                        >
+                          <FileText className="w-3.5 h-3.5" />
+                          <span>View {project.storySteps.length}-Slide Presentation Deck</span>
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1262,16 +1368,16 @@ export default function App() {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>AVAILABLE FOR IMMEDIATE FULL-TIME HIRE</span>
+              <span>AVAILABLE FOR IMMEDIATE FULL-TIME HIRE · 0 DAYS NOTICE</span>
             </div>
             
             <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-              Looking to Hire a Graduate Engineer?
+              Looking to Hire a Software Engineer or QA SDET?
             </h2>
             <div className="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
             
             <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed pt-2">
-              I am actively interviewing and available for immediate start in Mechatronics, Embedded IoT, Automation &amp; Robotics, and Mechanical Design roles across Malaysia and internationally.
+              I am actively interviewing and available for immediate start in Software Engineering (Full-Stack / Backend), QA Test Automation / SDET, and Systems Development roles across Malaysia and remotely.
             </p>
           </div>
 
@@ -1297,8 +1403,8 @@ export default function App() {
 
             <div className="p-4 sm:p-5 rounded-2xl bg-navy-900 border border-navy-800 space-y-1 block shadow-md">
               <MapPin className="w-5 h-5 text-sky-400 mb-2" />
-              <span className="text-[11px] font-mono text-slate-400 uppercase block">Base &amp; Mobility</span>
-              <span className="text-xs font-bold text-white block">Klang, Selangor · Willing to Relocate</span>
+              <span className="text-[11px] font-mono text-slate-400 uppercase block">Location &amp; Mobility</span>
+              <span className="text-xs font-bold text-white block">Klang, Selangor · Open to Relocation / Remote</span>
             </div>
           </div>
 
@@ -1321,6 +1427,16 @@ export default function App() {
               <span>Connect on LinkedIn</span>
             </a>
 
+            <a 
+              href={personalInfo.github} 
+              target="_blank" 
+              rel="noreferrer"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-navy-800 hover:bg-navy-750 text-sky-300 font-semibold text-sm border border-navy-700 transition flex items-center justify-center gap-2"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub Profile</span>
+            </a>
+
             <button 
               onClick={() => setIsQrModalOpen(true)}
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold text-sm border border-sky-500/40 transition flex items-center justify-center gap-2 cursor-pointer"
@@ -1332,15 +1448,15 @@ export default function App() {
 
           {/* Hiring Invariants Banner */}
           <div className="p-3.5 sm:p-4 rounded-xl bg-navy-900/60 border border-navy-800 text-[11px] sm:text-xs text-slate-300 flex flex-col sm:flex-row flex-wrap justify-around gap-2 sm:gap-3 font-mono text-center sm:text-left">
-            <span>✓ Notice Period: 0 Days (Immediate)</span>
-            <span>✓ Degree: B.Eng (Hons) Accredited</span>
-            <span>✓ Own Transport: Yes (Class D)</span>
-            <span>✓ Relocation: Open (Nationwide / SG)</span>
+            <span>✓ Notice Period: 0 Days (Immediate Start)</span>
+            <span>✓ 452 Automated Test Suites Passing</span>
+            <span>✓ Degree: B.Eng (Hons) Accredited (2026)</span>
+            <span>✓ Relocation &amp; Remote: Open (Nationwide / SG)</span>
           </div>
 
           <div className="pt-10 sm:pt-16 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
             <span>© {new Date().getFullYear()} {personalInfo.fullName}. All rights reserved.</span>
-            <span className="font-mono">Graduated Mechanical &amp; Systems Engineer</span>
+            <span className="font-mono text-sky-300 font-semibold">{personalInfo.targetTitle}</span>
           </div>
         </div>
       </section>

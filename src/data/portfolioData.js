@@ -1,79 +1,99 @@
 export const personalInfo = {
   name: "Muhammad Aiman",
-  fullName: "Muhammad Aiman Bin Mohd Sazali",
-  title: "Graduated Mechanical & Mechatronics Systems Engineer (B.Eng Hons)",
-  status: "Actively Seeking Full-Time Opportunities",
+  fullName: "MUHAMMAD AIMAN BIN MOHD SAZALI",
+  targetTitle: "Software Engineer & Systems Builder | QA Test Automation",
+  title: "Software Engineer & Systems Builder | QA Test Automation",
+  status: "Actively Seeking Software & QA Engineering Roles",
   availability: "Available for Immediate Start • Zero Notice Period",
   targetRoles: [
-    "Mechatronics Engineer",
-    "Embedded Systems / IoT Engineer",
-    "Automation & Robotics Engineer",
-    "Mechanical & CAD Design Engineer",
-    "Control Systems Engineer",
-    "Equipment & Maintenance Engineer"
+    "Software Engineer (Full-Stack / Backend)",
+    "QA Automation Engineer / SDET",
+    "Backend Systems Developer",
+    "Embedded Systems & IoT Engineer"
   ],
-  degree: "Bachelor of Mechanical Engineering with Honours (UniKL MFI, 2026)",
+  degree: "Bachelor of Mechanical Engineering with Honours, UniKL Malaysia France Institute (2026)",
   avatarUrl: "/profile.jpg",
-  tagline: "Recent B.Eng (Hons) Graduate engineer actively seeking full-time roles in Mechatronics, Embedded IoT, Automation & Control, and CAD Engineering. Ready to deliver immediate impact.",
+  tagline: "Engineering graduate with cross-disciplinary expertise spanning full-stack web platforms, embedded IoT telemetry, and automated software quality assurance. Backed by 452 automated test suites.",
   heroGreeting: "Hello, I am",
-  storyIntro: "Graduated Mechanical & Mechatronics Engineer (2026) with proven hands-on experience across CAD part design, structural/flow simulation, embedded microcontrollers (ESP32/Arduino), and modern full-stack web platforms. Open to work immediately.",
-  location: "Klang, Selangor, Malaysia (Open to Relocation)",
+  storyIntro: "Engineering graduate with cross-disciplinary expertise spanning full-stack web platforms, embedded IoT telemetry, and automated software quality assurance. Experienced in building layered web architectures using TypeScript, React 19, NestJS, Fastify, and PostgreSQL, backed by 452 automated test suites. Combines rigorous verification methodologies, technical documentation discipline, and modern cloud/database engineering.",
+  executiveSummary: "Engineering graduate with cross-disciplinary expertise spanning full-stack web platforms, embedded IoT telemetry, and automated software quality assurance. Experienced in building layered web architectures using TypeScript, React 19, NestJS, Fastify, and PostgreSQL, backed by 452 automated test suites. Combines rigorous verification methodologies, technical documentation discipline, and modern cloud/database engineering.",
+  location: "Klang, Selangor, Malaysia",
   email: "aiman.sazali913@gmail.com",
   phone: "+6011-65657622",
-  linkedin: "https://www.linkedin.com/in/aiman-sazali-794539265/",
+  linkedin: "https://www.linkedin.com/in/aiman-sazali-8288b2220/",
   github: "https://github.com/aimansazali913",
   resumeUrl: "#",
   aboutBio: [
-    "I am a recently graduated Mechanical & Mechatronics Systems Engineer (Bachelor of Mechanical Engineering with Honours, UniKL MFI, 2026) actively seeking my next full-time engineering role. With zero notice period, I am available to start immediately.",
-    "My foundational training began at Politeknik Port Dickson, where I designed and fabricated an automated walk-through disinfection tunnel for workshop safety. At UniKL MFI, I served as Capstone Lead for BangMan Solutions, directing a 6-member team in engineering an IoT-based smart rainwater harvesting system with SolidWorks FEA/CFD and ESP32 automation, achieving a 63% reduction in prototype fabrication costs.",
-    "Concurrently, I independently conducted research on DCC++ railway control systems, authoring a published peer-reviewed paper validating embedded protocol timing against NMRA standards. In 2026, I contributed as a core full-stack developer in KADA Cohort 2, engineering URUS — an enterprise operations platform with 452 automated tests and deterministic business logic.",
-    "As an engineer who bridges physical hardware, control firmware, and digital systems, I bring proven problem-solving rigor (TRIZ methodology), relentless curiosity, and immediate readiness to contribute to your engineering team."
+    "Engineering graduate with cross-disciplinary expertise spanning full-stack web platforms, embedded IoT telemetry, and automated software quality assurance (Bachelor of Mechanical Engineering with Honours, UniKL MFI, 2026). With zero notice period, I am available for immediate start in Software Engineering, QA Automation, and Backend Systems roles.",
+    "In modern web delivery, I specialize in building type-safe, layered architectures using TypeScript, React 19, NestJS, Fastify, and Supabase PostgreSQL. During KADA Cohort 2, I co-engineered the URUS enterprise operations platform, architecting multi-tier Role-Based Access Control (RBAC), deterministic KPI calculations, and database-level transactional invariants that eliminate race conditions and negative inventory balances.",
+    "Quality engineering is central to my software philosophy. I engineered and maintained a 452 automated test suite for URUS spanning unit, integration, and API contract tests using Jest, Supertest, and Fastify Test Framework, enforced through pre-merge GitHub Actions CI/CD quality gates ensuring zero-regression code delivery across staging and production branches.",
+    "My engineering discipline is rooted in deterministic verification and functional decomposition. For my final year research, I designed and validated an embedded command-control DCC++ base station simulation in Python and C++, achieving 100% compliance across 12 criteria under strict NMRA industry standards and authoring an independently published technical research paper (June 2026)."
   ],
   interestTags: [
-    "Mechatronics & Control",
-    "Embedded IoT (ESP32/C++)",
-    "SolidWorks 3D CAD & FEA",
-    "CFD Flow Modeling",
-    "TRIZ Systematic Innovation",
-    "React 19 & TypeScript",
-    "Automation & PLC",
-    "Equipment Maintenance"
+    "TypeScript & React 19",
+    "NestJS & Fastify",
+    "PostgreSQL & Supabase",
+    "Automated Testing (Jest / Supertest)",
+    "CI/CD & GitHub Actions",
+    "Docker & Containerization",
+    "RESTful API Architecture",
+    "Embedded C/C++ & ESP32"
   ]
 };
 
+export const skillsCategories = [
+  {
+    id: "languages-frameworks",
+    category: "Languages & Frameworks",
+    description: "Type-safe, high-concurrency modern development languages and UI/backend runtimes",
+    skills: ["TypeScript", "JavaScript", "Python", "C/C++", "MATLAB", "React 19", "NestJS", "Fastify", "HTML5/CSS3"]
+  },
+  {
+    id: "databases-cloud",
+    category: "Databases & Cloud",
+    description: "Relational persistence, transactional safety, cache layers, and deployment infrastructure",
+    skills: ["PostgreSQL", "Supabase", "Redis", "RESTful APIs", "Git", "GitHub Actions", "Docker"]
+  },
+  {
+    id: "testing-qa",
+    category: "Testing & Quality Assurance",
+    description: "Automated regression prevention, contract verification, and industry compliance",
+    skills: ["Automated Test Engineering (452 Test Suites)", "Jest", "Supertest", "CI/CD Pipelines", "System Verification & Validation (NMRA Standards)"]
+  },
+  {
+    id: "engineering-systems",
+    category: "Engineering & Systems",
+    description: "Physical modeling, deterministic control firmware, and structured specifications",
+    skills: ["CAD (SolidWorks, AutoCAD)", "Finite Element Analysis (FEA)", "IoT (ESP32)", "Technical Documentation & Functional Requirements"]
+  }
+];
+
 export const skills = [
-  "Engineering Contradiction Resolution",
-  "System & Super-System Decomposition",
-  "New Product Development (NPD)",
-  "SolidWorks 3D CAD",
-  "AutoCAD",
-  "FEA Structural Simulation",
-  "CFD Flow Simulation",
-  "React 19",
   "TypeScript",
-  "Tailwind CSS v4",
+  "JavaScript",
+  "Python",
+  "C/C++",
+  "MATLAB",
+  "React 19",
   "NestJS",
   "Fastify",
+  "HTML5/CSS3",
   "PostgreSQL",
   "Supabase",
-  "Python 3.10+",
-  "NumPy & SciPy",
-  "Matplotlib & Pandas",
-  "ESP32 & Arduino",
-  "C/C++",
-  "DCC++ Protocol",
-  "JMRI Software",
-  "Blynk IoT Platform",
-  "Sensors (Ultrasonic, TDS, Turbidity)",
-  "TCP/IP Networking",
+  "Redis",
   "RESTful APIs",
-  "Zod Validation",
-  "Docker",
   "Git & GitHub",
-  "FMEA & FoS",
-  "Equipment Maintenance",
-  "Sensor Calibration",
-  "DOSH & OSHA Standards"
+  "GitHub Actions",
+  "Docker",
+  "Automated Test Engineering (452 Test Suites)",
+  "Jest",
+  "Supertest",
+  "CI/CD Pipelines",
+  "System Verification & Validation (NMRA Standards)",
+  "CAD (SolidWorks, AutoCAD)",
+  "Finite Element Analysis (FEA)",
+  "IoT (ESP32)",
+  "Technical Documentation & Functional Requirements"
 ];
 
 export const education = [
@@ -81,9 +101,9 @@ export const education = [
     period: "January 2023 – July 2026",
     degree: "Bachelor of Mechanical Engineering with Honours",
     institution: "Universiti Kuala Lumpur – Malaysia France Institute (UniKL MFI)",
-    subtitle: "Specialization in Mechanical & Mechatronics Systems, CAD/FEA simulation, and embedded control",
+    subtitle: "Specialization in Mechanical & Mechatronics Systems, Embedded Control Firmware, and Computational Simulation",
     badge: "B.Eng (Hons)",
-    highlights: "Capstone Project Lead (BangMan Solutions); Author of published research on DCC++ embedded control systems; SolidWorks FEA and CFD project lead."
+    highlights: "Capstone Engineering Project Lead (BangMan Solutions); Author of independently published research on DCC++ railway control systems; SolidWorks FEA and CFD project lead."
   },
   {
     period: "June 2019 – August 2022",
@@ -97,38 +117,52 @@ export const education = [
 
 export const achievements = [
   {
-    icon: "lightbulb",
-    title: "TRIZ Engineering Innovation Excellence",
-    subtitle: "Formulated closed-loop trail training product using Classical TRIZ Function Analysis & Inventive Principles under Assoc. Prof. Dr. Ir. Zainal Fitri (UniKL · MARA)"
+    icon: "check-circle",
+    title: "452 Automated Test Passing Suite",
+    subtitle: "Engineered comprehensive testing infrastructure and CI/CD quality gates for URUS ERP platform (KADA Cohort 2)"
   },
   {
     icon: "file-text",
     title: "Published Technical Research Paper",
-    subtitle: "Authored peer-reviewed paper on DCC++ simulation & NMRA S-9.1 timing validation (June 2026)"
+    subtitle: "Independently authored technical paper on DCC++ simulation & 100% NMRA timing validation (Published June 2026)"
+  },
+  {
+    icon: "award",
+    title: "100% Compliance Across 12 NMRA Criteria",
+    subtitle: "Validated microsecond bit jitter (σ = 0.48 µs) and zero packet loss up to 8 trains against strict industry standards"
   },
   {
     icon: "users",
     title: "Final Year Capstone Project Lead",
-    subtitle: "Led 6-member engineering team (BangMan Solutions) in delivering the IoT Smart Rainwater Harvesting System"
+    subtitle: "Directed 6-member engineering team (BangMan Solutions), reducing BOM prototype fabrication cost by 63%"
   },
   {
-    icon: "check-circle",
-    title: "452 Automated Test Passing Suite",
-    subtitle: "Engineered transactional integrity and role-based access control for URUS ERP platform (KADA Cohort 2)"
+    icon: "shield-check",
+    title: "KADA Cohort 2 Certified Full-Stack Developer",
+    subtitle: "Certified completion of intensive full-stack curriculum (React 19, TypeScript, NestJS, PostgreSQL)"
   },
   {
-    icon: "award",
-    title: "100% User Survey Approval",
-    subtitle: "Validated 1500W automated disinfection tunnel across 32 workshop operators with zero surface wetting"
-  },
-  {
-    icon: "droplet",
-    title: "Facility 250L Rainwater Installation",
-    subtitle: "Engineered & installed rainwater system offsetting ~10% facility non-potable water at Teknion Furniture in 2 months"
+    icon: "lightbulb",
+    title: "TRIZ Engineering Innovation Excellence",
+    subtitle: "Formulated closed-loop trail training product using Classical TRIZ Function Analysis under Assoc. Prof. Dr. Ir. Zainal Fitri"
   }
 ];
 
 export const certifications = [
+  {
+    id: "kada",
+    title: "KADA Cohort 2 — Full-Stack Software Engineering",
+    issuer: "Korea-ASEAN Digital Academy (KADA) / MDEC",
+    date: "2026",
+    description: "Certified completion of intensive software engineering curriculum covering React 19, TypeScript, NestJS, Fastify, PostgreSQL, and automated test pipelines."
+  },
+  {
+    id: "dcc-research",
+    title: "Published Technical Author — NMRA DCC++ Systems",
+    issuer: "Peer-Reviewed Engineering Research",
+    date: "June 2026",
+    description: "Independently authored and published technical research paper validating software-in-the-loop embedded control timing against NMRA standards."
+  },
   {
     id: "niosh",
     title: "NIOSH Oil & Gas Safety Passport (OGSP)",
@@ -142,17 +176,17 @@ export const certifications = [
     issuer: "Construction Industry Development Board (CIDB Malaysia)",
     date: "February 2022",
     description: "Accredited construction and site safety card demonstrating compliance with Malaysian building regulations and occupational safety."
-  },
-  {
-    id: "kada",
-    title: "KADA Cohort 2 — Final Project Certification",
-    issuer: "Korea-ASEAN Digital Academy (KADA) / MDEC",
-    date: "2026",
-    description: "Certified completion of intensive full-stack engineering curriculum and final project delivery (URUS ERP) using modern web technologies."
   }
 ];
 
 export const experience = [
+  {
+    period: "2026",
+    role: "Full-Stack Developer & Quality Automation Contributor",
+    company: "URUS Platform · KADA Cohort 2",
+    location: "Kuala Lumpur, Malaysia",
+    description: "Co-architected an integrated business operations platform for stock-based SMEs connecting procurement, warehouse wave fulfillment, workforce KPI scoring, and statutory payroll. Engineered multi-tier Role-Based Access Control (RBAC), atomic database transaction invariants, and built 452 automated test suites with pre-merge GitHub Actions quality gates."
+  },
   {
     period: "July 2025 – September 2025",
     role: "Industrial Trainee — Maintenance & Facilities Engineering",
@@ -170,19 +204,37 @@ export const experience = [
 ];
 
 export const projects = [
+  // =========================================================================
+  // PILLAR 1: FLAGSHIP WEB APPLICATION — URUS
+  // =========================================================================
   {
     id: "urus",
-    frontTitle: "URUS Platform",
-    frontSub: "Centralized Stock, Staff & Money Management Platform (Pitch Deck 2026)",
-    category: "Enterprise ERP & Systems",
-    backTitle: "URUS: Centralized Stock, Staff & Money Management Platform",
-    backDesc: "An integrated business operations platform for stock-based SMEs connecting inbound procurement, inventory, outbound wave fulfillment, deterministic KPI scoring, and automated payroll.",
-    toolTags: ["React 19", "TypeScript", "NestJS", "Fastify", "PostgreSQL", "DeepSeek AI"],
+    pillarNumber: 1,
+    pillarTag: "Pillar 1 · Flagship Web Application",
+    frontTitle: "URUS: All-in-One Stock & Staff Money App",
+    frontSub: "Full-Stack SME Operations Platform (React 19, TypeScript, NestJS, Fastify, PostgreSQL)",
+    category: "Full-Stack Web Engineering",
+    role: "Full-Stack Developer & Technical Documentation Contributor (5-member team)",
+    stack: "React 19, TypeScript, NestJS, Fastify, Supabase PostgreSQL, Zod, Docker",
+    backTitle: "URUS: All-in-One Stock & Staff Money Platform",
+    backDesc: "Architected an integrated business operations platform for stock-based SMEs unifying procurement, real-time inventory tracking, outbound fulfillment, workforce/KPI management, and financial payroll into a single operational pipeline. Built multi-tier Role-Based Access Control (RBAC) and transactional integrity checks to ensure zero data race conditions and secure tenant isolation.",
+    toolTags: ["React 19", "TypeScript", "NestJS", "Fastify", "PostgreSQL", "Supabase", "Zod", "Docker"],
     heroImage: "/projects/slides/urus/slide_01.png",
+    keyMetrics: [
+      "15 PostgreSQL relational tables with multi-tier RBAC & secure tenant isolation",
+      "Atomic conditional row locks preventing negative balances & data race conditions",
+      "Integrated assistive AI operations copilot & automated receipt OCR data extraction"
+    ],
+    actionLinks: [
+      { label: "Live Web App Demo", url: "https://urus.app", isExternal: true, primary: true },
+      { label: "GitHub Repository", url: "https://github.com/aimansazali913", isExternal: true },
+      { label: "14-Slide Architecture Deck", action: "openDeck" }
+    ],
     overviewList: [
-      "Engineered an operational pipeline connecting supplier purchasing, barcode receiving, and atomic order dispatch with 452 automated tests.",
-      "Formulated a deterministic workforce KPI formula (40% Output, 30% Accuracy, 20% Efficiency, 10% Attendance) to power live performance podiums.",
-      "Integrated receipt OCR and deterministic profit-leak detection algorithms with assistive AI narration."
+      "Architected an integrated business operations platform for stock-based SMEs unifying procurement, real-time inventory tracking, outbound fulfillment, workforce/KPI management, and financial payroll into a single operational pipeline.",
+      "Built multi-tier Role-Based Access Control (RBAC) and transactional integrity checks to ensure zero data race conditions and secure tenant isolation.",
+      "Integrated assistive AI capabilities including an operations copilot, deterministic profit-leak detection, and automated receipt OCR data extraction within a layered web architecture.",
+      "Engineered strict cents-math integer precision across all financial ledgers, eliminating floating-point rounding drift."
     ],
     storySteps:     [
       {
@@ -298,126 +350,286 @@ export const projects = [
         detail: "Delivers traceable cost-per-order, automated cents-math payroll, zero negative-inventory risk, self-serve audit trails, and continuous real-time anomaly detection."
       }
     ]
+
   },
+
+  // =========================================================================
+  // PILLAR 2: SOFTWARE RELIABILITY & QUALITY ENGINEERING — 452 TEST SUITES
+  // =========================================================================
   {
-    id: "triz",
-    frontTitle: "Heart-Rate-Zone Trail Training",
-    frontSub: "Train to the zone, not the guess. (TRIZ Systematic Innovation)",
-    category: "TRIZ Innovation & NPD",
-    backTitle: "Heart-Rate-Zone Trail Training: TRIZ Systematic Innovation",
-    backDesc: "Applied classical TRIZ (Theory of Inventive Problem Solving) Function & Component Analysis to systematically eliminate alpine running fatigue and joint injury through closed-loop cardiac telemetric adaptation.",
-    toolTags: ["TRIZ Methodology", "Function Analysis", "40 Inventive Principles", "System Decomposition", "Biomechanical Engineering", "Cardiac Telemetry"],
-    heroImage: "/projects/slides/triz/slide_01.png",
+    id: "urus-qa",
+    pillarNumber: 2,
+    pillarTag: "Pillar 2 · Software Reliability & QA",
+    frontTitle: "Automated Test Suite & CI/CD Pipeline",
+    frontSub: "Software Reliability & Quality Engineering (452 Test Suites, Jest, Supertest, GitHub Actions)",
+    category: "QA & Reliability Engineering",
+    role: "Software QA / Automation Framework Developer (for URUS Platform)",
+    stack: "Jest, Supertest, Fastify Test Framework, GitHub Actions, Docker, Vitest",
+    backTitle: "Software Reliability & Quality Engineering: Automated Test Suite & CI/CD",
+    backDesc: "Engineered and maintained a comprehensive testing infrastructure featuring 452 automated test suites passing build and strict lint checks. Implemented unit, API integration, and contract test suites covering edge cases: authentication limits, token expiration, malformed payloads, rate limiting, and transactional rollbacks on database failure.",
+    toolTags: ["Jest", "Supertest", "Fastify Test", "GitHub Actions", "Docker", "CI/CD Gates", "Vitest"],
+    heroImage: "/projects/slides/urus/slide_06.png",
+    keyMetrics: [
+      "452 automated test suites passing with 100% CI/CD quality gate enforcement",
+      "Comprehensive edge case coverage: token expiry, payload tampering, DB failure rollback",
+      "Pre-merge GitHub Actions quality gates ensuring zero-regression code delivery"
+    ],
+    actionLinks: [
+      { label: "View Test Architecture", action: "openDeck", primary: true },
+      { label: "CI/CD Workflow Config", url: "https://github.com/aimansazali913/portfolio/actions", isExternal: true }
+    ],
     overviewList: [
-      "Conducted systematic TRIZ Function & Component Analysis and Super-System boundary modeling under Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA).",
-      "Resolved the physical contradiction between increasing weekly endurance training volume and preventing joint/connective tissue degradation.",
-      "Synthesized 3 core TRIZ Inventive Principles: #1 (Segmentation by terrain modality), #16 (Partial/Excessive Action via targeted hill intervals), and #23 (Closed-Loop Cardiac & Pace Feedback).",
-      "Formulated an adaptive weekly training matrix and telemetric pacer benchmark (13 min/km) eliminating guess-work for alpine runners."
+      "Engineered and maintained a comprehensive testing infrastructure featuring 452 automated test suites passing build and strict lint checks.",
+      "Implemented unit, API integration, and contract test suites covering edge cases: authentication limits, token expiration, malformed payloads, rate limiting, and transactional rollbacks on database failure.",
+      "Built pre-merge GitHub Actions CI/CD quality gates ensuring zero-regression code delivery across staging and production branches.",
+      "Established strict type contracts and schema-level validation (Zod) integrated directly into end-to-end integration test runners."
+    ],
+    storySteps: [
+      {
+        step: 1,
+        phase: "SDLC & QA Gate",
+        title: "Software Development Life Cycle & 452 Quality Gates",
+        image: "/projects/slides/urus/slide_06.png",
+        caption: "Slide 1: Schema-first, spec-driven development with 452 automated tests.",
+        detail: "Six-stage lifecycle from domain interviews to Supabase Postgres 18 and VitePWA deployment, enforcing a 100% CI pass gate across unit, integration, and e2e test suites."
+      },
+      {
+        step: 2,
+        phase: "Backend Invariants",
+        title: "Hardcore Backend Invariants & Transactional Integrity",
+        image: "/projects/slides/urus/slide_13.png",
+        caption: "Slide 2: Atomic row locks, cents-math integer precision, and deterministic algorithms.",
+        detail: "Guards inventory with atomic conditional WHERE clauses preventing negative balances; processes money in integer cents to eliminate floating-point drift; enforces strict multi-tier RBAC."
+      },
+      {
+        step: 3,
+        phase: "Security Layer",
+        title: "Three-Tier Architecture & Security Boundaries",
+        image: "/projects/slides/urus/slide_11.png",
+        caption: "Slide 3: Frontend PWA, NestJS/Fastify REST Gateway, and Postgres RLS fortress.",
+        detail: "Fastify HTTP adapter with sub-millisecond routing, Helmet CSP, and Supabase Postgres 18 with Row-Level Security on all 15 tables with zero race-condition exposure."
+      },
+      {
+        step: 4,
+        phase: "TypeScript Stack",
+        title: "End-to-End TypeScript Production Ecosystem",
+        image: "/projects/slides/urus/slide_12.png",
+        caption: "Slide 4: Modern choices for strict type-safety, performance, and simplicity.",
+        detail: "TypeScript 5.7 monorepo, React 19, NestJS, Fastify, PostgreSQL 18+, Zod runtime validation, DeepSeek Vision OCR, PNPM workspaces, and Vitest test suites."
+      },
+      {
+        step: 5,
+        phase: "Audited Ledger",
+        title: "Dual Role Journeys: Manager & Warehouse Worker",
+        image: "/projects/slides/urus/slide_05.png",
+        caption: "Slide 5: Every operational step writes an audited event with zero offline drift.",
+        detail: "Manager creates POs and approves payroll with MONEY_WRITE authority; Worker claims orders atomically, barcode-picks, and scans receipts without race conditions."
+      },
+      {
+        step: 6,
+        phase: "Telemetry & BI",
+        title: "Executive Operations & Real-Time Business Pulse",
+        image: "/projects/slides/urus/slide_07.png",
+        caption: "Slide 6: Live telemetry: inventory value (RM 124,500), fulfillment rate, and active crew.",
+        detail: "Role-aware management dashboard tracking 38/45 order fulfillment, cost-per-order (RM 306), 4 on-shift workers, and live operational alerts across the 5 autonomous crew members."
+      },
+      {
+        step: 7,
+        phase: "Operational Trust",
+        title: "Engineering Rigor & Operational Trust Metrics",
+        image: "/projects/slides/urus/slide_14.png",
+        caption: "Slide 7: 452 automated tests translating directly to operational business trust.",
+        detail: "Delivers traceable cost-per-order, automated cents-math payroll, zero negative-inventory risk, self-serve audit trails, and continuous real-time anomaly detection."
+      }
+    ]
+  },
+
+  // =========================================================================
+  // PILLAR 3: EMBEDDED SYSTEMS & DETERMINISTIC VALIDATION — DCC++ BASE STATION
+  // =========================================================================
+  {
+    id: "dcc",
+    pillarNumber: 3,
+    pillarTag: "Pillar 3 · Embedded Systems & Research",
+    frontTitle: "DCC++ Base Station Command Controller",
+    frontSub: "Embedded Systems & Deterministic Validation · Published Paper (Embedded C/C++, Python, NMRA)",
+    category: "Embedded Systems & Verification",
+    role: "Lead Researcher & Author (Final Year Research Project)",
+    stack: "Embedded C/C++, Arduino, Python simulation framework, NMRA Industry Standards",
+    backTitle: "DCC++ Base Station: Embedded Systems & Deterministic Validation",
+    backDesc: "Designed, built, and validated a 5-module simulation framework for an embedded command-control base station. Achieved 100% compliance across 12 pass/fail criteria under strict National Model Railroad Association (NMRA) industry standards. Formulated precise communication timing protocols and translated hardware-level signals into deterministic, verifiable software control logic.",
+    toolTags: ["Embedded C/C++", "Arduino", "Python 3.10+", "NMRA S-9.1", "JMRI Protocol", "TCP Sockets"],
+    heroImage: "/projects/slides/dcc/slide_01.png",
+    keyMetrics: [
+      "100% compliance across 12 pass/fail criteria under strict NMRA industry standards",
+      "Independently authored technical paper published June 2026",
+      "Microsecond bit jitter (σ = 0.48 µs) and zero packet loss up to 8 trains"
+    ],
+    actionLinks: [
+      { label: "Read Published Paper", action: "openDeck", primary: true },
+      { label: "Simulation Repository", url: "https://github.com/aimansazali913", isExternal: true }
+    ],
+    overviewList: [
+      "Designed, built, and validated a 5-module simulation framework for an embedded command-control base station.",
+      "Achieved 100% compliance across 12 pass/fail criteria under strict National Model Railroad Association (NMRA) industry standards.",
+      "Formulated precise communication timing protocols and translated hardware-level signals into deterministic, verifiable software control logic.",
+      "Authored a published peer-reviewed technical paper (June 2026) demonstrating superior signal quality over commercial systems costing RM 800–1,400."
     ],
     storySteps:     [
       {
         step: 1,
-        phase: "Title & Context",
-        title: "Heart-Rate-Zone Trail Training: TRIZ Innovation",
-        image: "/projects/slides/triz/slide_01.png",
-        caption: "Slide 1: NMB 25403 New Product Development presented at Universiti Kuala Lumpur \u00b7 MARA.",
-        detail: "Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin. Authored by student engineering team M. Syazwan, Faris Hadzre, Muhammad Aiman Bin Mohd Sazali, and Mamduh Nufail."
+        phase: "Title & Scope",
+        title: "DCC++ Base Station Train Model with JMRI",
+        image: "/projects/slides/dcc/slide_01.png",
+        caption: "Slide 1: A Python simulation-based performance evaluation against NMRA standards.",
+        detail: "Final Year Research Project 2 (FYRP 2) supervised by Dr. Mohd Juhari Bin Mat Basri, establishing a software-in-the-loop evaluation framework for Arduino Uno R3 ATmega328P DCC++ command stations."
       },
       {
         step: 2,
-        phase: "Core Problem",
-        title: "Trail Races Are Lost on Fatigue and Injury, Not Talent",
-        image: "/projects/slides/triz/slide_02.png",
-        caption: "Slide 2: Identifying physiological failure modes: pace fade, injury exposure, and friction damage.",
-        detail: "Steep inclines and rocky paths break metabolic rhythm and cause uncalibrated pacing; unchecked eccentric downhill forces trigger joint inflammation; friction causes severe blistering."
+        phase: "Roadmap & Rubric",
+        title: "Presentation Roadmap & Scoring Guide",
+        image: "/projects/slides/dcc/slide_02.png",
+        caption: "Slide 2: Structured research defense across 6 rubric scoring areas.",
+        detail: "Outlines the systematic roadmap: Introduction & Literature Review, Research Methodology, Results & Discussion, Conclusion & Recommendations, and Q&A Readiness, mapped to target Score 4."
       },
       {
         step: 3,
-        phase: "Paradigm Shift",
-        title: "From a Generic Static Schedule to an Adaptive Bio-Plan",
-        image: "/projects/slides/triz/slide_03.png",
-        caption: "Slide 3: Legacy calendar advice vs TRIZ-engineered closed-loop governance.",
-        detail: "Replaces generic 'Cardio/Hiking' calendars with a system that calculates individual Max HR, prevents overtraining, and provides real-time 13 min/km pacer feedback against cardiac drift."
+        phase: "Area 1: Context",
+        title: "Background, Scope & Significance",
+        image: "/projects/slides/dcc/slide_03.png",
+        caption: "Slide 3: Evolution of model railway control from 1900s Analogue DC to open-source DCC++.",
+        detail: "Highlights societal and engineering impact: democratizing digital railway control for universities, hobbyists, and industry while reducing electronic waste through retrofit-over-replace principles."
       },
       {
         step: 4,
-        phase: "TRIZ Decomposition",
-        title: "Super-System Boundary & Product Architecture",
-        image: "/projects/slides/triz/slide_04.png",
-        caption: "Slide 4: Mapping external environmental inputs to the engineered algorithmic core.",
-        detail: "Decomposes the system into contextual super-system inputs (Age, Fitness Baseline, Terrain Gradient, HR Sensor) and governing product components (HR Zone Engine, Modalities, Cadence & Rest, 13 min/km Pacer)."
+        phase: "Area 1: Problem",
+        title: "Problem Statement & Research Gap",
+        image: "/projects/slides/dcc/slide_04.png",
+        caption: "Slide 4: Identifying cost barriers (RM 800-1,400) and unvalidated open-source claims.",
+        detail: "Addresses closed proprietary architectures and the complete absence in prior literature of quantitative timing benchmarks, latency metrics, and multi-loco scaling curves."
       },
       {
         step: 5,
-        phase: "Algorithmic Flow",
-        title: "Single-Input Physiological Intensity Formulation",
-        image: "/projects/slides/triz/slide_05.png",
-        caption: "Slide 5: One user input (Age) generates a full week of mathematically bounded intensities.",
-        detail: "User inputs chronological age (e.g. 24 yrs). System calculates Max HR (220 - Age = 196 BPM), safe aerobic bounds (137 - 176 BPM), and prescribes discrete Zones 2, 3, and 4 per session."
+        phase: "Area 1: Objectives",
+        title: "SMART Objectives & Research Questions",
+        image: "/projects/slides/dcc/slide_05.png",
+        caption: "Slide 5: 3 SMART research objectives and 4 foundational research questions.",
+        detail: "Defines rigorous quantitative targets: 5,000-bit/1,000-packet NMRA timing adherence, >=95% JMRI reliability across 700 commands with Wilson CIs, and benchmarking against Digitrax & NCE."
       },
       {
         step: 6,
-        phase: "Execution Matrix",
-        title: "The Innovated Weekly Trail Training Plan",
-        image: "/projects/slides/triz/slide_06.png",
-        caption: "Slide 6: Comprehensive 7-day schedule with distances, repetitions, intervals, and HR ceilings.",
-        detail: "Monday: Uphill/Stair (Zone 3, 137-157 BPM); Tuesday: Downhill eccentric control (Zone 3); Wednesday: Full body strength; Thursday: Road threshold (Zone 4, 157-176 BPM); Friday: Rest; Saturday: 6.0km Trail run (Zone 2); Sunday: Rest."
+        phase: "Area 1: Literature",
+        title: "Literature Review Key Findings & Gaps",
+        image: "/projects/slides/dcc/slide_06.png",
+        caption: "Slide 6: Review of 6 landmark studies identifying latency, scaling, and integration gaps.",
+        detail: "Synthesizes literature from Hor\u00e1\u010dek (2024), Martinez (2021), Brown & Davis (2023), Kumar (2021), Zhou (2022), and Thompson (2023), demonstrating how this study closes all six gaps simultaneously."
       },
       {
         step: 7,
-        phase: "Biomechanical Roles",
-        title: "Every Training Session Has a Specific Biomechanical Job",
-        image: "/projects/slides/triz/slide_07.png",
-        caption: "Slide 7: Isolating distinct physical variables to eliminate compounding fatigue.",
-        detail: "Trail runs hone technical footwork; road runs sharpen turnover pace; uphill intervals recruit posterior chain climbing power; downhill runs condition eccentric knee decelerators; strength stabilizes core kinetics."
+        phase: "Area 2: Architecture",
+        title: "Research Design & Two Subsystems",
+        image: "/projects/slides/dcc/slide_07.png",
+        caption: "Slide 7: Core simulation engine (run_all.py) and JMRI TCP integration layer.",
+        detail: "Details the Software-in-the-Loop methodology separating protocol correctness from hardware noise. Features 5 simulation modules (M1-M5) connected to real JMRI via TCP port 2560."
       },
       {
         step: 8,
-        phase: "TRIZ Principles",
-        title: "Why It Works: Three TRIZ Principles Applied",
-        image: "/projects/slides/triz/slide_08.png",
-        caption: "Slide 8: Resolving the physical contradiction between endurance volume and joint longevity.",
-        detail: "Principle #1 (Segmentation: dividing training into isolated terrain modalities and HR zones); Principle #16 (Partial or Excessive Action: concentrated hill micro-doses); Principle #23 (Feedback: telemetric pace and cardiac loop)."
+        phase: "Area 2: Engineering",
+        title: "Complex Engineering Activities & Acceptance Criteria",
+        image: "/projects/slides/dcc/slide_08.png",
+        caption: "Slide 8: EA2 interactions and EA3 innovation mapped to PLO10 standards.",
+        detail: "Articulates technical trade-offs across hardware constraints, OS scheduling, and protocol timing, establishing strict pass/fail criteria for pulse timing, latency, reliability, and packet drops."
       },
       {
         step: 9,
-        phase: "Athletic Impact",
-        title: "Faster Race Times with Minimized Downtime",
-        image: "/projects/slides/triz/slide_09.png",
-        caption: "Slide 9: Measurable athletic benefits: pace consistency, joint longevity, and psychological confidence.",
-        detail: "Maintains steady physiological output over volatile elevation changes, prevents chronic overuse downtime through eccentric shock conditioning, and removes race-day panic."
+        phase: "Area 3: Signal Timing",
+        title: "Result 1: DCC Signal Timing vs NMRA S-9.1",
+        image: "/projects/slides/dcc/slide_09.png",
+        caption: "Slide 9: 100.00% timing compliance for Logic 1 and Logic 0 pulses.",
+        detail: "Simulated mean of 58.003 us (Logic 1) and 99.995 us (Logic 0) with jitter standard deviation sigma = 0.478 us, outperforming commercial Digitrax Zephyr (1.5 us) and NCE PowerCab (2.0 us)."
       },
       {
         step: 10,
-        phase: "Scientific Foundations",
-        title: "Academic & Methodological Foundations",
-        image: "/projects/slides/triz/slide_10.png",
-        caption: "Slide 10: Grounded in peer-reviewed exercise physiology and TRIZ engineering standards.",
-        detail: "Synthesizes Simplified TRIZ (Rantanen & Domb), Dr. Phil Maffetone's MAF Aerobic Method, Jack Daniels' & Matt Fitzgerald's 80/20 Polarity Running, and Jeff Nippard's minimalist resistance protocols."
+        phase: "Area 3: JMRI Reliability",
+        title: "Result 2: JMRI Integration & Functional Reliability",
+        image: "/projects/slides/dcc/slide_10.png",
+        caption: "Slide 10: 100% command success rate (95% CI: 99.5-100%) across 700 commands.",
+        detail: "Emergency stop executed in 8.17 ms meeting safety-critical limits. CV read/write operations recorded ~44 ms in compliance with NMRA S-9.2 service-mode multi-step protocol timing."
       },
       {
         step: 11,
-        phase: "Project Synthesis",
-        title: "Train to the Zone, Not the Guess: Closed-Loop Governance",
-        image: "/projects/slides/triz/slide_11.png",
-        caption: "Slide 11: Final project synthesis delivered for Universiti Kuala Lumpur \u00b7 MARA.",
-        detail: "Demonstrates how systematic TRIZ problem-solving transforms sports science into an engineered, reproducible product that eliminates guesswork and insulates athletes from injury."
+        phase: "Area 3: Multi-Train Scaling",
+        title: "Result 3: Multi-Loco Scaling & Speed Accuracy",
+        image: "/projects/slides/dcc/slide_11.png",
+        caption: "Slide 11: 1-8 locomotives evaluated with 0.0% packet drop and r = 0.999999 linearity.",
+        detail: "Latency increased by only 1.32 ms from 1 loco (7.50 ms) to 8 locos (8.82 ms). Speed accuracy in 28-step mode exhibited maximum deviation under 0.20% across 150 observations per step."
+      },
+      {
+        step: 12,
+        phase: "Area 3: Benchmarking",
+        title: "Comprehensive Performance Benchmarking",
+        image: "/projects/slides/dcc/slide_12.png",
+        caption: "Slide 12: 12/12 validation criteria ALL PASS with ICC = 0.902 repeatability.",
+        detail: "Comprehensive comparative matrix showing simulated DCC++ achieves equivalent or superior signal quality and protocol reliability to RM 800-1,400 commercial systems at RM 0 simulation cost."
+      },
+      {
+        step: 13,
+        phase: "Area 4: Conclusion",
+        title: "Conclusion Aligned to Research Objectives",
+        image: "/projects/slides/dcc/slide_13.png",
+        caption: "Slide 13: Full fulfillment of O1, O2, and O3 with 100% NMRA compliance.",
+        detail: "Confirms affordable signal generation, reliable JMRI protocol integration, and competitive benchmark parity against commercial systems on a fully reproducible Python platform."
+      },
+      {
+        step: 14,
+        phase: "Area 4: Recommendations",
+        title: "Recommendations: Clear, Feasible & Technical",
+        image: "/projects/slides/dcc/slide_14.png",
+        caption: "Slide 14: Structured engineering roadmap categorized into High, Med, and Low priority.",
+        detail: "Proposes physical oscilloscope validation with L298P shields, burst stress testing at 50 ms intervals, predictive fault injection modeling, ESP32 DCC-EX migration, and JMRI Operations dispatching."
+      },
+      {
+        step: 15,
+        phase: "Area 4: Research Impact",
+        title: "Final Conclusion & Research Impact",
+        image: "/projects/slides/dcc/slide_15.png",
+        caption: "Slide 15: Validating open-source digital control for STEM education and research.",
+        detail: "Proves protocol correctness and establishes that hardware failures in prior literature are electrical rather than design flaws, opening access for low-budget STEM labs worldwide."
       }
     ]
+
   },
+
+  // =========================================================================
+  // PILLAR 4: HARDWARE-TO-SOFTWARE BRIDGE — IOT SMART RAINWATER SYSTEM
+  // =========================================================================
   {
     id: "rainwater",
-    frontTitle: "IoT-Based Smart Rainwater Harvesting",
-    frontSub: "Filtration & Telemetry System (BangMan Solutions • IDP 2)",
-    category: "Mechatronics & IoT Automation",
-    backTitle: "Design & Development of IoT-Based Smart Rainwater Harvesting & Filtration System",
-    backDesc: "Led concept-to-fabrication of an automated dual-tank rainwater collection and filtration system equipped with an ESP32 microcontroller, multi-sensor telemetry, and live mobile monitoring via Blynk IoT.",
-    toolTags: ["SolidWorks", "ESP32", "Blynk IoT", "FEA Analysis", "CFD Flow", "AISI 304 SS"],
+    pillarNumber: 4,
+    pillarTag: "Pillar 4 · Hardware-to-Software Bridge",
+    frontTitle: "IoT Smart Rainwater Harvesting & Filtration",
+    frontSub: "Hardware-to-Software Bridge · Capstone Project Lead (ESP32, C/C++, Python, SolidWorks)",
+    category: "IoT Systems & Hardware Bridge",
+    role: "Project Lead (Final Year Industrial Design Project, UniKL MFI)",
+    stack: "ESP32 Microcontrollers, C/C++, Python, SolidWorks, Flow/Pressure Sensors",
+    backTitle: "IoT-Based Smart Rainwater Harvesting & Filtration System",
+    backDesc: "Directed concept-to-fabrication CAD engineering of a multi-component industrial assembly and a 7-item Bill of Materials (BOM). Executed structural stress/displacement analysis under 3000N static load and fluid dynamics pressure-drop calculations (ΔP ≈ 596 kPa). Integrated an ESP32-based IoT telemetry pipeline for automated real-time sensor data ingestion, threshold monitoring, and predictive maintenance alerting.",
+    toolTags: ["ESP32", "C/C++", "Python", "Blynk IoT", "SolidWorks CAD/FEA", "CFD Flow Simulation"],
     heroImage: "/projects/slides/rainwater/slide_01.png",
+    keyMetrics: [
+      "Directed 6-engineer capstone team, cutting prototype fabrication costs by 63%",
+      "SolidWorks FEA Factor of Safety FoS > 1.5 under 3000N static load",
+      "Real-time ESP32 IoT sensor telemetry pipeline with predictive maintenance alerting"
+    ],
+    actionLinks: [
+      { label: "CAD & Project Case Study", action: "openDeck", primary: true },
+      { label: "IoT Firmware Repository", url: "https://github.com/aimansazali913", isExternal: true }
+    ],
     overviewList: [
-      "Led a 6-member engineering team (BangMan Solutions) through CAD modeling, CAE stress analysis, in-house workshop fabrication, and system commissioning.",
-      "Performed SolidWorks FEA structural validation (FoS > 1.5 under 3000N static load) and CFD flow analysis on a 1-inch brass solenoid valve (ΔP ≈ 596 kPa).",
-      "Engineered automatic pump dry-run protection and valve automation logic with real-time TDS and ultrasonic telemetry streamed to Blynk mobile app."
+      "Directed concept-to-fabrication CAD engineering of a multi-component industrial assembly and a 7-item Bill of Materials (BOM).",
+      "Executed structural stress/displacement analysis under 3000N static load and fluid dynamics pressure-drop calculations (ΔP ≈ 596 kPa).",
+      "Integrated an ESP32-based IoT telemetry pipeline for automated real-time sensor data ingestion, threshold monitoring, and predictive maintenance alerting.",
+      "Coordinated cross-functional engineering sprints with academic and industry advisors."
     ],
     storySteps:     [
       {
@@ -685,153 +897,156 @@ export const projects = [
         detail: "Concludes the successful design, development, and defense of the IoT-Based Smart Rainwater Harvesting and Filtration System."
       }
     ]
+
   },
+
+  // =========================================================================
+  // ADDITIONAL CASE STUDY: TRIZ SYSTEMATIC INNOVATION SPOTLIGHT
+  // =========================================================================
   {
-    id: "dcc",
-    frontTitle: "DCC++ Base Station Train Model",
-    frontSub: "with JMRI • Python Simulation Against NMRA Standards (FYRP 2)",
-    category: "Embedded Control & Simulation",
-    backTitle: "DCC++ Base Station Train Model with JMRI (NMRA Validation)",
-    backDesc: "Independently built a 5-module Python simulation framework emulating an Arduino Uno ATmega328P DCC++ command station communicating in real-time with Java Model Railroad Interface (JMRI) over live TCP networking.",
-    toolTags: ["Python 3.10+", "NumPy", "SciPy", "Matplotlib", "Pandas", "JMRI 5.2+", "TCP Sockets"],
-    heroImage: "/projects/slides/dcc/slide_01.png",
+    id: "triz",
+    pillarNumber: 5,
+    pillarTag: "Systematic Innovation Spotlight",
+    frontTitle: "Heart-Rate-Zone Trail Training",
+    frontSub: "Train to the zone, not the guess. (TRIZ Systematic Innovation)",
+    category: "TRIZ Innovation & NPD",
+    role: "System Decomposition & TRIZ Principles Lead",
+    stack: "TRIZ Methodology, Function Analysis, Super-System Modeling, Biomechanical Metrics",
+    backTitle: "Heart-Rate-Zone Trail Training: TRIZ Systematic Innovation",
+    backDesc: "Applied classical TRIZ (Theory of Inventive Problem Solving) Function & Component Analysis to systematically eliminate alpine running fatigue and joint injury through closed-loop cardiac telemetric adaptation.",
+    toolTags: ["TRIZ Methodology", "Function Analysis", "40 Inventive Principles", "System Decomposition", "Biomechanical Engineering", "Cardiac Telemetry"],
+    heroImage: "/projects/slides/triz/slide_01.png",
+    keyMetrics: [
+      "Resolved endurance volume vs joint degradation physical contradiction with 3 TRIZ principles",
+      "Engineered automated age-to-zone algorithmic formulation and 13 min/km pacer benchmark",
+      "Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA)"
+    ],
+    actionLinks: [
+      { label: "Inspect 11 TRIZ Slides", action: "openDeck", primary: true }
+    ],
     overviewList: [
-      "Achieved 100% compliance across 12 validation criteria and NMRA S-9.1 / S-9.2 timing standards with microsecond bit jitter (σ = 0.48 µs).",
-      "Demonstrated near-perfect speed linearity (Pearson r = 0.999999) across 28-step throttle modes.",
-      "Validated multi-locomotive queues up to 8 trains without packet loss under standard 200ms refresh cycles and authored a published research paper."
+      "Conducted systematic TRIZ Function & Component Analysis and Super-System boundary modeling under Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin (UniKL · MARA).",
+      "Resolved the physical contradiction between increasing weekly endurance training volume and preventing joint/connective tissue degradation.",
+      "Synthesized 3 core TRIZ Inventive Principles: #1 (Segmentation by terrain modality), #16 (Partial/Excessive Action via targeted hill intervals), and #23 (Closed-Loop Cardiac & Pace Feedback).",
+      "Formulated an adaptive weekly training matrix and telemetric pacer benchmark (13 min/km) eliminating guess-work for alpine runners."
     ],
     storySteps:     [
       {
         step: 1,
-        phase: "Title & Scope",
-        title: "DCC++ Base Station Train Model with JMRI",
-        image: "/projects/slides/dcc/slide_01.png",
-        caption: "Slide 1: A Python simulation-based performance evaluation against NMRA standards.",
-        detail: "Final Year Research Project 2 (FYRP 2) supervised by Dr. Mohd Juhari Bin Mat Basri, establishing a software-in-the-loop evaluation framework for Arduino Uno R3 ATmega328P DCC++ command stations."
+        phase: "Title & Context",
+        title: "Heart-Rate-Zone Trail Training: TRIZ Innovation",
+        image: "/projects/slides/triz/slide_01.png",
+        caption: "Slide 1: NMB 25403 New Product Development presented at Universiti Kuala Lumpur \u00b7 MARA.",
+        detail: "Supervised by Assoc. Prof. Dr. Ir. Zainal Fitri Bin Zainal Abidin. Authored by student engineering team M. Syazwan, Faris Hadzre, Muhammad Aiman Bin Mohd Sazali, and Mamduh Nufail."
       },
       {
         step: 2,
-        phase: "Roadmap & Rubric",
-        title: "Presentation Roadmap & Scoring Guide",
-        image: "/projects/slides/dcc/slide_02.png",
-        caption: "Slide 2: Structured research defense across 6 rubric scoring areas.",
-        detail: "Outlines the systematic roadmap: Introduction & Literature Review, Research Methodology, Results & Discussion, Conclusion & Recommendations, and Q&A Readiness, mapped to target Score 4."
+        phase: "Core Problem",
+        title: "Trail Races Are Lost on Fatigue and Injury, Not Talent",
+        image: "/projects/slides/triz/slide_02.png",
+        caption: "Slide 2: Identifying physiological failure modes: pace fade, injury exposure, and friction damage.",
+        detail: "Steep inclines and rocky paths break metabolic rhythm and cause uncalibrated pacing; unchecked eccentric downhill forces trigger joint inflammation; friction causes severe blistering."
       },
       {
         step: 3,
-        phase: "Area 1: Context",
-        title: "Background, Scope & Significance",
-        image: "/projects/slides/dcc/slide_03.png",
-        caption: "Slide 3: Evolution of model railway control from 1900s Analogue DC to open-source DCC++.",
-        detail: "Highlights societal and engineering impact: democratizing digital railway control for universities, hobbyists, and industry while reducing electronic waste through retrofit-over-replace principles."
+        phase: "Paradigm Shift",
+        title: "From a Generic Static Schedule to an Adaptive Bio-Plan",
+        image: "/projects/slides/triz/slide_03.png",
+        caption: "Slide 3: Legacy calendar advice vs TRIZ-engineered closed-loop governance.",
+        detail: "Replaces generic 'Cardio/Hiking' calendars with a system that calculates individual Max HR, prevents overtraining, and provides real-time 13 min/km pacer feedback against cardiac drift."
       },
       {
         step: 4,
-        phase: "Area 1: Problem",
-        title: "Problem Statement & Research Gap",
-        image: "/projects/slides/dcc/slide_04.png",
-        caption: "Slide 4: Identifying cost barriers (RM 800-1,400) and unvalidated open-source claims.",
-        detail: "Addresses closed proprietary architectures and the complete absence in prior literature of quantitative timing benchmarks, latency metrics, and multi-loco scaling curves."
+        phase: "TRIZ Decomposition",
+        title: "Super-System Boundary & Product Architecture",
+        image: "/projects/slides/triz/slide_04.png",
+        caption: "Slide 4: Mapping external environmental inputs to the engineered algorithmic core.",
+        detail: "Decomposes the system into contextual super-system inputs (Age, Fitness Baseline, Terrain Gradient, HR Sensor) and governing product components (HR Zone Engine, Modalities, Cadence & Rest, 13 min/km Pacer)."
       },
       {
         step: 5,
-        phase: "Area 1: Objectives",
-        title: "SMART Objectives & Research Questions",
-        image: "/projects/slides/dcc/slide_05.png",
-        caption: "Slide 5: 3 SMART research objectives and 4 foundational research questions.",
-        detail: "Defines rigorous quantitative targets: 5,000-bit/1,000-packet NMRA timing adherence, >=95% JMRI reliability across 700 commands with Wilson CIs, and benchmarking against Digitrax & NCE."
+        phase: "Algorithmic Flow",
+        title: "Single-Input Physiological Intensity Formulation",
+        image: "/projects/slides/triz/slide_05.png",
+        caption: "Slide 5: One user input (Age) generates a full week of mathematically bounded intensities.",
+        detail: "User inputs chronological age (e.g. 24 yrs). System calculates Max HR (220 - Age = 196 BPM), safe aerobic bounds (137 - 176 BPM), and prescribes discrete Zones 2, 3, and 4 per session."
       },
       {
         step: 6,
-        phase: "Area 1: Literature",
-        title: "Literature Review Key Findings & Gaps",
-        image: "/projects/slides/dcc/slide_06.png",
-        caption: "Slide 6: Review of 6 landmark studies identifying latency, scaling, and integration gaps.",
-        detail: "Synthesizes literature from Hor\u00e1\u010dek (2024), Martinez (2021), Brown & Davis (2023), Kumar (2021), Zhou (2022), and Thompson (2023), demonstrating how this study closes all six gaps simultaneously."
+        phase: "Execution Matrix",
+        title: "The Innovated Weekly Trail Training Plan",
+        image: "/projects/slides/triz/slide_06.png",
+        caption: "Slide 6: Comprehensive 7-day schedule with distances, repetitions, intervals, and HR ceilings.",
+        detail: "Monday: Uphill/Stair (Zone 3, 137-157 BPM); Tuesday: Downhill eccentric control (Zone 3); Wednesday: Full body strength; Thursday: Road threshold (Zone 4, 157-176 BPM); Friday: Rest; Saturday: 6.0km Trail run (Zone 2); Sunday: Rest."
       },
       {
         step: 7,
-        phase: "Area 2: Architecture",
-        title: "Research Design & Two Subsystems",
-        image: "/projects/slides/dcc/slide_07.png",
-        caption: "Slide 7: Core simulation engine (run_all.py) and JMRI TCP integration layer.",
-        detail: "Details the Software-in-the-Loop methodology separating protocol correctness from hardware noise. Features 5 simulation modules (M1-M5) connected to real JMRI via TCP port 2560."
+        phase: "Biomechanical Roles",
+        title: "Every Training Session Has a Specific Biomechanical Job",
+        image: "/projects/slides/triz/slide_07.png",
+        caption: "Slide 7: Isolating distinct physical variables to eliminate compounding fatigue.",
+        detail: "Trail runs hone technical footwork; road runs sharpen turnover pace; uphill intervals recruit posterior chain climbing power; downhill runs condition eccentric knee decelerators; strength stabilizes core kinetics."
       },
       {
         step: 8,
-        phase: "Area 2: Engineering",
-        title: "Complex Engineering Activities & Acceptance Criteria",
-        image: "/projects/slides/dcc/slide_08.png",
-        caption: "Slide 8: EA2 interactions and EA3 innovation mapped to PLO10 standards.",
-        detail: "Articulates technical trade-offs across hardware constraints, OS scheduling, and protocol timing, establishing strict pass/fail criteria for pulse timing, latency, reliability, and packet drops."
+        phase: "TRIZ Principles",
+        title: "Why It Works: Three TRIZ Principles Applied",
+        image: "/projects/slides/triz/slide_08.png",
+        caption: "Slide 8: Resolving the physical contradiction between endurance volume and joint longevity.",
+        detail: "Principle #1 (Segmentation: dividing training into isolated terrain modalities and HR zones); Principle #16 (Partial or Excessive Action: concentrated hill micro-doses); Principle #23 (Feedback: telemetric pace and cardiac loop)."
       },
       {
         step: 9,
-        phase: "Area 3: Signal Timing",
-        title: "Result 1: DCC Signal Timing vs NMRA S-9.1",
-        image: "/projects/slides/dcc/slide_09.png",
-        caption: "Slide 9: 100.00% timing compliance for Logic 1 and Logic 0 pulses.",
-        detail: "Simulated mean of 58.003 us (Logic 1) and 99.995 us (Logic 0) with jitter standard deviation sigma = 0.478 us, outperforming commercial Digitrax Zephyr (1.5 us) and NCE PowerCab (2.0 us)."
+        phase: "Athletic Impact",
+        title: "Faster Race Times with Minimized Downtime",
+        image: "/projects/slides/triz/slide_09.png",
+        caption: "Slide 9: Measurable athletic benefits: pace consistency, joint longevity, and psychological confidence.",
+        detail: "Maintains steady physiological output over volatile elevation changes, prevents chronic overuse downtime through eccentric shock conditioning, and removes race-day panic."
       },
       {
         step: 10,
-        phase: "Area 3: JMRI Reliability",
-        title: "Result 2: JMRI Integration & Functional Reliability",
-        image: "/projects/slides/dcc/slide_10.png",
-        caption: "Slide 10: 100% command success rate (95% CI: 99.5-100%) across 700 commands.",
-        detail: "Emergency stop executed in 8.17 ms meeting safety-critical limits. CV read/write operations recorded ~44 ms in compliance with NMRA S-9.2 service-mode multi-step protocol timing."
+        phase: "Scientific Foundations",
+        title: "Academic & Methodological Foundations",
+        image: "/projects/slides/triz/slide_10.png",
+        caption: "Slide 10: Grounded in peer-reviewed exercise physiology and TRIZ engineering standards.",
+        detail: "Synthesizes Simplified TRIZ (Rantanen & Domb), Dr. Phil Maffetone's MAF Aerobic Method, Jack Daniels' & Matt Fitzgerald's 80/20 Polarity Running, and Jeff Nippard's minimalist resistance protocols."
       },
       {
         step: 11,
-        phase: "Area 3: Multi-Train Scaling",
-        title: "Result 3: Multi-Loco Scaling & Speed Accuracy",
-        image: "/projects/slides/dcc/slide_11.png",
-        caption: "Slide 11: 1-8 locomotives evaluated with 0.0% packet drop and r = 0.999999 linearity.",
-        detail: "Latency increased by only 1.32 ms from 1 loco (7.50 ms) to 8 locos (8.82 ms). Speed accuracy in 28-step mode exhibited maximum deviation under 0.20% across 150 observations per step."
-      },
-      {
-        step: 12,
-        phase: "Area 3: Benchmarking",
-        title: "Comprehensive Performance Benchmarking",
-        image: "/projects/slides/dcc/slide_12.png",
-        caption: "Slide 12: 12/12 validation criteria ALL PASS with ICC = 0.902 repeatability.",
-        detail: "Comprehensive comparative matrix showing simulated DCC++ achieves equivalent or superior signal quality and protocol reliability to RM 800-1,400 commercial systems at RM 0 simulation cost."
-      },
-      {
-        step: 13,
-        phase: "Area 4: Conclusion",
-        title: "Conclusion Aligned to Research Objectives",
-        image: "/projects/slides/dcc/slide_13.png",
-        caption: "Slide 13: Full fulfillment of O1, O2, and O3 with 100% NMRA compliance.",
-        detail: "Confirms affordable signal generation, reliable JMRI protocol integration, and competitive benchmark parity against commercial systems on a fully reproducible Python platform."
-      },
-      {
-        step: 14,
-        phase: "Area 4: Recommendations",
-        title: "Recommendations: Clear, Feasible & Technical",
-        image: "/projects/slides/dcc/slide_14.png",
-        caption: "Slide 14: Structured engineering roadmap categorized into High, Med, and Low priority.",
-        detail: "Proposes physical oscilloscope validation with L298P shields, burst stress testing at 50 ms intervals, predictive fault injection modeling, ESP32 DCC-EX migration, and JMRI Operations dispatching."
-      },
-      {
-        step: 15,
-        phase: "Area 4: Research Impact",
-        title: "Final Conclusion & Research Impact",
-        image: "/projects/slides/dcc/slide_15.png",
-        caption: "Slide 15: Validating open-source digital control for STEM education and research.",
-        detail: "Proves protocol correctness and establishes that hardware failures in prior literature are electrical rather than design flaws, opening access for low-budget STEM labs worldwide."
+        phase: "Project Synthesis",
+        title: "Train to the Zone, Not the Guess: Closed-Loop Governance",
+        image: "/projects/slides/triz/slide_11.png",
+        caption: "Slide 11: Final project synthesis delivered for Universiti Kuala Lumpur \u00b7 MARA.",
+        detail: "Demonstrates how systematic TRIZ problem-solving transforms sports science into an engineered, reproducible product that eliminates guesswork and insulates athletes from injury."
       }
     ]
+
   },
+
+  // =========================================================================
+  // AUXILIARY CASE STUDY: DISINFECTION TUNNEL
+  // =========================================================================
   {
     id: "disinfection",
+    pillarNumber: 6,
+    pillarTag: "Mechanical & Automation Design",
     frontTitle: "Disinfection Tunnel",
     frontSub: "Automated Walk-Through Sanitization Chamber (Politeknik Port Dickson)",
     category: "Mechanical Fabrication & Sensor Control",
+    role: "Mechanical Fabrication & Pneumatics Lead",
+    stack: "Pneumatics, Misting Sprayers, 1500W Fogger, Mild Steel Chassis, Acrylic Panels",
     backTitle: "Disinfection Tunnel: Automated Walk-Through Sanitization Chamber",
     backDesc: "Designed and fabricated an automated walk-through sanitization tunnel incorporating a 1500W fogging system, 0.2mm misting nozzles, and push-button controls to optimize sanitization speed and eliminate liquid wastage.",
     toolTags: ["Pneumatics", "Misting Sprayers", "1500W Fogger", "Mild Steel Chassis", "Acrylic Panels"],
     heroImage: "/projects/slides/disinfection/slide_01.png",
+    keyMetrics: [
+      "Designed a complete 3D walk-through chassis with 25mm mild steel tubing and acrylic shields",
+      "Engineered pneumatic routing with 10x 0.2mm precision misting nozzles driven by 1500W fogger",
+      "Achieved 100% positive user survey validation across 32 workshop respondents"
+    ],
+    actionLinks: [
+      { label: "Inspect 12 Slides", action: "openDeck", primary: true }
+    ],
     overviewList: [
       "Designed a complete 3D walk-through chassis with 25mm mild steel tubing and clear acrylic observation shields.",
       "Engineered a pneumatic routing network with 10x 0.2mm precision misting nozzles driven by a 1500W thermal fogging unit.",
