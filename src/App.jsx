@@ -1239,7 +1239,7 @@ export default function App() {
 
                     {/* Prominent Direct Action Links & Buttons */}
                     <div className="pt-3 border-t border-navy-800 mt-2 space-y-2">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className={`grid gap-2 ${project.actionLinks?.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
                         {(project.actionLinks || []).map((link, lIdx) => {
                           if (link.action === 'openDeck') {
                             return (
@@ -1273,7 +1273,11 @@ export default function App() {
                                   : 'bg-navy-800 hover:bg-navy-750 text-slate-200 hover:text-white border border-navy-700'
                               }`}
                             >
-                              <ExternalLink className="w-3.5 h-3.5 text-sky-400" />
+                              {link.label.toLowerCase().includes('github') ? (
+                                <Github className="w-3.5 h-3.5 text-sky-400" />
+                              ) : (
+                                <ExternalLink className="w-3.5 h-3.5 text-sky-400" />
+                              )}
                               <span>{link.label}</span>
                             </a>
                           );

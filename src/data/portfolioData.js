@@ -20,7 +20,7 @@ export const personalInfo = {
   location: "Klang, Selangor, Malaysia",
   email: "aiman.sazali913@gmail.com",
   phone: "+6011-65657622",
-  linkedin: "https://www.linkedin.com/in/aiman-sazali-8288b2220/",
+  linkedin: "https://www.linkedin.com/in/aiman-sazali-794539265/",
   github: "https://github.com/aimansazali913",
   resumeUrl: "#",
   aboutBio: [
@@ -226,9 +226,8 @@ export const projects = [
       "Integrated assistive AI operations copilot & automated receipt OCR data extraction"
     ],
     actionLinks: [
-      { label: "Live Web App Demo", url: "https://urus.app", isExternal: true, primary: true },
-      { label: "GitHub Repository", url: "https://github.com/aimansazali913", isExternal: true },
-      { label: "14-Slide Architecture Deck", action: "openDeck" }
+      { label: "14-Slide Architecture Deck", action: "openDeck", primary: true },
+      { label: "GitHub Repository", url: "https://github.com/aimansazali913", isExternal: true }
     ],
     overviewList: [
       "Architected an integrated business operations platform for stock-based SMEs unifying procurement, real-time inventory tracking, outbound fulfillment, workforce/KPI management, and financial payroll into a single operational pipeline.",
@@ -466,8 +465,7 @@ export const projects = [
       "Microsecond bit jitter (σ = 0.48 µs) and zero packet loss up to 8 trains"
     ],
     actionLinks: [
-      { label: "Read Published Paper", action: "openDeck", primary: true },
-      { label: "Simulation Repository", url: "https://github.com/aimansazali913", isExternal: true }
+      { label: "Read Published Paper (15-Slide Presentation)", action: "openDeck", primary: true }
     ],
     overviewList: [
       "Designed, built, and validated a 5-module simulation framework for an embedded command-control base station.",
@@ -622,8 +620,7 @@ export const projects = [
       "Real-time ESP32 IoT sensor telemetry pipeline with predictive maintenance alerting"
     ],
     actionLinks: [
-      { label: "CAD & Project Case Study", action: "openDeck", primary: true },
-      { label: "IoT Firmware Repository", url: "https://github.com/aimansazali913", isExternal: true }
+      { label: "CAD & Project Case Study (33-Slide Presentation)", action: "openDeck", primary: true }
     ],
     overviewList: [
       "Directed concept-to-fabrication CAD engineering of a multi-component industrial assembly and a 7-item Bill of Materials (BOM).",
