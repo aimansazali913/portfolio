@@ -20,7 +20,7 @@ export const personalInfo = {
   location: "Klang, Selangor, Malaysia",
   email: "aiman.sazali913@gmail.com",
   phone: "+6011-65657622",
-  linkedin: "https://www.linkedin.com/in/muhammad-aiman-mohd-sazali/",
+  linkedin: "https://www.linkedin.com/in/muhammad-aiman-mohd-sazali-/",
   github: "https://github.com/aimansazali913",
   resumeUrl: "#",
   aboutBio: [
